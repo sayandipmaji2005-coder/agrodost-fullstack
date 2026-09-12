@@ -101,11 +101,17 @@ export const SatelliteAnalysisPage: React.FC = () => {
       const res = await api.analyzeSatellite(targetFarmId, targetMode, targetScenario);
       setCurrentScan(res.scan);
 
-      // Sync local farm record with updated status & scan date
+      // Sync local farm record with updated status & scan date & telemetry metrics
       setFarms(prev => prev.map(f => f.id === targetFarmId ? {
         ...f,
         status: res.scan.overallStatus,
-        lastScanDate: res.scan.scanDate
+        lastScanDate: res.scan.scanDate,
+        telemetryMetrics: {
+          meanNdvi: res.scan.opticalMetrics?.meanNdvi,
+          vigorDropPercent: res.scan.anomalyHotspots?.[0]?.chlorophyllDeficitPercent || 0,
+          hotspotSector: res.scan.anomalyHotspots?.[0]?.sector || null,
+          temperatureElevation: res.scan.anomalyHotspots?.[0]?.temperatureElevation || 0,
+        }
       } : f));
 
       // Auto-select the critical hotspot or lowest-NDVI cell
@@ -340,11 +346,11 @@ export const SatelliteAnalysisPage: React.FC = () => {
             }}
             className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-all ${
               scenario === 'default'
-                ? 'bg-rose-600 text-white shadow-sm'
+                ? 'bg-emerald-700 text-white shadow-sm'
                 : 'text-slate-600 hover:text-slate-900'
             }`}
           >
-            🎯 Stress Hotspot
+            🛰️ Live Orbit Telemetry
           </button>
           <button
             type="button"
@@ -505,6 +511,18 @@ export const SatelliteAnalysisPage: React.FC = () => {
                   <span className="text-xs font-bold text-slate-700 bg-slate-100 px-3 py-1 rounded-full border border-slate-200">
                     Field: {selectedFarm.name} ({selectedFarm.areaAcres} Acres)
                   </span>
+                  <div className="flex items-center gap-1.5 flex-wrap">
+                    <span className={`text-[11px] font-black font-mono px-2 py-0.5 rounded-lg border shadow-xs ${
+                      (currentScan?.opticalMetrics?.meanNdvi ?? selectedFarm.telemetryMetrics?.meanNdvi ?? 0.72) > 0.6 
+                        ? 'bg-emerald-50 text-emerald-700 border-emerald-200' 
+                        : (currentScan?.opticalMetrics?.meanNdvi ?? selectedFarm.telemetryMetrics?.meanNdvi ?? 0.50) >= 0.4 
+                        ? 'bg-amber-50 text-amber-800 border-amber-300' 
+                        : 'bg-rose-50 text-rose-800 border-rose-300'
+                    }`}>
+                      NDVI: {(currentScan?.opticalMetrics?.meanNdvi ?? selectedFarm.telemetryMetrics?.meanNdvi ?? 0.72).toFixed(2)}
+                    </span>
+                    <StatusBadge status={currentScan?.overallStatus || selectedFarm.status} />
+                  </div>
                   <span className="inline-flex items-center gap-1 text-[11px] font-black text-slate-800 bg-white border border-slate-300 px-2.5 py-0.5 rounded-full shadow-xs">
                     <Sparkles className="w-3 h-3 text-agri-600" />
                     <span>Farmer-selected: {selectedFarm.cropType}</span>
