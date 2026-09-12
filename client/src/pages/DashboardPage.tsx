@@ -323,7 +323,7 @@ export const DashboardPage: React.FC = () => {
                   </div>
 
                   {/* Dynamic Coordinate-Derived Alert Badge for Critical Stress Farms */}
-                  {farm.status === 'critical' && (() => {
+                  {farm.status === 'critical' && (farm.telemetryMetrics?.meanNdvi ?? 0) < 0.40 && (() => {
                     const alert = getFarmAlertTelemetry(farm);
                     const ndviVal = farm.telemetryMetrics?.meanNdvi !== undefined 
                       ? farm.telemetryMetrics.meanNdvi.toFixed(2) 
@@ -355,7 +355,7 @@ export const DashboardPage: React.FC = () => {
                   })()}
 
                   {/* Dynamic Coordinate-Derived Alert Badge for Moderate Stress / Monitor Farms */}
-                  {farm.status === 'warning' && (() => {
+                  {farm.status === 'warning' && (farm.telemetryMetrics?.meanNdvi ?? 0.5) <= 0.60 && (farm.telemetryMetrics?.meanNdvi ?? 0.5) >= 0.40 && (() => {
                     const alert = getFarmAlertTelemetry(farm);
                     const ndviVal = farm.telemetryMetrics?.meanNdvi !== undefined 
                       ? farm.telemetryMetrics.meanNdvi.toFixed(2) 

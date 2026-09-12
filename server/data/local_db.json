@@ -4385,11 +4385,11 @@
       "classificationConfidence": null,
       "phenologySeries": null,
       "status": "healthy",
-      "lastScanDate": "2026-09-12T08:40:33.439Z",
+      "lastScanDate": "2026-09-12T09:15:41.304Z",
       "createdAt": "2026-09-12T08:33:26.125Z",
-      "updatedAt": "2026-09-12T08:40:33.529Z",
+      "updatedAt": "2026-09-12T09:15:41.355Z",
       "telemetryMetrics": {
-        "meanNdvi": 0.92,
+        "meanNdvi": 0.89,
         "vigorDropPercent": 0,
         "hotspotSector": null,
         "temperatureElevation": 0
@@ -4651,11 +4651,11 @@
       "classificationConfidence": null,
       "phenologySeries": null,
       "status": "healthy",
-      "lastScanDate": "2026-09-12T08:37:07.171Z",
+      "lastScanDate": "2026-09-12T09:13:03.967Z",
       "createdAt": "2026-09-12T08:37:06.572Z",
-      "updatedAt": "2026-09-12T08:37:07.267Z",
+      "updatedAt": "2026-09-12T09:13:04.019Z",
       "telemetryMetrics": {
-        "meanNdvi": 0.93,
+        "meanNdvi": 0.92,
         "vigorDropPercent": 0,
         "hotspotSector": null,
         "temperatureElevation": 0
@@ -4925,6 +4925,1687 @@
     }
   ],
   "satelliteScans": [
+    {
+      "id": "f5cc1fe5-a041-4cba-8c72-b195be8cdff8",
+      "farmId": "ffe3a2c5-8e99-4dda-8372-e3ce3f573bc5",
+      "userId": "1789201814064",
+      "scanDate": "2026-09-12T09:15:41.304Z",
+      "mode": "optical",
+      "cloudCoverPercentage": 18,
+      "isMonsoonRadarActive": false,
+      "overallStatus": "healthy",
+      "opticalMetrics": {
+        "meanNdvi": 0.89,
+        "cloudCoverPercentage": 18,
+        "healthyCanopyPercentage": 100,
+        "moderateStressPercentage": 0,
+        "severeStressPercentage": 0,
+        "opticalImageTimestamp": "2026-09-12T09:15:41.304Z"
+      },
+      "sarMetrics": {
+        "vvBackscatterDb": -9.9,
+        "vhBackscatterDb": -17.8,
+        "polarizationRatio": 1.47,
+        "soilMoistureIndex": 57,
+        "canopyStructuralLossPercentage": 1,
+        "waterloggingRisk": "minimal",
+        "radarPenetrationDepthCm": 4.2,
+        "sarImageTimestamp": "2026-09-12T09:15:41.304Z"
+      },
+      "stressZones": [],
+      "zonalGrid": [
+        {
+          "id": "cell-1",
+          "sector": "South-West Sector",
+          "subQuadrant": "SW-Sector-1",
+          "coordinates": [
+            [
+              [
+                75.50116371946216,
+                30.925043079193244
+              ],
+              [
+                75.50116371946216,
+                30.925611359731082
+              ],
+              [
+                75.50173199999999,
+                30.925611359731082
+              ],
+              [
+                75.50173199999999,
+                30.925043079193244
+              ],
+              [
+                75.50116371946216,
+                30.925043079193244
+              ]
+            ]
+          ],
+          "center": [
+            30.925327,
+            75.501448
+          ],
+          "ndvi": 0.87,
+          "sarBackscatterDb": -11.6,
+          "vhVvRatio": 1.52,
+          "soilMoisturePercentage": 56,
+          "status": "healthy",
+          "color": "#22c55e",
+          "recommendedSprayCoords": {
+            "lat": 30.925327,
+            "lng": 75.501448
+          },
+          "recommendedAction": "Canopy vigor is optimal. Maintain balanced irrigation."
+        },
+        {
+          "id": "cell-2",
+          "sector": "North-West Sector",
+          "subQuadrant": "NW-Sector-2",
+          "coordinates": [
+            [
+              [
+                75.50116371946216,
+                30.925611359731082
+              ],
+              [
+                75.50116371946216,
+                30.92617964026892
+              ],
+              [
+                75.50173199999999,
+                30.92617964026892
+              ],
+              [
+                75.50173199999999,
+                30.925611359731082
+              ],
+              [
+                75.50116371946216,
+                30.925611359731082
+              ]
+            ]
+          ],
+          "center": [
+            30.925896,
+            75.501448
+          ],
+          "ndvi": 0.86,
+          "sarBackscatterDb": -11.6,
+          "vhVvRatio": 1.5,
+          "soilMoisturePercentage": 57,
+          "status": "healthy",
+          "color": "#22c55e",
+          "recommendedSprayCoords": {
+            "lat": 30.925896,
+            "lng": 75.501448
+          },
+          "recommendedAction": "Canopy vigor is optimal. Maintain balanced irrigation."
+        },
+        {
+          "id": "cell-3",
+          "sector": "North-West Sector",
+          "subQuadrant": "NW-Sector-3",
+          "coordinates": [
+            [
+              [
+                75.50116371946216,
+                30.92617964026892
+              ],
+              [
+                75.50116371946216,
+                30.926747920806758
+              ],
+              [
+                75.50173199999999,
+                30.926747920806758
+              ],
+              [
+                75.50173199999999,
+                30.92617964026892
+              ],
+              [
+                75.50116371946216,
+                30.92617964026892
+              ]
+            ]
+          ],
+          "center": [
+            30.926464,
+            75.501448
+          ],
+          "ndvi": 0.87,
+          "sarBackscatterDb": -11.6,
+          "vhVvRatio": 1.48,
+          "soilMoisturePercentage": 58,
+          "status": "healthy",
+          "color": "#22c55e",
+          "recommendedSprayCoords": {
+            "lat": 30.926464,
+            "lng": 75.501448
+          },
+          "recommendedAction": "Canopy vigor is optimal. Maintain balanced irrigation."
+        },
+        {
+          "id": "cell-4",
+          "sector": "South-East Sector",
+          "subQuadrant": "SE-Sector-4",
+          "coordinates": [
+            [
+              [
+                75.50173199999999,
+                30.925043079193244
+              ],
+              [
+                75.50173199999999,
+                30.925611359731082
+              ],
+              [
+                75.50230028053782,
+                30.925611359731082
+              ],
+              [
+                75.50230028053782,
+                30.925043079193244
+              ],
+              [
+                75.50173199999999,
+                30.925043079193244
+              ]
+            ]
+          ],
+          "center": [
+            30.925327,
+            75.502016
+          ],
+          "ndvi": 0.91,
+          "sarBackscatterDb": -12.2,
+          "vhVvRatio": 1.5,
+          "soilMoisturePercentage": 57,
+          "status": "healthy",
+          "color": "#22c55e",
+          "recommendedSprayCoords": {
+            "lat": 30.925327,
+            "lng": 75.502016
+          },
+          "recommendedAction": "Canopy vigor is optimal. Maintain balanced irrigation."
+        },
+        {
+          "id": "cell-5",
+          "sector": "North-East Sector",
+          "subQuadrant": "NE-Sector-5",
+          "coordinates": [
+            [
+              [
+                75.50173199999999,
+                30.925611359731082
+              ],
+              [
+                75.50173199999999,
+                30.92617964026892
+              ],
+              [
+                75.50230028053782,
+                30.92617964026892
+              ],
+              [
+                75.50230028053782,
+                30.925611359731082
+              ],
+              [
+                75.50173199999999,
+                30.925611359731082
+              ]
+            ]
+          ],
+          "center": [
+            30.925896,
+            75.502016
+          ],
+          "ndvi": 0.92,
+          "sarBackscatterDb": -12.2,
+          "vhVvRatio": 1.48,
+          "soilMoisturePercentage": 58,
+          "status": "healthy",
+          "color": "#22c55e",
+          "recommendedSprayCoords": {
+            "lat": 30.925896,
+            "lng": 75.502016
+          },
+          "recommendedAction": "Canopy vigor is optimal. Maintain balanced irrigation."
+        },
+        {
+          "id": "cell-6",
+          "sector": "North-East Sector",
+          "subQuadrant": "NE-Sector-6",
+          "coordinates": [
+            [
+              [
+                75.50173199999999,
+                30.92617964026892
+              ],
+              [
+                75.50173199999999,
+                30.926747920806758
+              ],
+              [
+                75.50230028053782,
+                30.926747920806758
+              ],
+              [
+                75.50230028053782,
+                30.92617964026892
+              ],
+              [
+                75.50173199999999,
+                30.92617964026892
+              ]
+            ]
+          ],
+          "center": [
+            30.926464,
+            75.502016
+          ],
+          "ndvi": 0.92,
+          "sarBackscatterDb": -12.2,
+          "vhVvRatio": 1.46,
+          "soilMoisturePercentage": 58,
+          "status": "healthy",
+          "color": "#22c55e",
+          "recommendedSprayCoords": {
+            "lat": 30.926464,
+            "lng": 75.502016
+          },
+          "recommendedAction": "Canopy vigor is optimal. Maintain balanced irrigation."
+        }
+      ],
+      "anomalyHotspots": [],
+      "gridResolution": "6 Sub-Sectors (Turf.js Micro-Grid)",
+      "macroObservations": [
+        "Foliar Canopy Vigor: Active standing crop monitored via Sentinel-2 & Sentinel-1 SAR.",
+        "Canopy vigor is optimal and uniformly distributed across all 6 sub-sectors (Mean NDVI: 0.89 > 0.6). No stress anomalies detected."
+      ],
+      "scientificLimitationNotice": "Satellite remote sensing identifies possible crop-stress hotspots only. It does NOT claim exact disease, pest, fungus, soil pH, NPK, or crop type from map data alone. Ground-truth foliar camera diagnosis is required.",
+      "promptCameraInspection": false
+    },
+    {
+      "id": "3ef49b9b-6508-4779-b7e7-5deacc648298",
+      "farmId": "a522bb0f-5c0d-46af-861e-01397b75e663",
+      "userId": "1789201814064",
+      "scanDate": "2026-09-12T09:13:03.967Z",
+      "mode": "optical",
+      "cloudCoverPercentage": 18,
+      "isMonsoonRadarActive": false,
+      "overallStatus": "healthy",
+      "opticalMetrics": {
+        "meanNdvi": 0.92,
+        "cloudCoverPercentage": 18,
+        "healthyCanopyPercentage": 100,
+        "moderateStressPercentage": 0,
+        "severeStressPercentage": 0,
+        "opticalImageTimestamp": "2026-09-12T09:13:03.965Z"
+      },
+      "sarMetrics": {
+        "vvBackscatterDb": -10.6,
+        "vhBackscatterDb": -17.8,
+        "polarizationRatio": 1.47,
+        "soilMoistureIndex": 53,
+        "canopyStructuralLossPercentage": 1,
+        "waterloggingRisk": "minimal",
+        "radarPenetrationDepthCm": 4.2,
+        "sarImageTimestamp": "2026-09-12T09:13:03.966Z"
+      },
+      "stressZones": [],
+      "zonalGrid": [
+        {
+          "id": "cell-1",
+          "sector": "South-West Sector",
+          "subQuadrant": "SW-Sector-1",
+          "coordinates": [
+            [
+              [
+                88.237485,
+                22.898657
+              ],
+              [
+                88.23799500000001,
+                22.898657
+              ],
+              [
+                88.23799500000001,
+                22.899077
+              ],
+              [
+                88.237485,
+                22.899077
+              ],
+              [
+                88.237485,
+                22.898657
+              ]
+            ]
+          ],
+          "center": [
+            22.898867,
+            88.23774
+          ],
+          "ndvi": 0.92,
+          "sarBackscatterDb": -12.2,
+          "vhVvRatio": 1.53,
+          "soilMoisturePercentage": 51,
+          "status": "healthy",
+          "color": "#22c55e",
+          "recommendedSprayCoords": {
+            "lat": 22.898867,
+            "lng": 88.23774
+          },
+          "recommendedAction": "Canopy vigor is optimal. Maintain balanced irrigation."
+        },
+        {
+          "id": "cell-2",
+          "sector": "South-East Sector",
+          "subQuadrant": "SE-Sector-2",
+          "coordinates": [
+            [
+              [
+                88.23799500000001,
+                22.898657
+              ],
+              [
+                88.238505,
+                22.898657
+              ],
+              [
+                88.238505,
+                22.899077
+              ],
+              [
+                88.23799500000001,
+                22.899077
+              ],
+              [
+                88.23799500000001,
+                22.898657
+              ]
+            ]
+          ],
+          "center": [
+            22.898867,
+            88.23825
+          ],
+          "ndvi": 0.92,
+          "sarBackscatterDb": -11.7,
+          "vhVvRatio": 1.54,
+          "soilMoisturePercentage": 52,
+          "status": "healthy",
+          "color": "#22c55e",
+          "recommendedSprayCoords": {
+            "lat": 22.898867,
+            "lng": 88.23825
+          },
+          "recommendedAction": "Canopy vigor is optimal. Maintain balanced irrigation."
+        },
+        {
+          "id": "cell-3",
+          "sector": "North-West Sector",
+          "subQuadrant": "NW-Sector-3",
+          "coordinates": [
+            [
+              [
+                88.237485,
+                22.899077
+              ],
+              [
+                88.23799500000001,
+                22.899077
+              ],
+              [
+                88.23799500000001,
+                22.899497
+              ],
+              [
+                88.237485,
+                22.899497
+              ],
+              [
+                88.237485,
+                22.899077
+              ]
+            ]
+          ],
+          "center": [
+            22.899287,
+            88.23774
+          ],
+          "ndvi": 0.92,
+          "sarBackscatterDb": -12.2,
+          "vhVvRatio": 1.53,
+          "soilMoisturePercentage": 53,
+          "status": "healthy",
+          "color": "#22c55e",
+          "recommendedSprayCoords": {
+            "lat": 22.899287,
+            "lng": 88.23774
+          },
+          "recommendedAction": "Canopy vigor is optimal. Maintain balanced irrigation."
+        },
+        {
+          "id": "cell-4",
+          "sector": "North-East Sector",
+          "subQuadrant": "NE-Sector-4",
+          "coordinates": [
+            [
+              [
+                88.23799500000001,
+                22.899077
+              ],
+              [
+                88.238505,
+                22.899077
+              ],
+              [
+                88.238505,
+                22.899497
+              ],
+              [
+                88.23799500000001,
+                22.899497
+              ],
+              [
+                88.23799500000001,
+                22.899077
+              ]
+            ]
+          ],
+          "center": [
+            22.899287,
+            88.23825
+          ],
+          "ndvi": 0.91,
+          "sarBackscatterDb": -11.7,
+          "vhVvRatio": 1.54,
+          "soilMoisturePercentage": 54,
+          "status": "healthy",
+          "color": "#22c55e",
+          "recommendedSprayCoords": {
+            "lat": 22.899287,
+            "lng": 88.23825
+          },
+          "recommendedAction": "Canopy vigor is optimal. Maintain balanced irrigation."
+        }
+      ],
+      "anomalyHotspots": [],
+      "gridResolution": "4 Sub-Sectors (Turf.js Micro-Grid)",
+      "macroObservations": [
+        "Foliar Canopy Vigor: Active standing crop monitored via Sentinel-2 & Sentinel-1 SAR.",
+        "Canopy vigor is optimal and uniformly distributed across all 4 sub-sectors (Mean NDVI: 0.92 > 0.6). No stress anomalies detected."
+      ],
+      "scientificLimitationNotice": "Satellite remote sensing identifies possible crop-stress hotspots only. It does NOT claim exact disease, pest, fungus, soil pH, NPK, or crop type from map data alone. Ground-truth foliar camera diagnosis is required.",
+      "promptCameraInspection": false
+    },
+    {
+      "id": "de77f973-cad5-47a2-93b7-8f15b9fcd972",
+      "farmId": "a522bb0f-5c0d-46af-861e-01397b75e663",
+      "userId": "1789201814064",
+      "scanDate": "2026-09-12T09:08:05.318Z",
+      "mode": "optical",
+      "cloudCoverPercentage": 18,
+      "isMonsoonRadarActive": false,
+      "overallStatus": "healthy",
+      "opticalMetrics": {
+        "meanNdvi": 0.92,
+        "cloudCoverPercentage": 18,
+        "healthyCanopyPercentage": 100,
+        "moderateStressPercentage": 0,
+        "severeStressPercentage": 0,
+        "opticalImageTimestamp": "2026-09-12T09:08:05.318Z"
+      },
+      "sarMetrics": {
+        "vvBackscatterDb": -10.6,
+        "vhBackscatterDb": -17.8,
+        "polarizationRatio": 1.47,
+        "soilMoistureIndex": 53,
+        "canopyStructuralLossPercentage": 1,
+        "waterloggingRisk": "minimal",
+        "radarPenetrationDepthCm": 4.2,
+        "sarImageTimestamp": "2026-09-12T09:08:05.318Z"
+      },
+      "stressZones": [],
+      "zonalGrid": [
+        {
+          "id": "cell-1",
+          "sector": "South-West Sector",
+          "subQuadrant": "SW-Sector-1",
+          "coordinates": [
+            [
+              [
+                88.237485,
+                22.898657
+              ],
+              [
+                88.23799500000001,
+                22.898657
+              ],
+              [
+                88.23799500000001,
+                22.899077
+              ],
+              [
+                88.237485,
+                22.899077
+              ],
+              [
+                88.237485,
+                22.898657
+              ]
+            ]
+          ],
+          "center": [
+            22.898867,
+            88.23774
+          ],
+          "ndvi": 0.92,
+          "sarBackscatterDb": -12.2,
+          "vhVvRatio": 1.53,
+          "soilMoisturePercentage": 51,
+          "status": "healthy",
+          "color": "#22c55e",
+          "recommendedSprayCoords": {
+            "lat": 22.898867,
+            "lng": 88.23774
+          },
+          "recommendedAction": "Canopy vigor is optimal. Maintain balanced irrigation."
+        },
+        {
+          "id": "cell-2",
+          "sector": "South-East Sector",
+          "subQuadrant": "SE-Sector-2",
+          "coordinates": [
+            [
+              [
+                88.23799500000001,
+                22.898657
+              ],
+              [
+                88.238505,
+                22.898657
+              ],
+              [
+                88.238505,
+                22.899077
+              ],
+              [
+                88.23799500000001,
+                22.899077
+              ],
+              [
+                88.23799500000001,
+                22.898657
+              ]
+            ]
+          ],
+          "center": [
+            22.898867,
+            88.23825
+          ],
+          "ndvi": 0.92,
+          "sarBackscatterDb": -11.7,
+          "vhVvRatio": 1.54,
+          "soilMoisturePercentage": 52,
+          "status": "healthy",
+          "color": "#22c55e",
+          "recommendedSprayCoords": {
+            "lat": 22.898867,
+            "lng": 88.23825
+          },
+          "recommendedAction": "Canopy vigor is optimal. Maintain balanced irrigation."
+        },
+        {
+          "id": "cell-3",
+          "sector": "North-West Sector",
+          "subQuadrant": "NW-Sector-3",
+          "coordinates": [
+            [
+              [
+                88.237485,
+                22.899077
+              ],
+              [
+                88.23799500000001,
+                22.899077
+              ],
+              [
+                88.23799500000001,
+                22.899497
+              ],
+              [
+                88.237485,
+                22.899497
+              ],
+              [
+                88.237485,
+                22.899077
+              ]
+            ]
+          ],
+          "center": [
+            22.899287,
+            88.23774
+          ],
+          "ndvi": 0.92,
+          "sarBackscatterDb": -12.2,
+          "vhVvRatio": 1.53,
+          "soilMoisturePercentage": 53,
+          "status": "healthy",
+          "color": "#22c55e",
+          "recommendedSprayCoords": {
+            "lat": 22.899287,
+            "lng": 88.23774
+          },
+          "recommendedAction": "Canopy vigor is optimal. Maintain balanced irrigation."
+        },
+        {
+          "id": "cell-4",
+          "sector": "North-East Sector",
+          "subQuadrant": "NE-Sector-4",
+          "coordinates": [
+            [
+              [
+                88.23799500000001,
+                22.899077
+              ],
+              [
+                88.238505,
+                22.899077
+              ],
+              [
+                88.238505,
+                22.899497
+              ],
+              [
+                88.23799500000001,
+                22.899497
+              ],
+              [
+                88.23799500000001,
+                22.899077
+              ]
+            ]
+          ],
+          "center": [
+            22.899287,
+            88.23825
+          ],
+          "ndvi": 0.91,
+          "sarBackscatterDb": -11.7,
+          "vhVvRatio": 1.54,
+          "soilMoisturePercentage": 54,
+          "status": "healthy",
+          "color": "#22c55e",
+          "recommendedSprayCoords": {
+            "lat": 22.899287,
+            "lng": 88.23825
+          },
+          "recommendedAction": "Canopy vigor is optimal. Maintain balanced irrigation."
+        }
+      ],
+      "anomalyHotspots": [],
+      "gridResolution": "4 Sub-Sectors (Turf.js Micro-Grid)",
+      "macroObservations": [
+        "Foliar Canopy Vigor: Active standing crop monitored via Sentinel-2 & Sentinel-1 SAR.",
+        "Canopy vigor is optimal and uniformly distributed across all 4 sub-sectors (Mean NDVI: 0.92 > 0.6). No stress anomalies detected."
+      ],
+      "scientificLimitationNotice": "Satellite remote sensing identifies possible crop-stress hotspots only. It does NOT claim exact disease, pest, fungus, soil pH, NPK, or crop type from map data alone. Ground-truth foliar camera diagnosis is required.",
+      "promptCameraInspection": false
+    },
+    {
+      "id": "8b2ae1bb-a158-4c71-8d6a-e984d34ec4d7",
+      "farmId": "a522bb0f-5c0d-46af-861e-01397b75e663",
+      "userId": "1789201814064",
+      "scanDate": "2026-09-12T09:07:46.203Z",
+      "mode": "optical",
+      "cloudCoverPercentage": 18,
+      "isMonsoonRadarActive": false,
+      "overallStatus": "healthy",
+      "opticalMetrics": {
+        "meanNdvi": 0.92,
+        "cloudCoverPercentage": 18,
+        "healthyCanopyPercentage": 100,
+        "moderateStressPercentage": 0,
+        "severeStressPercentage": 0,
+        "opticalImageTimestamp": "2026-09-12T09:07:46.203Z"
+      },
+      "sarMetrics": {
+        "vvBackscatterDb": -10.6,
+        "vhBackscatterDb": -17.8,
+        "polarizationRatio": 1.47,
+        "soilMoistureIndex": 53,
+        "canopyStructuralLossPercentage": 1,
+        "waterloggingRisk": "minimal",
+        "radarPenetrationDepthCm": 4.2,
+        "sarImageTimestamp": "2026-09-12T09:07:46.203Z"
+      },
+      "stressZones": [],
+      "zonalGrid": [
+        {
+          "id": "cell-1",
+          "sector": "South-West Sector",
+          "subQuadrant": "SW-Sector-1",
+          "coordinates": [
+            [
+              [
+                88.237485,
+                22.898657
+              ],
+              [
+                88.23799500000001,
+                22.898657
+              ],
+              [
+                88.23799500000001,
+                22.899077
+              ],
+              [
+                88.237485,
+                22.899077
+              ],
+              [
+                88.237485,
+                22.898657
+              ]
+            ]
+          ],
+          "center": [
+            22.898867,
+            88.23774
+          ],
+          "ndvi": 0.92,
+          "sarBackscatterDb": -12.2,
+          "vhVvRatio": 1.53,
+          "soilMoisturePercentage": 51,
+          "status": "healthy",
+          "color": "#22c55e",
+          "recommendedSprayCoords": {
+            "lat": 22.898867,
+            "lng": 88.23774
+          },
+          "recommendedAction": "Canopy vigor is optimal. Maintain balanced irrigation."
+        },
+        {
+          "id": "cell-2",
+          "sector": "South-East Sector",
+          "subQuadrant": "SE-Sector-2",
+          "coordinates": [
+            [
+              [
+                88.23799500000001,
+                22.898657
+              ],
+              [
+                88.238505,
+                22.898657
+              ],
+              [
+                88.238505,
+                22.899077
+              ],
+              [
+                88.23799500000001,
+                22.899077
+              ],
+              [
+                88.23799500000001,
+                22.898657
+              ]
+            ]
+          ],
+          "center": [
+            22.898867,
+            88.23825
+          ],
+          "ndvi": 0.92,
+          "sarBackscatterDb": -11.7,
+          "vhVvRatio": 1.54,
+          "soilMoisturePercentage": 52,
+          "status": "healthy",
+          "color": "#22c55e",
+          "recommendedSprayCoords": {
+            "lat": 22.898867,
+            "lng": 88.23825
+          },
+          "recommendedAction": "Canopy vigor is optimal. Maintain balanced irrigation."
+        },
+        {
+          "id": "cell-3",
+          "sector": "North-West Sector",
+          "subQuadrant": "NW-Sector-3",
+          "coordinates": [
+            [
+              [
+                88.237485,
+                22.899077
+              ],
+              [
+                88.23799500000001,
+                22.899077
+              ],
+              [
+                88.23799500000001,
+                22.899497
+              ],
+              [
+                88.237485,
+                22.899497
+              ],
+              [
+                88.237485,
+                22.899077
+              ]
+            ]
+          ],
+          "center": [
+            22.899287,
+            88.23774
+          ],
+          "ndvi": 0.92,
+          "sarBackscatterDb": -12.2,
+          "vhVvRatio": 1.53,
+          "soilMoisturePercentage": 53,
+          "status": "healthy",
+          "color": "#22c55e",
+          "recommendedSprayCoords": {
+            "lat": 22.899287,
+            "lng": 88.23774
+          },
+          "recommendedAction": "Canopy vigor is optimal. Maintain balanced irrigation."
+        },
+        {
+          "id": "cell-4",
+          "sector": "North-East Sector",
+          "subQuadrant": "NE-Sector-4",
+          "coordinates": [
+            [
+              [
+                88.23799500000001,
+                22.899077
+              ],
+              [
+                88.238505,
+                22.899077
+              ],
+              [
+                88.238505,
+                22.899497
+              ],
+              [
+                88.23799500000001,
+                22.899497
+              ],
+              [
+                88.23799500000001,
+                22.899077
+              ]
+            ]
+          ],
+          "center": [
+            22.899287,
+            88.23825
+          ],
+          "ndvi": 0.91,
+          "sarBackscatterDb": -11.7,
+          "vhVvRatio": 1.54,
+          "soilMoisturePercentage": 54,
+          "status": "healthy",
+          "color": "#22c55e",
+          "recommendedSprayCoords": {
+            "lat": 22.899287,
+            "lng": 88.23825
+          },
+          "recommendedAction": "Canopy vigor is optimal. Maintain balanced irrigation."
+        }
+      ],
+      "anomalyHotspots": [],
+      "gridResolution": "4 Sub-Sectors (Turf.js Micro-Grid)",
+      "macroObservations": [
+        "Foliar Canopy Vigor: Active standing crop monitored via Sentinel-2 & Sentinel-1 SAR.",
+        "Canopy vigor is optimal and uniformly distributed across all 4 sub-sectors (Mean NDVI: 0.92 > 0.6). No stress anomalies detected."
+      ],
+      "scientificLimitationNotice": "Satellite remote sensing identifies possible crop-stress hotspots only. It does NOT claim exact disease, pest, fungus, soil pH, NPK, or crop type from map data alone. Ground-truth foliar camera diagnosis is required.",
+      "promptCameraInspection": false
+    },
+    {
+      "id": "1227092b-10cd-4fa7-b8a3-eb084b34b25d",
+      "farmId": "a522bb0f-5c0d-46af-861e-01397b75e663",
+      "userId": "1789201814064",
+      "scanDate": "2026-09-12T09:07:45.876Z",
+      "mode": "optical",
+      "cloudCoverPercentage": 18,
+      "isMonsoonRadarActive": false,
+      "overallStatus": "healthy",
+      "opticalMetrics": {
+        "meanNdvi": 0.92,
+        "cloudCoverPercentage": 18,
+        "healthyCanopyPercentage": 100,
+        "moderateStressPercentage": 0,
+        "severeStressPercentage": 0,
+        "opticalImageTimestamp": "2026-09-12T09:07:45.876Z"
+      },
+      "sarMetrics": {
+        "vvBackscatterDb": -10.6,
+        "vhBackscatterDb": -17.8,
+        "polarizationRatio": 1.47,
+        "soilMoistureIndex": 53,
+        "canopyStructuralLossPercentage": 1,
+        "waterloggingRisk": "minimal",
+        "radarPenetrationDepthCm": 4.2,
+        "sarImageTimestamp": "2026-09-12T09:07:45.876Z"
+      },
+      "stressZones": [],
+      "zonalGrid": [
+        {
+          "id": "cell-1",
+          "sector": "South-West Sector",
+          "subQuadrant": "SW-Sector-1",
+          "coordinates": [
+            [
+              [
+                88.237485,
+                22.898657
+              ],
+              [
+                88.23799500000001,
+                22.898657
+              ],
+              [
+                88.23799500000001,
+                22.899077
+              ],
+              [
+                88.237485,
+                22.899077
+              ],
+              [
+                88.237485,
+                22.898657
+              ]
+            ]
+          ],
+          "center": [
+            22.898867,
+            88.23774
+          ],
+          "ndvi": 0.92,
+          "sarBackscatterDb": -12.2,
+          "vhVvRatio": 1.53,
+          "soilMoisturePercentage": 51,
+          "status": "healthy",
+          "color": "#22c55e",
+          "recommendedSprayCoords": {
+            "lat": 22.898867,
+            "lng": 88.23774
+          },
+          "recommendedAction": "Canopy vigor is optimal. Maintain balanced irrigation."
+        },
+        {
+          "id": "cell-2",
+          "sector": "South-East Sector",
+          "subQuadrant": "SE-Sector-2",
+          "coordinates": [
+            [
+              [
+                88.23799500000001,
+                22.898657
+              ],
+              [
+                88.238505,
+                22.898657
+              ],
+              [
+                88.238505,
+                22.899077
+              ],
+              [
+                88.23799500000001,
+                22.899077
+              ],
+              [
+                88.23799500000001,
+                22.898657
+              ]
+            ]
+          ],
+          "center": [
+            22.898867,
+            88.23825
+          ],
+          "ndvi": 0.92,
+          "sarBackscatterDb": -11.7,
+          "vhVvRatio": 1.54,
+          "soilMoisturePercentage": 52,
+          "status": "healthy",
+          "color": "#22c55e",
+          "recommendedSprayCoords": {
+            "lat": 22.898867,
+            "lng": 88.23825
+          },
+          "recommendedAction": "Canopy vigor is optimal. Maintain balanced irrigation."
+        },
+        {
+          "id": "cell-3",
+          "sector": "North-West Sector",
+          "subQuadrant": "NW-Sector-3",
+          "coordinates": [
+            [
+              [
+                88.237485,
+                22.899077
+              ],
+              [
+                88.23799500000001,
+                22.899077
+              ],
+              [
+                88.23799500000001,
+                22.899497
+              ],
+              [
+                88.237485,
+                22.899497
+              ],
+              [
+                88.237485,
+                22.899077
+              ]
+            ]
+          ],
+          "center": [
+            22.899287,
+            88.23774
+          ],
+          "ndvi": 0.92,
+          "sarBackscatterDb": -12.2,
+          "vhVvRatio": 1.53,
+          "soilMoisturePercentage": 53,
+          "status": "healthy",
+          "color": "#22c55e",
+          "recommendedSprayCoords": {
+            "lat": 22.899287,
+            "lng": 88.23774
+          },
+          "recommendedAction": "Canopy vigor is optimal. Maintain balanced irrigation."
+        },
+        {
+          "id": "cell-4",
+          "sector": "North-East Sector",
+          "subQuadrant": "NE-Sector-4",
+          "coordinates": [
+            [
+              [
+                88.23799500000001,
+                22.899077
+              ],
+              [
+                88.238505,
+                22.899077
+              ],
+              [
+                88.238505,
+                22.899497
+              ],
+              [
+                88.23799500000001,
+                22.899497
+              ],
+              [
+                88.23799500000001,
+                22.899077
+              ]
+            ]
+          ],
+          "center": [
+            22.899287,
+            88.23825
+          ],
+          "ndvi": 0.91,
+          "sarBackscatterDb": -11.7,
+          "vhVvRatio": 1.54,
+          "soilMoisturePercentage": 54,
+          "status": "healthy",
+          "color": "#22c55e",
+          "recommendedSprayCoords": {
+            "lat": 22.899287,
+            "lng": 88.23825
+          },
+          "recommendedAction": "Canopy vigor is optimal. Maintain balanced irrigation."
+        }
+      ],
+      "anomalyHotspots": [],
+      "gridResolution": "4 Sub-Sectors (Turf.js Micro-Grid)",
+      "macroObservations": [
+        "Foliar Canopy Vigor: Active standing crop monitored via Sentinel-2 & Sentinel-1 SAR.",
+        "Canopy vigor is optimal and uniformly distributed across all 4 sub-sectors (Mean NDVI: 0.92 > 0.6). No stress anomalies detected."
+      ],
+      "scientificLimitationNotice": "Satellite remote sensing identifies possible crop-stress hotspots only. It does NOT claim exact disease, pest, fungus, soil pH, NPK, or crop type from map data alone. Ground-truth foliar camera diagnosis is required.",
+      "promptCameraInspection": false
+    },
+    {
+      "id": "f694d69a-48bb-4776-9511-9c1e4d2a32c4",
+      "farmId": "a522bb0f-5c0d-46af-861e-01397b75e663",
+      "userId": "1789201814064",
+      "scanDate": "2026-09-12T09:07:45.684Z",
+      "mode": "optical",
+      "cloudCoverPercentage": 18,
+      "isMonsoonRadarActive": false,
+      "overallStatus": "healthy",
+      "opticalMetrics": {
+        "meanNdvi": 0.92,
+        "cloudCoverPercentage": 18,
+        "healthyCanopyPercentage": 100,
+        "moderateStressPercentage": 0,
+        "severeStressPercentage": 0,
+        "opticalImageTimestamp": "2026-09-12T09:07:45.684Z"
+      },
+      "sarMetrics": {
+        "vvBackscatterDb": -10.6,
+        "vhBackscatterDb": -17.8,
+        "polarizationRatio": 1.47,
+        "soilMoistureIndex": 53,
+        "canopyStructuralLossPercentage": 1,
+        "waterloggingRisk": "minimal",
+        "radarPenetrationDepthCm": 4.2,
+        "sarImageTimestamp": "2026-09-12T09:07:45.684Z"
+      },
+      "stressZones": [],
+      "zonalGrid": [
+        {
+          "id": "cell-1",
+          "sector": "South-West Sector",
+          "subQuadrant": "SW-Sector-1",
+          "coordinates": [
+            [
+              [
+                88.237485,
+                22.898657
+              ],
+              [
+                88.23799500000001,
+                22.898657
+              ],
+              [
+                88.23799500000001,
+                22.899077
+              ],
+              [
+                88.237485,
+                22.899077
+              ],
+              [
+                88.237485,
+                22.898657
+              ]
+            ]
+          ],
+          "center": [
+            22.898867,
+            88.23774
+          ],
+          "ndvi": 0.92,
+          "sarBackscatterDb": -12.2,
+          "vhVvRatio": 1.53,
+          "soilMoisturePercentage": 51,
+          "status": "healthy",
+          "color": "#22c55e",
+          "recommendedSprayCoords": {
+            "lat": 22.898867,
+            "lng": 88.23774
+          },
+          "recommendedAction": "Canopy vigor is optimal. Maintain balanced irrigation."
+        },
+        {
+          "id": "cell-2",
+          "sector": "South-East Sector",
+          "subQuadrant": "SE-Sector-2",
+          "coordinates": [
+            [
+              [
+                88.23799500000001,
+                22.898657
+              ],
+              [
+                88.238505,
+                22.898657
+              ],
+              [
+                88.238505,
+                22.899077
+              ],
+              [
+                88.23799500000001,
+                22.899077
+              ],
+              [
+                88.23799500000001,
+                22.898657
+              ]
+            ]
+          ],
+          "center": [
+            22.898867,
+            88.23825
+          ],
+          "ndvi": 0.92,
+          "sarBackscatterDb": -11.7,
+          "vhVvRatio": 1.54,
+          "soilMoisturePercentage": 52,
+          "status": "healthy",
+          "color": "#22c55e",
+          "recommendedSprayCoords": {
+            "lat": 22.898867,
+            "lng": 88.23825
+          },
+          "recommendedAction": "Canopy vigor is optimal. Maintain balanced irrigation."
+        },
+        {
+          "id": "cell-3",
+          "sector": "North-West Sector",
+          "subQuadrant": "NW-Sector-3",
+          "coordinates": [
+            [
+              [
+                88.237485,
+                22.899077
+              ],
+              [
+                88.23799500000001,
+                22.899077
+              ],
+              [
+                88.23799500000001,
+                22.899497
+              ],
+              [
+                88.237485,
+                22.899497
+              ],
+              [
+                88.237485,
+                22.899077
+              ]
+            ]
+          ],
+          "center": [
+            22.899287,
+            88.23774
+          ],
+          "ndvi": 0.92,
+          "sarBackscatterDb": -12.2,
+          "vhVvRatio": 1.53,
+          "soilMoisturePercentage": 53,
+          "status": "healthy",
+          "color": "#22c55e",
+          "recommendedSprayCoords": {
+            "lat": 22.899287,
+            "lng": 88.23774
+          },
+          "recommendedAction": "Canopy vigor is optimal. Maintain balanced irrigation."
+        },
+        {
+          "id": "cell-4",
+          "sector": "North-East Sector",
+          "subQuadrant": "NE-Sector-4",
+          "coordinates": [
+            [
+              [
+                88.23799500000001,
+                22.899077
+              ],
+              [
+                88.238505,
+                22.899077
+              ],
+              [
+                88.238505,
+                22.899497
+              ],
+              [
+                88.23799500000001,
+                22.899497
+              ],
+              [
+                88.23799500000001,
+                22.899077
+              ]
+            ]
+          ],
+          "center": [
+            22.899287,
+            88.23825
+          ],
+          "ndvi": 0.92,
+          "sarBackscatterDb": -11.7,
+          "vhVvRatio": 1.54,
+          "soilMoisturePercentage": 54,
+          "status": "healthy",
+          "color": "#22c55e",
+          "recommendedSprayCoords": {
+            "lat": 22.899287,
+            "lng": 88.23825
+          },
+          "recommendedAction": "Canopy vigor is optimal. Maintain balanced irrigation."
+        }
+      ],
+      "anomalyHotspots": [],
+      "gridResolution": "4 Sub-Sectors (Turf.js Micro-Grid)",
+      "macroObservations": [
+        "Foliar Canopy Vigor: Active standing crop monitored via Sentinel-2 & Sentinel-1 SAR.",
+        "Canopy vigor is optimal and uniformly distributed across all 4 sub-sectors (Mean NDVI: 0.92 > 0.6). No stress anomalies detected."
+      ],
+      "scientificLimitationNotice": "Satellite remote sensing identifies possible crop-stress hotspots only. It does NOT claim exact disease, pest, fungus, soil pH, NPK, or crop type from map data alone. Ground-truth foliar camera diagnosis is required.",
+      "promptCameraInspection": false
+    },
+    {
+      "id": "f1111182-ddbd-493d-ad01-8fbd07188332",
+      "farmId": "ffe3a2c5-8e99-4dda-8372-e3ce3f573bc5",
+      "userId": "1789201814064",
+      "scanDate": "2026-09-12T09:07:36.075Z",
+      "mode": "optical",
+      "cloudCoverPercentage": 18,
+      "isMonsoonRadarActive": false,
+      "overallStatus": "healthy",
+      "opticalMetrics": {
+        "meanNdvi": 0.9,
+        "cloudCoverPercentage": 18,
+        "healthyCanopyPercentage": 100,
+        "moderateStressPercentage": 0,
+        "severeStressPercentage": 0,
+        "opticalImageTimestamp": "2026-09-12T09:07:36.075Z"
+      },
+      "sarMetrics": {
+        "vvBackscatterDb": -9.9,
+        "vhBackscatterDb": -17.8,
+        "polarizationRatio": 1.47,
+        "soilMoistureIndex": 57,
+        "canopyStructuralLossPercentage": 1,
+        "waterloggingRisk": "minimal",
+        "radarPenetrationDepthCm": 4.2,
+        "sarImageTimestamp": "2026-09-12T09:07:36.075Z"
+      },
+      "stressZones": [],
+      "zonalGrid": [
+        {
+          "id": "cell-1",
+          "sector": "South-West Sector",
+          "subQuadrant": "SW-Sector-1",
+          "coordinates": [
+            [
+              [
+                75.50116371946216,
+                30.925043079193244
+              ],
+              [
+                75.50116371946216,
+                30.925611359731082
+              ],
+              [
+                75.50173199999999,
+                30.925611359731082
+              ],
+              [
+                75.50173199999999,
+                30.925043079193244
+              ],
+              [
+                75.50116371946216,
+                30.925043079193244
+              ]
+            ]
+          ],
+          "center": [
+            30.925327,
+            75.501448
+          ],
+          "ndvi": 0.89,
+          "sarBackscatterDb": -11.6,
+          "vhVvRatio": 1.52,
+          "soilMoisturePercentage": 56,
+          "status": "healthy",
+          "color": "#22c55e",
+          "recommendedSprayCoords": {
+            "lat": 30.925327,
+            "lng": 75.501448
+          },
+          "recommendedAction": "Canopy vigor is optimal. Maintain balanced irrigation."
+        },
+        {
+          "id": "cell-2",
+          "sector": "North-West Sector",
+          "subQuadrant": "NW-Sector-2",
+          "coordinates": [
+            [
+              [
+                75.50116371946216,
+                30.925611359731082
+              ],
+              [
+                75.50116371946216,
+                30.92617964026892
+              ],
+              [
+                75.50173199999999,
+                30.92617964026892
+              ],
+              [
+                75.50173199999999,
+                30.925611359731082
+              ],
+              [
+                75.50116371946216,
+                30.925611359731082
+              ]
+            ]
+          ],
+          "center": [
+            30.925896,
+            75.501448
+          ],
+          "ndvi": 0.88,
+          "sarBackscatterDb": -11.6,
+          "vhVvRatio": 1.5,
+          "soilMoisturePercentage": 57,
+          "status": "healthy",
+          "color": "#22c55e",
+          "recommendedSprayCoords": {
+            "lat": 30.925896,
+            "lng": 75.501448
+          },
+          "recommendedAction": "Canopy vigor is optimal. Maintain balanced irrigation."
+        },
+        {
+          "id": "cell-3",
+          "sector": "North-West Sector",
+          "subQuadrant": "NW-Sector-3",
+          "coordinates": [
+            [
+              [
+                75.50116371946216,
+                30.92617964026892
+              ],
+              [
+                75.50116371946216,
+                30.926747920806758
+              ],
+              [
+                75.50173199999999,
+                30.926747920806758
+              ],
+              [
+                75.50173199999999,
+                30.92617964026892
+              ],
+              [
+                75.50116371946216,
+                30.92617964026892
+              ]
+            ]
+          ],
+          "center": [
+            30.926464,
+            75.501448
+          ],
+          "ndvi": 0.89,
+          "sarBackscatterDb": -11.6,
+          "vhVvRatio": 1.48,
+          "soilMoisturePercentage": 58,
+          "status": "healthy",
+          "color": "#22c55e",
+          "recommendedSprayCoords": {
+            "lat": 30.926464,
+            "lng": 75.501448
+          },
+          "recommendedAction": "Canopy vigor is optimal. Maintain balanced irrigation."
+        },
+        {
+          "id": "cell-4",
+          "sector": "South-East Sector",
+          "subQuadrant": "SE-Sector-4",
+          "coordinates": [
+            [
+              [
+                75.50173199999999,
+                30.925043079193244
+              ],
+              [
+                75.50173199999999,
+                30.925611359731082
+              ],
+              [
+                75.50230028053782,
+                30.925611359731082
+              ],
+              [
+                75.50230028053782,
+                30.925043079193244
+              ],
+              [
+                75.50173199999999,
+                30.925043079193244
+              ]
+            ]
+          ],
+          "center": [
+            30.925327,
+            75.502016
+          ],
+          "ndvi": 0.92,
+          "sarBackscatterDb": -12.2,
+          "vhVvRatio": 1.5,
+          "soilMoisturePercentage": 57,
+          "status": "healthy",
+          "color": "#22c55e",
+          "recommendedSprayCoords": {
+            "lat": 30.925327,
+            "lng": 75.502016
+          },
+          "recommendedAction": "Canopy vigor is optimal. Maintain balanced irrigation."
+        },
+        {
+          "id": "cell-5",
+          "sector": "North-East Sector",
+          "subQuadrant": "NE-Sector-5",
+          "coordinates": [
+            [
+              [
+                75.50173199999999,
+                30.925611359731082
+              ],
+              [
+                75.50173199999999,
+                30.92617964026892
+              ],
+              [
+                75.50230028053782,
+                30.92617964026892
+              ],
+              [
+                75.50230028053782,
+                30.925611359731082
+              ],
+              [
+                75.50173199999999,
+                30.925611359731082
+              ]
+            ]
+          ],
+          "center": [
+            30.925896,
+            75.502016
+          ],
+          "ndvi": 0.92,
+          "sarBackscatterDb": -12.2,
+          "vhVvRatio": 1.48,
+          "soilMoisturePercentage": 58,
+          "status": "healthy",
+          "color": "#22c55e",
+          "recommendedSprayCoords": {
+            "lat": 30.925896,
+            "lng": 75.502016
+          },
+          "recommendedAction": "Canopy vigor is optimal. Maintain balanced irrigation."
+        },
+        {
+          "id": "cell-6",
+          "sector": "North-East Sector",
+          "subQuadrant": "NE-Sector-6",
+          "coordinates": [
+            [
+              [
+                75.50173199999999,
+                30.92617964026892
+              ],
+              [
+                75.50173199999999,
+                30.926747920806758
+              ],
+              [
+                75.50230028053782,
+                30.926747920806758
+              ],
+              [
+                75.50230028053782,
+                30.92617964026892
+              ],
+              [
+                75.50173199999999,
+                30.92617964026892
+              ]
+            ]
+          ],
+          "center": [
+            30.926464,
+            75.502016
+          ],
+          "ndvi": 0.92,
+          "sarBackscatterDb": -12.2,
+          "vhVvRatio": 1.46,
+          "soilMoisturePercentage": 58,
+          "status": "healthy",
+          "color": "#22c55e",
+          "recommendedSprayCoords": {
+            "lat": 30.926464,
+            "lng": 75.502016
+          },
+          "recommendedAction": "Canopy vigor is optimal. Maintain balanced irrigation."
+        }
+      ],
+      "anomalyHotspots": [],
+      "gridResolution": "6 Sub-Sectors (Turf.js Micro-Grid)",
+      "macroObservations": [
+        "Foliar Canopy Vigor: Active standing crop monitored via Sentinel-2 & Sentinel-1 SAR.",
+        "Canopy vigor is optimal and uniformly distributed across all 6 sub-sectors (Mean NDVI: 0.9 > 0.6). No stress anomalies detected."
+      ],
+      "scientificLimitationNotice": "Satellite remote sensing identifies possible crop-stress hotspots only. It does NOT claim exact disease, pest, fungus, soil pH, NPK, or crop type from map data alone. Ground-truth foliar camera diagnosis is required.",
+      "promptCameraInspection": false
+    },
     {
       "id": "94a4b5bf-32eb-4192-a18f-33b0f7a88603",
       "farmId": "f20d600c-0f6f-4828-a7b6-7fa62d727a8c",
@@ -57204,6 +58885,24 @@
   ],
   "cameraScans": [
     {
+      "id": "546e3c52-264f-4026-a69a-495999f81828",
+      "farmId": null,
+      "userId": "1789201814064",
+      "imageUrl": "/uploads/5e7a01b2-d9e0-45ce-b18f-b62e35f92f87.jpg",
+      "fileSizeBytes": 57408,
+      "mimeType": "image/jpeg",
+      "createdAt": "2026-09-12T09:02:01.925Z"
+    },
+    {
+      "id": "d3346964-62dc-4971-8239-6e7b3d68344a",
+      "farmId": null,
+      "userId": "1789201814064",
+      "imageUrl": "/uploads/b59f065d-03a6-48e8-aa27-3f6c6660b1f3.jpg",
+      "fileSizeBytes": 20819,
+      "mimeType": "image/jpeg",
+      "createdAt": "2026-09-12T09:01:05.609Z"
+    },
+    {
       "id": "783b42a5-7e83-4f5e-94e2-af47f61f8ad3",
       "farmId": null,
       "userId": "1789201814064",
@@ -57385,6 +59084,143 @@
     }
   ],
   "diseaseResults": [
+    {
+      "id": "a1d17913-9dea-453e-ae5b-914ecfee887e",
+      "scanId": "db4aa364-61f8-4328-bdac-9cb8f78e0f8e",
+      "farmId": "",
+      "userId": "1789201814064",
+      "is_valid_plant": true,
+      "cropName": "Rice (Dhan)",
+      "cropFamily": "Poaceae",
+      "growthStage": "Flowering",
+      "isSenescence": false,
+      "status": "confirmed",
+      "probableDisease": "Orseolia oryzae (Rice Gall Midge)",
+      "confidenceScore": 92,
+      "isLowConfidence": false,
+      "severityLevel": "Severe",
+      "visibleSymptoms": [
+        "Formation of hollow, whitish-green tubular gall resembling an onion leaf (silver shoot)",
+        "Presence of orange-colored pupa/larva emerging from the ruptured gall tissue",
+        "Suppression of normal panicle development leading to sterile tillers",
+        "Necrotic and distorted tissue at the site of larval feeding"
+      ],
+      "probableCauses": [
+        "High relative humidity (above 80%) and warm temperatures favoring pest multiplication",
+        "Excessive application of nitrogenous fertilizers promoting lush vegetative growth",
+        "Presence of alternative weed hosts like wild rice (Oryza rufipogon) and grassy weeds on bunds",
+        "Late transplanting of the crop"
+      ],
+      "secondaryPossibilities": [],
+      "culturalTreatments": [
+        "Use gall midge resistant rice varieties suitable for the region",
+        "Avoid excessive nitrogen application; apply nitrogen in split doses based on leaf color chart",
+        "Clear alternative weed hosts from field bunds and surrounding areas",
+        "Adopt optimum plant spacing to ensure adequate sunlight penetration",
+        "Plough the field immediately after harvest to expose and destroy pupae in stubble"
+      ],
+      "biologicalTreatments": [
+        "Conserve and encourage natural larval parasitoids, particularly Platygaster oryzae",
+        "Conserve generalist predators such as spiders and predatory mirid bugs in the rice ecosystem"
+      ],
+      "activeChemicals": [
+        {
+          "name": "Fipronil",
+          "category": "Insecticide",
+          "targetOrganism": "Orseolia oryzae",
+          "applicationNotes": "Apply as granules (0.3% G) in standing water at 15-20 kg/ha or as a foliar spray (5% SC) during early tillering stage.",
+          "procurementQuery": "Fipronil 0.3% G or 5% SC insecticide price and availability"
+        },
+        {
+          "name": "Chlorpyrifos",
+          "category": "Insecticide",
+          "targetOrganism": "Orseolia oryzae",
+          "applicationNotes": "Apply as a foliar spray (20% EC) at 1.25 to 1.5 liters per hectare during peak adult fly activity.",
+          "procurementQuery": "Chlorpyrifos 20% EC insecticide price"
+        }
+      ],
+      "kisanCallCenterNumber": "1800-180-1551",
+      "kvkAdvisoryNotice": "Follow recommended application rates. Wear protective PPE.",
+      "imageUrl": "/uploads/5e7a01b2-d9e0-45ce-b18f-b62e35f92f87.jpg",
+      "scannedAt": "2026-09-12T09:02:35.754Z",
+      "confidenceBreakdown": {
+        "Rice (Dhan)": 95,
+        "Wheat": 3,
+        "Maize": 2
+      }
+    },
+    {
+      "id": "611e09b0-ef10-4d02-b6a8-1eff9c195d2e",
+      "scanId": "c3079a84-bf0b-466e-8f9b-14fd48eef8ff",
+      "farmId": "",
+      "userId": "1789201814064",
+      "is_valid_plant": true,
+      "cropName": "Rice (Oryza sativa)",
+      "cropFamily": "Poaceae",
+      "growthStage": "Vegetative",
+      "isSenescence": false,
+      "status": "confirmed",
+      "probableDisease": "Magnaporthe oryzae (syn. Pyricularia oryzae)",
+      "confidenceScore": 95,
+      "isLowConfidence": false,
+      "severityLevel": "Moderate",
+      "visibleSymptoms": [
+        "Spindle-shaped or diamond-shaped lesions on leaf blades with pointed ends",
+        "Ash-gray or whitish centers surrounded by reddish-brown to dark brown borders",
+        "Yellow chlorotic halos surrounding developing lesions",
+        "Coalescing lesions leading to leaf tissue blighting"
+      ],
+      "probableCauses": [
+        "Fungal infection by Magnaporthe oryzae favored by high leaf wetness",
+        "Excessive application of nitrogenous fertilizers",
+        "High relative humidity (>90%) and moderate temperatures (25-28°C)",
+        "Dense canopy planting causing poor air circulation and extended dew duration"
+      ],
+      "secondaryPossibilities": [],
+      "culturalTreatments": [
+        "Avoid excessive nitrogen fertilization; apply N in split doses balanced with Potash (K)",
+        "Maintain optimum field water levels; avoid water stress during vulnerable vegetative phases",
+        "Use resistant or tolerant rice varieties suitable for the region",
+        "Destroy infected crop residue post-harvest to reduce primary inoculum"
+      ],
+      "biologicalTreatments": [
+        "Foliar spray of Pseudomonas fluorescens (20g/L) to suppress fungal sporulation",
+        "Application of Bacillus subtilis formulations at early disease onset",
+        "Seed treatment with Trichoderma harzianum prior to sowing"
+      ],
+      "activeChemicals": [
+        {
+          "name": "Tricyclazole 75% WP",
+          "category": "Fungicide",
+          "targetOrganism": "Magnaporthe oryzae",
+          "applicationNotes": "Apply at first sign of blast lesions at 0.6 g/L of water. Ensures systemic protection.",
+          "procurementQuery": "Buy Tricyclazole 75 WP systemic fungicide for rice blast"
+        },
+        {
+          "name": "Isoprothiolane 40% EC",
+          "category": "Fungicide",
+          "targetOrganism": "Magnaporthe oryzae",
+          "applicationNotes": "Foliar spray at 1.5 mL/L water during early infection stage.",
+          "procurementQuery": "Purchase Isoprothiolane 40 EC fungicide for paddy leaf blast"
+        },
+        {
+          "name": "Azoxystrobin 18.2% + Difenoconazole 11.4% SC",
+          "category": "Fungicide",
+          "targetOrganism": "Fungal foliar pathogens",
+          "applicationNotes": "Apply at 1 mL/L of water for broad-spectrum protective and curative control.",
+          "procurementQuery": "Buy Azoxystrobin Difenoconazole combination fungicide"
+        }
+      ],
+      "kisanCallCenterNumber": "1800-180-1551",
+      "kvkAdvisoryNotice": "Follow recommended application rates. Wear protective PPE.",
+      "imageUrl": "/uploads/b59f065d-03a6-48e8-aa27-3f6c6660b1f3.jpg",
+      "scannedAt": "2026-09-12T09:01:18.148Z",
+      "confidenceBreakdown": {
+        "Rice (Oryza sativa)": 95,
+        "Wheat": 3,
+        "Barley": 2
+      }
+    },
     {
       "id": "3882aec9-bdb3-4f3f-945c-ee4f518a4bd6",
       "scanId": "1acf8172-9e99-47d5-a974-9c047e013586",
@@ -60827,6 +62663,4581 @@
   ],
   "userNotifications": [],
   "landCoverScans": [
+    {
+      "id": "lc_1789204387527_f7c21458",
+      "farmId": "a522bb0f-5c0d-46af-861e-01397b75e663",
+      "scanDate": "2026-09-12",
+      "satelliteSource": "Sentinel-2 L2A (10m Multi-spectral) & High-Resolution World Imagery",
+      "isModelConnected": true,
+      "areaHectares": 0.696,
+      "areaAcres": 1.72,
+      "isSmallPlot": false,
+      "dominantLandCover": "crop",
+      "dominantLandCoverLabel": "Crop vegetation",
+      "summaryHeadline": "Crop detected: Paddy / Rice (Dhaan) (88% match)",
+      "estimatedCropType": "Paddy / Rice (Dhaan)",
+      "suggestedSoilType": "Silty Clay Loam",
+      "dataQualityEvidence": {
+        "purePixelCount": 12,
+        "totalPixelCount": 12,
+        "purePixelRatio": 1,
+        "spatialResolutionMeters": 10,
+        "temporalConfidenceScore": 0.92,
+        "cloudOcclusionPct": 4.5,
+        "validationNotes": "High pixel purity observed across Sentinel-2 10m bands and high-resolution satellite imagery."
+      },
+      "subZones": [
+        {
+          "id": "zone_1",
+          "coordinates": [
+            [
+              [
+                88.23754533981814,
+                22.898802916741108
+              ],
+              [
+                88.23777016990907,
+                22.89875789373177
+              ],
+              [
+                88.23777016990907,
+                22.898964584954534
+              ],
+              [
+                88.23754533981814,
+                22.898964584954534
+              ],
+              [
+                88.23754533981814,
+                22.898802916741108
+              ]
+            ]
+          ],
+          "center": [
+            22.89887249509549,
+            88.2376577548636
+          ],
+          "areaAcres": 0.117,
+          "areaHectares": 0.0472,
+          "landCoverClass": "crop",
+          "landCoverLabel": "Crop vegetation",
+          "color": "#22c55e",
+          "confidence": 0.86,
+          "cropTypeLabel": "Crop vegetation",
+          "isCropConfirmed": false,
+          "spectralIndices": {
+            "ndvi": 0.53,
+            "ndwi": -0.15,
+            "ndbi": -0.1,
+            "ndre": 0.371
+          },
+          "source": "Sentinel-2 L2A",
+          "date": "2026-09-12"
+        },
+        {
+          "id": "zone_2",
+          "coordinates": [
+            [
+              [
+                88.23754533981814,
+                22.898964584954534
+              ],
+              [
+                88.23777016990907,
+                22.898964584954534
+              ],
+              [
+                88.23777016990907,
+                22.899189415045466
+              ],
+              [
+                88.23754703651046,
+                22.899189415045466
+              ],
+              [
+                88.23754533981814,
+                22.899179174831605
+              ],
+              [
+                88.23754533981814,
+                22.898964584954534
+              ]
+            ]
+          ],
+          "center": [
+            22.899097434966322,
+            88.23763561119299
+          ],
+          "areaAcres": 0.142,
+          "areaHectares": 0.0576,
+          "landCoverClass": "crop",
+          "landCoverLabel": "Crop vegetation",
+          "color": "#22c55e",
+          "confidence": 0.86,
+          "cropTypeLabel": "Crop vegetation",
+          "isCropConfirmed": false,
+          "spectralIndices": {
+            "ndvi": 0.53,
+            "ndwi": -0.15,
+            "ndbi": -0.1,
+            "ndre": 0.371
+          },
+          "source": "Sentinel-2 L2A",
+          "date": "2026-09-12"
+        },
+        {
+          "id": "zone_3",
+          "coordinates": [
+            [
+              [
+                88.23754703651046,
+                22.899189415045466
+              ],
+              [
+                88.23777016990907,
+                22.899189415045466
+              ],
+              [
+                88.23777016990907,
+                22.8994142451364
+              ],
+              [
+                88.23758428841703,
+                22.8994142451364
+              ],
+              [
+                88.23754703651046,
+                22.899189415045466
+              ]
+            ]
+          ],
+          "center": [
+            22.899301830090934,
+            88.23766791618641
+          ],
+          "areaAcres": 0.129,
+          "areaHectares": 0.0524,
+          "landCoverClass": "crop",
+          "landCoverLabel": "Crop vegetation",
+          "color": "#22c55e",
+          "confidence": 0.86,
+          "cropTypeLabel": "Crop vegetation",
+          "isCropConfirmed": false,
+          "spectralIndices": {
+            "ndvi": 0.53,
+            "ndwi": -0.15,
+            "ndbi": -0.1,
+            "ndre": 0.371
+          },
+          "source": "Sentinel-2 L2A",
+          "date": "2026-09-12"
+        },
+        {
+          "id": "zone_4",
+          "coordinates": [
+            [
+              [
+                88.23777016990907,
+                22.89875789373177
+              ],
+              [
+                88.23786074944695,
+                22.898739754863602
+              ],
+              [
+                88.237995,
+                22.898739754863602
+              ],
+              [
+                88.237995,
+                22.898964584954534
+              ],
+              [
+                88.23777016990907,
+                22.898964584954534
+              ],
+              [
+                88.23777016990907,
+                22.89875789373177
+              ]
+            ]
+          ],
+          "center": [
+            22.898833314673606,
+            88.23787821785302
+          ],
+          "areaAcres": 0.14,
+          "areaHectares": 0.0566,
+          "landCoverClass": "crop",
+          "landCoverLabel": "Crop vegetation",
+          "color": "#22c55e",
+          "confidence": 0.86,
+          "cropTypeLabel": "Crop vegetation",
+          "isCropConfirmed": false,
+          "spectralIndices": {
+            "ndvi": 0.53,
+            "ndwi": -0.15,
+            "ndbi": -0.1,
+            "ndre": 0.371
+          },
+          "source": "Sentinel-2 L2A",
+          "date": "2026-09-12"
+        },
+        {
+          "id": "zone_5",
+          "coordinates": [
+            [
+              [
+                88.23777016990907,
+                22.898964584954534
+              ],
+              [
+                88.237995,
+                22.898964584954534
+              ],
+              [
+                88.237995,
+                22.899189415045466
+              ],
+              [
+                88.23777016990907,
+                22.899189415045466
+              ],
+              [
+                88.23777016990907,
+                22.898964584954534
+              ]
+            ]
+          ],
+          "center": [
+            22.899077000000002,
+            88.23788258495453
+          ],
+          "areaAcres": 0.142,
+          "areaHectares": 0.0576,
+          "landCoverClass": "crop",
+          "landCoverLabel": "Crop vegetation",
+          "color": "#22c55e",
+          "confidence": 0.86,
+          "cropTypeLabel": "Crop vegetation",
+          "isCropConfirmed": false,
+          "spectralIndices": {
+            "ndvi": 0.53,
+            "ndwi": -0.15,
+            "ndbi": -0.1,
+            "ndre": 0.371
+          },
+          "source": "Sentinel-2 L2A",
+          "date": "2026-09-12"
+        },
+        {
+          "id": "zone_6",
+          "coordinates": [
+            [
+              [
+                88.23777016990907,
+                22.899189415045466
+              ],
+              [
+                88.237995,
+                22.899189415045466
+              ],
+              [
+                88.237995,
+                22.8994142451364
+              ],
+              [
+                88.23777016990907,
+                22.8994142451364
+              ],
+              [
+                88.23777016990907,
+                22.899189415045466
+              ]
+            ]
+          ],
+          "center": [
+            22.899301830090934,
+            88.23788258495453
+          ],
+          "areaAcres": 0.142,
+          "areaHectares": 0.0576,
+          "landCoverClass": "crop",
+          "landCoverLabel": "Crop vegetation",
+          "color": "#22c55e",
+          "confidence": 0.86,
+          "cropTypeLabel": "Crop vegetation",
+          "isCropConfirmed": false,
+          "spectralIndices": {
+            "ndvi": 0.53,
+            "ndwi": -0.15,
+            "ndbi": -0.1,
+            "ndre": 0.371
+          },
+          "source": "Sentinel-2 L2A",
+          "date": "2026-09-12"
+        },
+        {
+          "id": "zone_7",
+          "coordinates": [
+            [
+              [
+                88.237995,
+                22.898739754863602
+              ],
+              [
+                88.23821983009093,
+                22.898739754863602
+              ],
+              [
+                88.23821983009093,
+                22.898964584954534
+              ],
+              [
+                88.237995,
+                22.898964584954534
+              ],
+              [
+                88.237995,
+                22.898739754863602
+              ]
+            ]
+          ],
+          "center": [
+            22.89885216990907,
+            88.23810741504546
+          ],
+          "areaAcres": 0.142,
+          "areaHectares": 0.0576,
+          "landCoverClass": "crop",
+          "landCoverLabel": "Crop vegetation",
+          "color": "#22c55e",
+          "confidence": 0.86,
+          "cropTypeLabel": "Crop vegetation",
+          "isCropConfirmed": false,
+          "spectralIndices": {
+            "ndvi": 0.53,
+            "ndwi": -0.15,
+            "ndbi": -0.1,
+            "ndre": 0.371
+          },
+          "source": "Sentinel-2 L2A",
+          "date": "2026-09-12"
+        },
+        {
+          "id": "zone_8",
+          "coordinates": [
+            [
+              [
+                88.237995,
+                22.898964584954534
+              ],
+              [
+                88.23821983009093,
+                22.898964584954534
+              ],
+              [
+                88.23821983009093,
+                22.899189415045466
+              ],
+              [
+                88.237995,
+                22.899189415045466
+              ],
+              [
+                88.237995,
+                22.898964584954534
+              ]
+            ]
+          ],
+          "center": [
+            22.899077000000002,
+            88.23810741504546
+          ],
+          "areaAcres": 0.142,
+          "areaHectares": 0.0576,
+          "landCoverClass": "crop",
+          "landCoverLabel": "Crop vegetation",
+          "color": "#22c55e",
+          "confidence": 0.86,
+          "cropTypeLabel": "Crop vegetation",
+          "isCropConfirmed": false,
+          "spectralIndices": {
+            "ndvi": 0.53,
+            "ndwi": -0.15,
+            "ndbi": -0.1,
+            "ndre": 0.371
+          },
+          "source": "Sentinel-2 L2A",
+          "date": "2026-09-12"
+        },
+        {
+          "id": "zone_9",
+          "coordinates": [
+            [
+              [
+                88.237995,
+                22.899189415045466
+              ],
+              [
+                88.23821983009093,
+                22.899189415045466
+              ],
+              [
+                88.23821983009093,
+                22.89941068554545
+              ],
+              [
+                88.2381877937724,
+                22.8994142451364
+              ],
+              [
+                88.237995,
+                22.8994142451364
+              ],
+              [
+                88.237995,
+                22.899189415045466
+              ]
+            ]
+          ],
+          "center": [
+            22.899323601181838,
+            88.23812349079085
+          ],
+          "areaAcres": 0.142,
+          "areaHectares": 0.0575,
+          "landCoverClass": "crop",
+          "landCoverLabel": "Crop vegetation",
+          "color": "#22c55e",
+          "confidence": 0.86,
+          "cropTypeLabel": "Crop vegetation",
+          "isCropConfirmed": false,
+          "spectralIndices": {
+            "ndvi": 0.53,
+            "ndwi": -0.15,
+            "ndbi": -0.1,
+            "ndre": 0.371
+          },
+          "source": "Sentinel-2 L2A",
+          "date": "2026-09-12"
+        },
+        {
+          "id": "zone_10",
+          "coordinates": [
+            [
+              [
+                88.23821983009093,
+                22.898739754863602
+              ],
+              [
+                88.2383004769716,
+                22.898739754863602
+              ],
+              [
+                88.23837241014473,
+                22.898964584954534
+              ],
+              [
+                88.23821983009093,
+                22.898964584954534
+              ],
+              [
+                88.23821983009093,
+                22.898739754863602
+              ]
+            ]
+          ],
+          "center": [
+            22.89885216990907,
+            88.23827813682455
+          ],
+          "areaAcres": 0.074,
+          "areaHectares": 0.0299,
+          "landCoverClass": "crop",
+          "landCoverLabel": "Crop vegetation",
+          "color": "#22c55e",
+          "confidence": 0.86,
+          "cropTypeLabel": "Crop vegetation",
+          "isCropConfirmed": false,
+          "spectralIndices": {
+            "ndvi": 0.53,
+            "ndwi": -0.15,
+            "ndbi": -0.1,
+            "ndre": 0.371
+          },
+          "source": "Sentinel-2 L2A",
+          "date": "2026-09-12"
+        },
+        {
+          "id": "zone_11",
+          "coordinates": [
+            [
+              [
+                88.23821983009093,
+                22.898964584954534
+              ],
+              [
+                88.23837241014473,
+                22.898964584954534
+              ],
+              [
+                88.23844434331787,
+                22.899189415045466
+              ],
+              [
+                88.23821983009093,
+                22.899189415045466
+              ],
+              [
+                88.23821983009093,
+                22.898964584954534
+              ]
+            ]
+          ],
+          "center": [
+            22.899077000000002,
+            88.23831410341113
+          ],
+          "areaAcres": 0.119,
+          "areaHectares": 0.0483,
+          "landCoverClass": "crop",
+          "landCoverLabel": "Crop vegetation",
+          "color": "#22c55e",
+          "confidence": 0.86,
+          "cropTypeLabel": "Crop vegetation",
+          "isCropConfirmed": false,
+          "spectralIndices": {
+            "ndvi": 0.53,
+            "ndwi": -0.15,
+            "ndbi": -0.1,
+            "ndre": 0.371
+          },
+          "source": "Sentinel-2 L2A",
+          "date": "2026-09-12"
+        },
+        {
+          "id": "zone_12",
+          "coordinates": [
+            [
+              [
+                88.23821983009093,
+                22.899189415045466
+              ],
+              [
+                88.23844434331787,
+                22.899189415045466
+              ],
+              [
+                88.23844466018186,
+                22.899190405416896
+              ],
+              [
+                88.23844466018186,
+                22.899385704424237
+              ],
+              [
+                88.23821983009093,
+                22.89941068554545
+              ],
+              [
+                88.23821983009093,
+                22.899189415045466
+              ]
+            ]
+          ],
+          "center": [
+            22.8992731250955,
+            88.23835466477269
+          ],
+          "areaAcres": 0.132,
+          "areaHectares": 0.0535,
+          "landCoverClass": "crop",
+          "landCoverLabel": "Crop vegetation",
+          "color": "#22c55e",
+          "confidence": 0.86,
+          "cropTypeLabel": "Crop vegetation",
+          "isCropConfirmed": false,
+          "spectralIndices": {
+            "ndvi": 0.53,
+            "ndwi": -0.15,
+            "ndbi": -0.1,
+            "ndre": 0.371
+          },
+          "source": "Sentinel-2 L2A",
+          "date": "2026-09-12"
+        }
+      ],
+      "classBreakdown": {
+        "crop": {
+          "areaAcres": 1.56,
+          "areaHectares": 0.633,
+          "percentage": 100,
+          "label": "Crop vegetation",
+          "color": "#22c55e"
+        },
+        "tree": {
+          "areaAcres": 0,
+          "areaHectares": 0,
+          "percentage": 0,
+          "label": "Tree canopy",
+          "color": "#15803d"
+        },
+        "bare_soil": {
+          "areaAcres": 0,
+          "areaHectares": 0,
+          "percentage": 0,
+          "label": "Bare soil / fallow land",
+          "color": "#92400e"
+        },
+        "water": {
+          "areaAcres": 0,
+          "areaHectares": 0,
+          "percentage": 0,
+          "label": "Water body / pond",
+          "color": "#0284c7"
+        },
+        "built_up": {
+          "areaAcres": 0,
+          "areaHectares": 0,
+          "percentage": 0,
+          "label": "Built-up / house / road",
+          "color": "#64748b"
+        },
+        "unknown": {
+          "areaAcres": 0,
+          "areaHectares": 0,
+          "percentage": 0,
+          "label": "Unknown / needs verification",
+          "color": "#eab308"
+        }
+      },
+      "soilData": {
+        "source": "ISRIC SoilGrids v2.0",
+        "coordinates": [
+          22.8991652,
+          88.2378952
+        ],
+        "clayPercentage": 38.9,
+        "sandPercentage": 9.6,
+        "siltPercentage": 51.5,
+        "soilTexture": "Silty Clay Loam",
+        "organicCarbonGPerKg": 22.8,
+        "organicCarbonPercentage": 2.28,
+        "phH2o": 6.8,
+        "nitrogenGPerKg": 1.51,
+        "disclaimer": "Map-based estimate — field soil test required for exact values.",
+        "isAvailable": true,
+        "resolution": "250m grid resolution",
+        "depth": "0–5 cm (topsoil)",
+        "isEstimate": true,
+        "rawLayerDepths": {
+          "clay": 389,
+          "nitrogen": 151,
+          "phh2o": 68,
+          "sand": 96,
+          "silt": 515,
+          "soc": 228
+        }
+      },
+      "cropInference": {
+        "status": "model_predicted",
+        "isModelLoaded": true,
+        "predictedCrop": "Paddy / Rice (Dhaan)",
+        "confidence": 0.88,
+        "confidenceBreakdown": {
+          "Paddy / Rice (Dhaan)": 88,
+          "Wheat": 6,
+          "Potato (Aloo)": 3,
+          "Mustard (Sarson)": 2,
+          "Maize": 1
+        },
+        "modelVersion": "v1.1.0-agrifieldnet-balanced",
+        "supportingDates": [
+          "2026-09-10",
+          "2026-09-07",
+          "2026-09-05",
+          "2026-08-31",
+          "2026-08-21",
+          "2026-08-18",
+          "2026-08-16",
+          "2026-08-11",
+          "2026-08-06",
+          "2026-08-01",
+          "2026-07-29",
+          "2026-07-27"
+        ],
+        "scenesFound": [
+          {
+            "sceneId": "S2B_MSIL2A_20260910T043659_R033_T45QXF_20260910T082519",
+            "acquisitionDate": "2026-09-10",
+            "cloudCoverPercentage": 81.9,
+            "platform": "Sentinel-2B",
+            "bandsAvailable": [
+              "B02",
+              "B03",
+              "B04",
+              "B05",
+              "B08",
+              "B11",
+              "SCL"
+            ]
+          },
+          {
+            "sceneId": "S2A_MSIL2A_20260907T044231_R033_T45QXF_20260907T094319",
+            "acquisitionDate": "2026-09-07",
+            "cloudCoverPercentage": 92.2,
+            "platform": "Sentinel-2A",
+            "bandsAvailable": [
+              "B02",
+              "B03",
+              "B04",
+              "B05",
+              "B08",
+              "B11",
+              "SCL"
+            ]
+          },
+          {
+            "sceneId": "S2C_MSIL2A_20260905T043701_R033_T45QXF_20260905T094209",
+            "acquisitionDate": "2026-09-05",
+            "cloudCoverPercentage": 92.7,
+            "platform": "Sentinel-2C",
+            "bandsAvailable": [
+              "B02",
+              "B03",
+              "B04",
+              "B05",
+              "B08",
+              "B11",
+              "SCL"
+            ]
+          },
+          {
+            "sceneId": "S2B_MSIL2A_20260831T043659_R033_T45QXF_20260831T082240",
+            "acquisitionDate": "2026-08-31",
+            "cloudCoverPercentage": 94.1,
+            "platform": "Sentinel-2B",
+            "bandsAvailable": [
+              "B02",
+              "B03",
+              "B04",
+              "B05",
+              "B08",
+              "B11",
+              "SCL"
+            ]
+          },
+          {
+            "sceneId": "S2B_MSIL2A_20260821T043659_R033_T45QXF_20260821T082129",
+            "acquisitionDate": "2026-08-21",
+            "cloudCoverPercentage": 74.3,
+            "platform": "Sentinel-2B",
+            "bandsAvailable": [
+              "B02",
+              "B03",
+              "B04",
+              "B05",
+              "B08",
+              "B11",
+              "SCL"
+            ]
+          },
+          {
+            "sceneId": "S2A_MSIL2A_20260818T044231_R033_T45QXF_20260818T094411",
+            "acquisitionDate": "2026-08-18",
+            "cloudCoverPercentage": 97.3,
+            "platform": "Sentinel-2A",
+            "bandsAvailable": [
+              "B02",
+              "B03",
+              "B04",
+              "B05",
+              "B08",
+              "B11",
+              "SCL"
+            ]
+          },
+          {
+            "sceneId": "S2C_MSIL2A_20260816T043701_R033_T45QXF_20260816T093714",
+            "acquisitionDate": "2026-08-16",
+            "cloudCoverPercentage": 90.9,
+            "platform": "Sentinel-2C",
+            "bandsAvailable": [
+              "B02",
+              "B03",
+              "B04",
+              "B05",
+              "B08",
+              "B11",
+              "SCL"
+            ]
+          },
+          {
+            "sceneId": "S2B_MSIL2A_20260811T043659_R033_T45QXF_20260811T082821",
+            "acquisitionDate": "2026-08-11",
+            "cloudCoverPercentage": 62.1,
+            "platform": "Sentinel-2B",
+            "bandsAvailable": [
+              "B02",
+              "B03",
+              "B04",
+              "B05",
+              "B08",
+              "B11",
+              "SCL"
+            ]
+          },
+          {
+            "sceneId": "S2C_MSIL2A_20260806T043701_R033_T45QXF_20260806T094611",
+            "acquisitionDate": "2026-08-06",
+            "cloudCoverPercentage": 100,
+            "platform": "Sentinel-2C",
+            "bandsAvailable": [
+              "B02",
+              "B03",
+              "B04",
+              "B05",
+              "B08",
+              "B11",
+              "SCL"
+            ]
+          },
+          {
+            "sceneId": "S2B_MSIL2A_20260801T043659_R033_T45QXF_20260801T082248",
+            "acquisitionDate": "2026-08-01",
+            "cloudCoverPercentage": 98,
+            "platform": "Sentinel-2B",
+            "bandsAvailable": [
+              "B02",
+              "B03",
+              "B04",
+              "B05",
+              "B08",
+              "B11",
+              "SCL"
+            ]
+          },
+          {
+            "sceneId": "S2A_MSIL2A_20260729T044241_R033_T45QXF_20260729T095112",
+            "acquisitionDate": "2026-07-29",
+            "cloudCoverPercentage": 70.9,
+            "platform": "Sentinel-2A",
+            "bandsAvailable": [
+              "B02",
+              "B03",
+              "B04",
+              "B05",
+              "B08",
+              "B11",
+              "SCL"
+            ]
+          },
+          {
+            "sceneId": "S2C_MSIL2A_20260727T043701_R033_T45QXF_20260727T094703",
+            "acquisitionDate": "2026-07-27",
+            "cloudCoverPercentage": 99.7,
+            "platform": "Sentinel-2C",
+            "bandsAvailable": [
+              "B02",
+              "B03",
+              "B04",
+              "B05",
+              "B08",
+              "B11",
+              "SCL"
+            ]
+          }
+        ],
+        "sarScenesFound": [
+          {
+            "sceneId": "S1D_IW_GRDH_1SDV_20260907T000338_20260907T000403_004464_008479",
+            "date": "2026-09-07",
+            "platform": "sentinel-1d",
+            "orbitDirection": "descending"
+          },
+          {
+            "sceneId": "S1D_IW_GRDH_1SDV_20260904T121158_20260904T121223_004428_00833E",
+            "date": "2026-09-04",
+            "platform": "sentinel-1d",
+            "orbitDirection": "ascending"
+          },
+          {
+            "sceneId": "S1D_IW_GRDH_1SDV_20260823T121158_20260823T121223_004253_007D19",
+            "date": "2026-08-23",
+            "platform": "sentinel-1d",
+            "orbitDirection": "ascending"
+          },
+          {
+            "sceneId": "S1D_IW_GRDH_1SDV_20260814T000337_20260814T000402_004114_00783F",
+            "date": "2026-08-14",
+            "platform": "sentinel-1d",
+            "orbitDirection": "descending"
+          },
+          {
+            "sceneId": "S1D_IW_GRDH_1SDV_20260811T121157_20260811T121222_004078_0076F9",
+            "date": "2026-08-11",
+            "platform": "sentinel-1d",
+            "orbitDirection": "ascending"
+          },
+          {
+            "sceneId": "S1D_IW_GRDH_1SDV_20260802T000336_20260802T000401_003939_00722D",
+            "date": "2026-08-02",
+            "platform": "sentinel-1d",
+            "orbitDirection": "descending"
+          }
+        ],
+        "message": "Regional satellite estimate: Paddy / Rice (Dhaan) (88% pattern match). Ground-truth validated against ICAR regional agro-calendar.",
+        "featuresUsed": {
+          "NDVI": 0.529,
+          "NDRE": 0.372,
+          "EVI": 0.681,
+          "NDWI": 0.378,
+          "B04_Red": 2200,
+          "B08_NIR": 7150
+        }
+      }
+    },
+    {
+      "id": "lc_1789204069924_a2289aac",
+      "farmId": "a522bb0f-5c0d-46af-861e-01397b75e663",
+      "scanDate": "2026-09-12",
+      "satelliteSource": "Sentinel-2 L2A (10m Multi-spectral) & High-Resolution World Imagery",
+      "isModelConnected": true,
+      "areaHectares": 0.696,
+      "areaAcres": 1.72,
+      "isSmallPlot": false,
+      "dominantLandCover": "crop",
+      "dominantLandCoverLabel": "Crop vegetation",
+      "summaryHeadline": "Crop detected: Paddy / Rice (Dhaan) (88% match)",
+      "estimatedCropType": "Paddy / Rice (Dhaan)",
+      "suggestedSoilType": "Silty Clay Loam",
+      "dataQualityEvidence": {
+        "purePixelCount": 12,
+        "totalPixelCount": 12,
+        "purePixelRatio": 1,
+        "spatialResolutionMeters": 10,
+        "temporalConfidenceScore": 0.92,
+        "cloudOcclusionPct": 4.5,
+        "validationNotes": "High pixel purity observed across Sentinel-2 10m bands and high-resolution satellite imagery."
+      },
+      "subZones": [
+        {
+          "id": "zone_1",
+          "coordinates": [
+            [
+              [
+                88.23754533981814,
+                22.898802916741108
+              ],
+              [
+                88.23777016990907,
+                22.89875789373177
+              ],
+              [
+                88.23777016990907,
+                22.898964584954534
+              ],
+              [
+                88.23754533981814,
+                22.898964584954534
+              ],
+              [
+                88.23754533981814,
+                22.898802916741108
+              ]
+            ]
+          ],
+          "center": [
+            22.89887249509549,
+            88.2376577548636
+          ],
+          "areaAcres": 0.117,
+          "areaHectares": 0.0472,
+          "landCoverClass": "crop",
+          "landCoverLabel": "Crop vegetation",
+          "color": "#22c55e",
+          "confidence": 0.86,
+          "cropTypeLabel": "Crop vegetation",
+          "isCropConfirmed": false,
+          "spectralIndices": {
+            "ndvi": 0.53,
+            "ndwi": -0.15,
+            "ndbi": -0.1,
+            "ndre": 0.371
+          },
+          "source": "Sentinel-2 L2A",
+          "date": "2026-09-12"
+        },
+        {
+          "id": "zone_2",
+          "coordinates": [
+            [
+              [
+                88.23754533981814,
+                22.898964584954534
+              ],
+              [
+                88.23777016990907,
+                22.898964584954534
+              ],
+              [
+                88.23777016990907,
+                22.899189415045466
+              ],
+              [
+                88.23754703651046,
+                22.899189415045466
+              ],
+              [
+                88.23754533981814,
+                22.899179174831605
+              ],
+              [
+                88.23754533981814,
+                22.898964584954534
+              ]
+            ]
+          ],
+          "center": [
+            22.899097434966322,
+            88.23763561119299
+          ],
+          "areaAcres": 0.142,
+          "areaHectares": 0.0576,
+          "landCoverClass": "crop",
+          "landCoverLabel": "Crop vegetation",
+          "color": "#22c55e",
+          "confidence": 0.86,
+          "cropTypeLabel": "Crop vegetation",
+          "isCropConfirmed": false,
+          "spectralIndices": {
+            "ndvi": 0.53,
+            "ndwi": -0.15,
+            "ndbi": -0.1,
+            "ndre": 0.371
+          },
+          "source": "Sentinel-2 L2A",
+          "date": "2026-09-12"
+        },
+        {
+          "id": "zone_3",
+          "coordinates": [
+            [
+              [
+                88.23754703651046,
+                22.899189415045466
+              ],
+              [
+                88.23777016990907,
+                22.899189415045466
+              ],
+              [
+                88.23777016990907,
+                22.8994142451364
+              ],
+              [
+                88.23758428841703,
+                22.8994142451364
+              ],
+              [
+                88.23754703651046,
+                22.899189415045466
+              ]
+            ]
+          ],
+          "center": [
+            22.899301830090934,
+            88.23766791618641
+          ],
+          "areaAcres": 0.129,
+          "areaHectares": 0.0524,
+          "landCoverClass": "crop",
+          "landCoverLabel": "Crop vegetation",
+          "color": "#22c55e",
+          "confidence": 0.86,
+          "cropTypeLabel": "Crop vegetation",
+          "isCropConfirmed": false,
+          "spectralIndices": {
+            "ndvi": 0.53,
+            "ndwi": -0.15,
+            "ndbi": -0.1,
+            "ndre": 0.371
+          },
+          "source": "Sentinel-2 L2A",
+          "date": "2026-09-12"
+        },
+        {
+          "id": "zone_4",
+          "coordinates": [
+            [
+              [
+                88.23777016990907,
+                22.89875789373177
+              ],
+              [
+                88.23786074944695,
+                22.898739754863602
+              ],
+              [
+                88.237995,
+                22.898739754863602
+              ],
+              [
+                88.237995,
+                22.898964584954534
+              ],
+              [
+                88.23777016990907,
+                22.898964584954534
+              ],
+              [
+                88.23777016990907,
+                22.89875789373177
+              ]
+            ]
+          ],
+          "center": [
+            22.898833314673606,
+            88.23787821785302
+          ],
+          "areaAcres": 0.14,
+          "areaHectares": 0.0566,
+          "landCoverClass": "crop",
+          "landCoverLabel": "Crop vegetation",
+          "color": "#22c55e",
+          "confidence": 0.86,
+          "cropTypeLabel": "Crop vegetation",
+          "isCropConfirmed": false,
+          "spectralIndices": {
+            "ndvi": 0.53,
+            "ndwi": -0.15,
+            "ndbi": -0.1,
+            "ndre": 0.371
+          },
+          "source": "Sentinel-2 L2A",
+          "date": "2026-09-12"
+        },
+        {
+          "id": "zone_5",
+          "coordinates": [
+            [
+              [
+                88.23777016990907,
+                22.898964584954534
+              ],
+              [
+                88.237995,
+                22.898964584954534
+              ],
+              [
+                88.237995,
+                22.899189415045466
+              ],
+              [
+                88.23777016990907,
+                22.899189415045466
+              ],
+              [
+                88.23777016990907,
+                22.898964584954534
+              ]
+            ]
+          ],
+          "center": [
+            22.899077000000002,
+            88.23788258495453
+          ],
+          "areaAcres": 0.142,
+          "areaHectares": 0.0576,
+          "landCoverClass": "crop",
+          "landCoverLabel": "Crop vegetation",
+          "color": "#22c55e",
+          "confidence": 0.86,
+          "cropTypeLabel": "Crop vegetation",
+          "isCropConfirmed": false,
+          "spectralIndices": {
+            "ndvi": 0.53,
+            "ndwi": -0.15,
+            "ndbi": -0.1,
+            "ndre": 0.371
+          },
+          "source": "Sentinel-2 L2A",
+          "date": "2026-09-12"
+        },
+        {
+          "id": "zone_6",
+          "coordinates": [
+            [
+              [
+                88.23777016990907,
+                22.899189415045466
+              ],
+              [
+                88.237995,
+                22.899189415045466
+              ],
+              [
+                88.237995,
+                22.8994142451364
+              ],
+              [
+                88.23777016990907,
+                22.8994142451364
+              ],
+              [
+                88.23777016990907,
+                22.899189415045466
+              ]
+            ]
+          ],
+          "center": [
+            22.899301830090934,
+            88.23788258495453
+          ],
+          "areaAcres": 0.142,
+          "areaHectares": 0.0576,
+          "landCoverClass": "crop",
+          "landCoverLabel": "Crop vegetation",
+          "color": "#22c55e",
+          "confidence": 0.86,
+          "cropTypeLabel": "Crop vegetation",
+          "isCropConfirmed": false,
+          "spectralIndices": {
+            "ndvi": 0.53,
+            "ndwi": -0.15,
+            "ndbi": -0.1,
+            "ndre": 0.371
+          },
+          "source": "Sentinel-2 L2A",
+          "date": "2026-09-12"
+        },
+        {
+          "id": "zone_7",
+          "coordinates": [
+            [
+              [
+                88.237995,
+                22.898739754863602
+              ],
+              [
+                88.23821983009093,
+                22.898739754863602
+              ],
+              [
+                88.23821983009093,
+                22.898964584954534
+              ],
+              [
+                88.237995,
+                22.898964584954534
+              ],
+              [
+                88.237995,
+                22.898739754863602
+              ]
+            ]
+          ],
+          "center": [
+            22.89885216990907,
+            88.23810741504546
+          ],
+          "areaAcres": 0.142,
+          "areaHectares": 0.0576,
+          "landCoverClass": "crop",
+          "landCoverLabel": "Crop vegetation",
+          "color": "#22c55e",
+          "confidence": 0.86,
+          "cropTypeLabel": "Crop vegetation",
+          "isCropConfirmed": false,
+          "spectralIndices": {
+            "ndvi": 0.53,
+            "ndwi": -0.15,
+            "ndbi": -0.1,
+            "ndre": 0.371
+          },
+          "source": "Sentinel-2 L2A",
+          "date": "2026-09-12"
+        },
+        {
+          "id": "zone_8",
+          "coordinates": [
+            [
+              [
+                88.237995,
+                22.898964584954534
+              ],
+              [
+                88.23821983009093,
+                22.898964584954534
+              ],
+              [
+                88.23821983009093,
+                22.899189415045466
+              ],
+              [
+                88.237995,
+                22.899189415045466
+              ],
+              [
+                88.237995,
+                22.898964584954534
+              ]
+            ]
+          ],
+          "center": [
+            22.899077000000002,
+            88.23810741504546
+          ],
+          "areaAcres": 0.142,
+          "areaHectares": 0.0576,
+          "landCoverClass": "crop",
+          "landCoverLabel": "Crop vegetation",
+          "color": "#22c55e",
+          "confidence": 0.86,
+          "cropTypeLabel": "Crop vegetation",
+          "isCropConfirmed": false,
+          "spectralIndices": {
+            "ndvi": 0.53,
+            "ndwi": -0.15,
+            "ndbi": -0.1,
+            "ndre": 0.371
+          },
+          "source": "Sentinel-2 L2A",
+          "date": "2026-09-12"
+        },
+        {
+          "id": "zone_9",
+          "coordinates": [
+            [
+              [
+                88.237995,
+                22.899189415045466
+              ],
+              [
+                88.23821983009093,
+                22.899189415045466
+              ],
+              [
+                88.23821983009093,
+                22.89941068554545
+              ],
+              [
+                88.2381877937724,
+                22.8994142451364
+              ],
+              [
+                88.237995,
+                22.8994142451364
+              ],
+              [
+                88.237995,
+                22.899189415045466
+              ]
+            ]
+          ],
+          "center": [
+            22.899323601181838,
+            88.23812349079085
+          ],
+          "areaAcres": 0.142,
+          "areaHectares": 0.0575,
+          "landCoverClass": "crop",
+          "landCoverLabel": "Crop vegetation",
+          "color": "#22c55e",
+          "confidence": 0.86,
+          "cropTypeLabel": "Crop vegetation",
+          "isCropConfirmed": false,
+          "spectralIndices": {
+            "ndvi": 0.53,
+            "ndwi": -0.15,
+            "ndbi": -0.1,
+            "ndre": 0.371
+          },
+          "source": "Sentinel-2 L2A",
+          "date": "2026-09-12"
+        },
+        {
+          "id": "zone_10",
+          "coordinates": [
+            [
+              [
+                88.23821983009093,
+                22.898739754863602
+              ],
+              [
+                88.2383004769716,
+                22.898739754863602
+              ],
+              [
+                88.23837241014473,
+                22.898964584954534
+              ],
+              [
+                88.23821983009093,
+                22.898964584954534
+              ],
+              [
+                88.23821983009093,
+                22.898739754863602
+              ]
+            ]
+          ],
+          "center": [
+            22.89885216990907,
+            88.23827813682455
+          ],
+          "areaAcres": 0.074,
+          "areaHectares": 0.0299,
+          "landCoverClass": "crop",
+          "landCoverLabel": "Crop vegetation",
+          "color": "#22c55e",
+          "confidence": 0.86,
+          "cropTypeLabel": "Crop vegetation",
+          "isCropConfirmed": false,
+          "spectralIndices": {
+            "ndvi": 0.53,
+            "ndwi": -0.15,
+            "ndbi": -0.1,
+            "ndre": 0.371
+          },
+          "source": "Sentinel-2 L2A",
+          "date": "2026-09-12"
+        },
+        {
+          "id": "zone_11",
+          "coordinates": [
+            [
+              [
+                88.23821983009093,
+                22.898964584954534
+              ],
+              [
+                88.23837241014473,
+                22.898964584954534
+              ],
+              [
+                88.23844434331787,
+                22.899189415045466
+              ],
+              [
+                88.23821983009093,
+                22.899189415045466
+              ],
+              [
+                88.23821983009093,
+                22.898964584954534
+              ]
+            ]
+          ],
+          "center": [
+            22.899077000000002,
+            88.23831410341113
+          ],
+          "areaAcres": 0.119,
+          "areaHectares": 0.0483,
+          "landCoverClass": "crop",
+          "landCoverLabel": "Crop vegetation",
+          "color": "#22c55e",
+          "confidence": 0.86,
+          "cropTypeLabel": "Crop vegetation",
+          "isCropConfirmed": false,
+          "spectralIndices": {
+            "ndvi": 0.53,
+            "ndwi": -0.15,
+            "ndbi": -0.1,
+            "ndre": 0.371
+          },
+          "source": "Sentinel-2 L2A",
+          "date": "2026-09-12"
+        },
+        {
+          "id": "zone_12",
+          "coordinates": [
+            [
+              [
+                88.23821983009093,
+                22.899189415045466
+              ],
+              [
+                88.23844434331787,
+                22.899189415045466
+              ],
+              [
+                88.23844466018186,
+                22.899190405416896
+              ],
+              [
+                88.23844466018186,
+                22.899385704424237
+              ],
+              [
+                88.23821983009093,
+                22.89941068554545
+              ],
+              [
+                88.23821983009093,
+                22.899189415045466
+              ]
+            ]
+          ],
+          "center": [
+            22.8992731250955,
+            88.23835466477269
+          ],
+          "areaAcres": 0.132,
+          "areaHectares": 0.0535,
+          "landCoverClass": "crop",
+          "landCoverLabel": "Crop vegetation",
+          "color": "#22c55e",
+          "confidence": 0.86,
+          "cropTypeLabel": "Crop vegetation",
+          "isCropConfirmed": false,
+          "spectralIndices": {
+            "ndvi": 0.53,
+            "ndwi": -0.15,
+            "ndbi": -0.1,
+            "ndre": 0.371
+          },
+          "source": "Sentinel-2 L2A",
+          "date": "2026-09-12"
+        }
+      ],
+      "classBreakdown": {
+        "crop": {
+          "areaAcres": 1.56,
+          "areaHectares": 0.633,
+          "percentage": 100,
+          "label": "Crop vegetation",
+          "color": "#22c55e"
+        },
+        "tree": {
+          "areaAcres": 0,
+          "areaHectares": 0,
+          "percentage": 0,
+          "label": "Tree canopy",
+          "color": "#15803d"
+        },
+        "bare_soil": {
+          "areaAcres": 0,
+          "areaHectares": 0,
+          "percentage": 0,
+          "label": "Bare soil / fallow land",
+          "color": "#92400e"
+        },
+        "water": {
+          "areaAcres": 0,
+          "areaHectares": 0,
+          "percentage": 0,
+          "label": "Water body / pond",
+          "color": "#0284c7"
+        },
+        "built_up": {
+          "areaAcres": 0,
+          "areaHectares": 0,
+          "percentage": 0,
+          "label": "Built-up / house / road",
+          "color": "#64748b"
+        },
+        "unknown": {
+          "areaAcres": 0,
+          "areaHectares": 0,
+          "percentage": 0,
+          "label": "Unknown / needs verification",
+          "color": "#eab308"
+        }
+      },
+      "soilData": {
+        "source": "ISRIC SoilGrids v2.0",
+        "coordinates": [
+          22.8991652,
+          88.2378952
+        ],
+        "clayPercentage": 38.9,
+        "sandPercentage": 9.6,
+        "siltPercentage": 51.5,
+        "soilTexture": "Silty Clay Loam",
+        "organicCarbonGPerKg": 22.8,
+        "organicCarbonPercentage": 2.28,
+        "phH2o": 6.8,
+        "nitrogenGPerKg": 1.51,
+        "disclaimer": "Map-based estimate — field soil test required for exact values.",
+        "isAvailable": true,
+        "resolution": "250m grid resolution",
+        "depth": "0–5 cm (topsoil)",
+        "isEstimate": true,
+        "rawLayerDepths": {
+          "clay": 389,
+          "nitrogen": 151,
+          "phh2o": 68,
+          "sand": 96,
+          "silt": 515,
+          "soc": 228
+        }
+      },
+      "cropInference": {
+        "status": "model_predicted",
+        "isModelLoaded": true,
+        "predictedCrop": "Paddy / Rice (Dhaan)",
+        "confidence": 0.88,
+        "confidenceBreakdown": {
+          "Paddy / Rice (Dhaan)": 88,
+          "Wheat": 6,
+          "Potato (Aloo)": 3,
+          "Mustard (Sarson)": 2,
+          "Maize": 1
+        },
+        "modelVersion": "v1.1.0-agrifieldnet-balanced",
+        "supportingDates": [
+          "2026-09-10",
+          "2026-09-07",
+          "2026-09-05",
+          "2026-08-31",
+          "2026-08-21",
+          "2026-08-18",
+          "2026-08-16",
+          "2026-08-11",
+          "2026-08-06",
+          "2026-08-01",
+          "2026-07-29",
+          "2026-07-27"
+        ],
+        "scenesFound": [
+          {
+            "sceneId": "S2B_MSIL2A_20260910T043659_R033_T45QXF_20260910T082519",
+            "acquisitionDate": "2026-09-10",
+            "cloudCoverPercentage": 81.9,
+            "platform": "Sentinel-2B",
+            "bandsAvailable": [
+              "B02",
+              "B03",
+              "B04",
+              "B05",
+              "B08",
+              "B11",
+              "SCL"
+            ]
+          },
+          {
+            "sceneId": "S2A_MSIL2A_20260907T044231_R033_T45QXF_20260907T094319",
+            "acquisitionDate": "2026-09-07",
+            "cloudCoverPercentage": 92.2,
+            "platform": "Sentinel-2A",
+            "bandsAvailable": [
+              "B02",
+              "B03",
+              "B04",
+              "B05",
+              "B08",
+              "B11",
+              "SCL"
+            ]
+          },
+          {
+            "sceneId": "S2C_MSIL2A_20260905T043701_R033_T45QXF_20260905T094209",
+            "acquisitionDate": "2026-09-05",
+            "cloudCoverPercentage": 92.7,
+            "platform": "Sentinel-2C",
+            "bandsAvailable": [
+              "B02",
+              "B03",
+              "B04",
+              "B05",
+              "B08",
+              "B11",
+              "SCL"
+            ]
+          },
+          {
+            "sceneId": "S2B_MSIL2A_20260831T043659_R033_T45QXF_20260831T082240",
+            "acquisitionDate": "2026-08-31",
+            "cloudCoverPercentage": 94.1,
+            "platform": "Sentinel-2B",
+            "bandsAvailable": [
+              "B02",
+              "B03",
+              "B04",
+              "B05",
+              "B08",
+              "B11",
+              "SCL"
+            ]
+          },
+          {
+            "sceneId": "S2B_MSIL2A_20260821T043659_R033_T45QXF_20260821T082129",
+            "acquisitionDate": "2026-08-21",
+            "cloudCoverPercentage": 74.3,
+            "platform": "Sentinel-2B",
+            "bandsAvailable": [
+              "B02",
+              "B03",
+              "B04",
+              "B05",
+              "B08",
+              "B11",
+              "SCL"
+            ]
+          },
+          {
+            "sceneId": "S2A_MSIL2A_20260818T044231_R033_T45QXF_20260818T094411",
+            "acquisitionDate": "2026-08-18",
+            "cloudCoverPercentage": 97.3,
+            "platform": "Sentinel-2A",
+            "bandsAvailable": [
+              "B02",
+              "B03",
+              "B04",
+              "B05",
+              "B08",
+              "B11",
+              "SCL"
+            ]
+          },
+          {
+            "sceneId": "S2C_MSIL2A_20260816T043701_R033_T45QXF_20260816T093714",
+            "acquisitionDate": "2026-08-16",
+            "cloudCoverPercentage": 90.9,
+            "platform": "Sentinel-2C",
+            "bandsAvailable": [
+              "B02",
+              "B03",
+              "B04",
+              "B05",
+              "B08",
+              "B11",
+              "SCL"
+            ]
+          },
+          {
+            "sceneId": "S2B_MSIL2A_20260811T043659_R033_T45QXF_20260811T082821",
+            "acquisitionDate": "2026-08-11",
+            "cloudCoverPercentage": 62.1,
+            "platform": "Sentinel-2B",
+            "bandsAvailable": [
+              "B02",
+              "B03",
+              "B04",
+              "B05",
+              "B08",
+              "B11",
+              "SCL"
+            ]
+          },
+          {
+            "sceneId": "S2C_MSIL2A_20260806T043701_R033_T45QXF_20260806T094611",
+            "acquisitionDate": "2026-08-06",
+            "cloudCoverPercentage": 100,
+            "platform": "Sentinel-2C",
+            "bandsAvailable": [
+              "B02",
+              "B03",
+              "B04",
+              "B05",
+              "B08",
+              "B11",
+              "SCL"
+            ]
+          },
+          {
+            "sceneId": "S2B_MSIL2A_20260801T043659_R033_T45QXF_20260801T082248",
+            "acquisitionDate": "2026-08-01",
+            "cloudCoverPercentage": 98,
+            "platform": "Sentinel-2B",
+            "bandsAvailable": [
+              "B02",
+              "B03",
+              "B04",
+              "B05",
+              "B08",
+              "B11",
+              "SCL"
+            ]
+          },
+          {
+            "sceneId": "S2A_MSIL2A_20260729T044241_R033_T45QXF_20260729T095112",
+            "acquisitionDate": "2026-07-29",
+            "cloudCoverPercentage": 70.9,
+            "platform": "Sentinel-2A",
+            "bandsAvailable": [
+              "B02",
+              "B03",
+              "B04",
+              "B05",
+              "B08",
+              "B11",
+              "SCL"
+            ]
+          },
+          {
+            "sceneId": "S2C_MSIL2A_20260727T043701_R033_T45QXF_20260727T094703",
+            "acquisitionDate": "2026-07-27",
+            "cloudCoverPercentage": 99.7,
+            "platform": "Sentinel-2C",
+            "bandsAvailable": [
+              "B02",
+              "B03",
+              "B04",
+              "B05",
+              "B08",
+              "B11",
+              "SCL"
+            ]
+          }
+        ],
+        "sarScenesFound": [
+          {
+            "sceneId": "S1D_IW_GRDH_1SDV_20260907T000338_20260907T000403_004464_008479",
+            "date": "2026-09-07",
+            "platform": "sentinel-1d",
+            "orbitDirection": "descending"
+          },
+          {
+            "sceneId": "S1D_IW_GRDH_1SDV_20260904T121158_20260904T121223_004428_00833E",
+            "date": "2026-09-04",
+            "platform": "sentinel-1d",
+            "orbitDirection": "ascending"
+          },
+          {
+            "sceneId": "S1D_IW_GRDH_1SDV_20260823T121158_20260823T121223_004253_007D19",
+            "date": "2026-08-23",
+            "platform": "sentinel-1d",
+            "orbitDirection": "ascending"
+          },
+          {
+            "sceneId": "S1D_IW_GRDH_1SDV_20260814T000337_20260814T000402_004114_00783F",
+            "date": "2026-08-14",
+            "platform": "sentinel-1d",
+            "orbitDirection": "descending"
+          },
+          {
+            "sceneId": "S1D_IW_GRDH_1SDV_20260811T121157_20260811T121222_004078_0076F9",
+            "date": "2026-08-11",
+            "platform": "sentinel-1d",
+            "orbitDirection": "ascending"
+          },
+          {
+            "sceneId": "S1D_IW_GRDH_1SDV_20260802T000336_20260802T000401_003939_00722D",
+            "date": "2026-08-02",
+            "platform": "sentinel-1d",
+            "orbitDirection": "descending"
+          }
+        ],
+        "message": "Regional satellite estimate: Paddy / Rice (Dhaan) (88% pattern match). Ground-truth validated against ICAR regional agro-calendar.",
+        "featuresUsed": {
+          "NDVI": 0.529,
+          "NDRE": 0.372,
+          "EVI": 0.681,
+          "NDWI": 0.378,
+          "B04_Red": 2200,
+          "B08_NIR": 7150
+        }
+      }
+    },
+    {
+      "id": "lc_1789204060196_0660a631",
+      "farmId": "ffe3a2c5-8e99-4dda-8372-e3ce3f573bc5",
+      "scanDate": "2026-09-12",
+      "satelliteSource": "Sentinel-2 L2A (10m Multi-spectral) & High-Resolution World Imagery",
+      "isModelConnected": true,
+      "areaHectares": 3.052,
+      "areaAcres": 7.54,
+      "isSmallPlot": false,
+      "dominantLandCover": "crop",
+      "dominantLandCoverLabel": "Crop vegetation",
+      "summaryHeadline": "Crop detected: Paddy / Rice (Dhaan) (88% match)",
+      "estimatedCropType": "Paddy / Rice (Dhaan)",
+      "suggestedSoilType": "Loam",
+      "dataQualityEvidence": {
+        "purePixelCount": 50,
+        "totalPixelCount": 50,
+        "purePixelRatio": 1,
+        "spatialResolutionMeters": 10,
+        "temporalConfidenceScore": 0.92,
+        "cloudOcclusionPct": 4.5,
+        "validationNotes": "High pixel purity observed across Sentinel-2 10m bands and high-resolution satellite imagery."
+      },
+      "subZones": [
+        {
+          "id": "zone_1",
+          "coordinates": [
+            [
+              [
+                75.50116992477267,
+                30.924771349545345
+              ],
+              [
+                75.5013947548636,
+                30.924771349545345
+              ],
+              [
+                75.5013947548636,
+                30.924996179636278
+              ],
+              [
+                75.50116992477267,
+                30.924996179636278
+              ],
+              [
+                75.50116992477267,
+                30.924771349545345
+              ]
+            ]
+          ],
+          "center": [
+            30.924883764590813,
+            75.50128233981813
+          ],
+          "areaAcres": 0.132,
+          "areaHectares": 0.0536,
+          "landCoverClass": "crop",
+          "landCoverLabel": "Crop vegetation",
+          "color": "#22c55e",
+          "confidence": 0.86,
+          "cropTypeLabel": "Crop vegetation",
+          "isCropConfirmed": false,
+          "spectralIndices": {
+            "ndvi": 0.5,
+            "ndwi": -0.15,
+            "ndbi": -0.1,
+            "ndre": 0.35
+          },
+          "source": "Sentinel-2 L2A",
+          "date": "2026-09-12"
+        },
+        {
+          "id": "zone_2",
+          "coordinates": [
+            [
+              [
+                75.50116992477267,
+                30.924996179636278
+              ],
+              [
+                75.5013947548636,
+                30.924996179636278
+              ],
+              [
+                75.5013947548636,
+                30.92522100972721
+              ],
+              [
+                75.50116992477267,
+                30.92522100972721
+              ],
+              [
+                75.50116992477267,
+                30.924996179636278
+              ]
+            ]
+          ],
+          "center": [
+            30.925108594681745,
+            75.50128233981813
+          ],
+          "areaAcres": 0.132,
+          "areaHectares": 0.0536,
+          "landCoverClass": "crop",
+          "landCoverLabel": "Crop vegetation",
+          "color": "#22c55e",
+          "confidence": 0.86,
+          "cropTypeLabel": "Crop vegetation",
+          "isCropConfirmed": false,
+          "spectralIndices": {
+            "ndvi": 0.5,
+            "ndwi": -0.15,
+            "ndbi": -0.1,
+            "ndre": 0.35
+          },
+          "source": "Sentinel-2 L2A",
+          "date": "2026-09-12"
+        },
+        {
+          "id": "zone_3",
+          "coordinates": [
+            [
+              [
+                75.50116992477267,
+                30.92522100972721
+              ],
+              [
+                75.5013947548636,
+                30.92522100972721
+              ],
+              [
+                75.5013947548636,
+                30.925445839818142
+              ],
+              [
+                75.50116992477267,
+                30.925445839818142
+              ],
+              [
+                75.50116992477267,
+                30.92522100972721
+              ]
+            ]
+          ],
+          "center": [
+            30.925333424772674,
+            75.50128233981813
+          ],
+          "areaAcres": 0.132,
+          "areaHectares": 0.0536,
+          "landCoverClass": "crop",
+          "landCoverLabel": "Crop vegetation",
+          "color": "#22c55e",
+          "confidence": 0.86,
+          "cropTypeLabel": "Crop vegetation",
+          "isCropConfirmed": false,
+          "spectralIndices": {
+            "ndvi": 0.5,
+            "ndwi": -0.15,
+            "ndbi": -0.1,
+            "ndre": 0.35
+          },
+          "source": "Sentinel-2 L2A",
+          "date": "2026-09-12"
+        },
+        {
+          "id": "zone_4",
+          "coordinates": [
+            [
+              [
+                75.50116992477267,
+                30.925445839818142
+              ],
+              [
+                75.5013947548636,
+                30.925445839818142
+              ],
+              [
+                75.5013947548636,
+                30.925670669909074
+              ],
+              [
+                75.50116992477267,
+                30.925670669909074
+              ],
+              [
+                75.50116992477267,
+                30.925445839818142
+              ]
+            ]
+          ],
+          "center": [
+            30.92555825486361,
+            75.50128233981813
+          ],
+          "areaAcres": 0.132,
+          "areaHectares": 0.0536,
+          "landCoverClass": "crop",
+          "landCoverLabel": "Crop vegetation",
+          "color": "#22c55e",
+          "confidence": 0.86,
+          "cropTypeLabel": "Crop vegetation",
+          "isCropConfirmed": false,
+          "spectralIndices": {
+            "ndvi": 0.5,
+            "ndwi": -0.15,
+            "ndbi": -0.1,
+            "ndre": 0.35
+          },
+          "source": "Sentinel-2 L2A",
+          "date": "2026-09-12"
+        },
+        {
+          "id": "zone_5",
+          "coordinates": [
+            [
+              [
+                75.50116992477267,
+                30.925670669909074
+              ],
+              [
+                75.5013947548636,
+                30.925670669909074
+              ],
+              [
+                75.5013947548636,
+                30.925895500000006
+              ],
+              [
+                75.50116992477267,
+                30.925895500000006
+              ],
+              [
+                75.50116992477267,
+                30.925670669909074
+              ]
+            ]
+          ],
+          "center": [
+            30.925783084954542,
+            75.50128233981813
+          ],
+          "areaAcres": 0.132,
+          "areaHectares": 0.0536,
+          "landCoverClass": "crop",
+          "landCoverLabel": "Crop vegetation",
+          "color": "#22c55e",
+          "confidence": 0.86,
+          "cropTypeLabel": "Crop vegetation",
+          "isCropConfirmed": false,
+          "spectralIndices": {
+            "ndvi": 0.5,
+            "ndwi": -0.15,
+            "ndbi": -0.1,
+            "ndre": 0.35
+          },
+          "source": "Sentinel-2 L2A",
+          "date": "2026-09-12"
+        },
+        {
+          "id": "zone_6",
+          "coordinates": [
+            [
+              [
+                75.50116992477267,
+                30.925895500000006
+              ],
+              [
+                75.5013947548636,
+                30.925895500000006
+              ],
+              [
+                75.5013947548636,
+                30.92612033009094
+              ],
+              [
+                75.50116992477267,
+                30.92612033009094
+              ],
+              [
+                75.50116992477267,
+                30.925895500000006
+              ]
+            ]
+          ],
+          "center": [
+            30.92600791504547,
+            75.50128233981813
+          ],
+          "areaAcres": 0.132,
+          "areaHectares": 0.0536,
+          "landCoverClass": "crop",
+          "landCoverLabel": "Crop vegetation",
+          "color": "#22c55e",
+          "confidence": 0.86,
+          "cropTypeLabel": "Crop vegetation",
+          "isCropConfirmed": false,
+          "spectralIndices": {
+            "ndvi": 0.5,
+            "ndwi": -0.15,
+            "ndbi": -0.1,
+            "ndre": 0.35
+          },
+          "source": "Sentinel-2 L2A",
+          "date": "2026-09-12"
+        },
+        {
+          "id": "zone_7",
+          "coordinates": [
+            [
+              [
+                75.50116992477267,
+                30.92612033009094
+              ],
+              [
+                75.5013947548636,
+                30.92612033009094
+              ],
+              [
+                75.5013947548636,
+                30.92634516018187
+              ],
+              [
+                75.50116992477267,
+                30.92634516018187
+              ],
+              [
+                75.50116992477267,
+                30.92612033009094
+              ]
+            ]
+          ],
+          "center": [
+            30.926232745136403,
+            75.50128233981813
+          ],
+          "areaAcres": 0.132,
+          "areaHectares": 0.0536,
+          "landCoverClass": "crop",
+          "landCoverLabel": "Crop vegetation",
+          "color": "#22c55e",
+          "confidence": 0.86,
+          "cropTypeLabel": "Crop vegetation",
+          "isCropConfirmed": false,
+          "spectralIndices": {
+            "ndvi": 0.5,
+            "ndwi": -0.15,
+            "ndbi": -0.1,
+            "ndre": 0.35
+          },
+          "source": "Sentinel-2 L2A",
+          "date": "2026-09-12"
+        },
+        {
+          "id": "zone_8",
+          "coordinates": [
+            [
+              [
+                75.50116992477267,
+                30.92634516018187
+              ],
+              [
+                75.5013947548636,
+                30.92634516018187
+              ],
+              [
+                75.5013947548636,
+                30.926569990272803
+              ],
+              [
+                75.50116992477267,
+                30.926569990272803
+              ],
+              [
+                75.50116992477267,
+                30.92634516018187
+              ]
+            ]
+          ],
+          "center": [
+            30.92645757522734,
+            75.50128233981813
+          ],
+          "areaAcres": 0.132,
+          "areaHectares": 0.0536,
+          "landCoverClass": "crop",
+          "landCoverLabel": "Crop vegetation",
+          "color": "#22c55e",
+          "confidence": 0.86,
+          "cropTypeLabel": "Crop vegetation",
+          "isCropConfirmed": false,
+          "spectralIndices": {
+            "ndvi": 0.5,
+            "ndwi": -0.15,
+            "ndbi": -0.1,
+            "ndre": 0.35
+          },
+          "source": "Sentinel-2 L2A",
+          "date": "2026-09-12"
+        },
+        {
+          "id": "zone_9",
+          "coordinates": [
+            [
+              [
+                75.50116992477267,
+                30.926569990272803
+              ],
+              [
+                75.5013947548636,
+                30.926569990272803
+              ],
+              [
+                75.5013947548636,
+                30.926794820363735
+              ],
+              [
+                75.50116992477267,
+                30.926794820363735
+              ],
+              [
+                75.50116992477267,
+                30.926569990272803
+              ]
+            ]
+          ],
+          "center": [
+            30.92668240531827,
+            75.50128233981813
+          ],
+          "areaAcres": 0.132,
+          "areaHectares": 0.0536,
+          "landCoverClass": "crop",
+          "landCoverLabel": "Crop vegetation",
+          "color": "#22c55e",
+          "confidence": 0.86,
+          "cropTypeLabel": "Crop vegetation",
+          "isCropConfirmed": false,
+          "spectralIndices": {
+            "ndvi": 0.5,
+            "ndwi": -0.15,
+            "ndbi": -0.1,
+            "ndre": 0.35
+          },
+          "source": "Sentinel-2 L2A",
+          "date": "2026-09-12"
+        },
+        {
+          "id": "zone_10",
+          "coordinates": [
+            [
+              [
+                75.50116992477267,
+                30.926794820363735
+              ],
+              [
+                75.5013947548636,
+                30.926794820363735
+              ],
+              [
+                75.5013947548636,
+                30.927019650454667
+              ],
+              [
+                75.50116992477267,
+                30.927019650454667
+              ],
+              [
+                75.50116992477267,
+                30.926794820363735
+              ]
+            ]
+          ],
+          "center": [
+            30.926907235409203,
+            75.50128233981813
+          ],
+          "areaAcres": 0.132,
+          "areaHectares": 0.0536,
+          "landCoverClass": "crop",
+          "landCoverLabel": "Crop vegetation",
+          "color": "#22c55e",
+          "confidence": 0.86,
+          "cropTypeLabel": "Crop vegetation",
+          "isCropConfirmed": false,
+          "spectralIndices": {
+            "ndvi": 0.5,
+            "ndwi": -0.15,
+            "ndbi": -0.1,
+            "ndre": 0.35
+          },
+          "source": "Sentinel-2 L2A",
+          "date": "2026-09-12"
+        },
+        {
+          "id": "zone_11",
+          "coordinates": [
+            [
+              [
+                75.5013947548636,
+                30.924771349545345
+              ],
+              [
+                75.50161958495453,
+                30.924771349545345
+              ],
+              [
+                75.50161958495453,
+                30.924996179636278
+              ],
+              [
+                75.5013947548636,
+                30.924996179636278
+              ],
+              [
+                75.5013947548636,
+                30.924771349545345
+              ]
+            ]
+          ],
+          "center": [
+            30.924883764590813,
+            75.50150716990906
+          ],
+          "areaAcres": 0.132,
+          "areaHectares": 0.0536,
+          "landCoverClass": "crop",
+          "landCoverLabel": "Crop vegetation",
+          "color": "#22c55e",
+          "confidence": 0.86,
+          "cropTypeLabel": "Crop vegetation",
+          "isCropConfirmed": false,
+          "spectralIndices": {
+            "ndvi": 0.5,
+            "ndwi": -0.15,
+            "ndbi": -0.1,
+            "ndre": 0.35
+          },
+          "source": "Sentinel-2 L2A",
+          "date": "2026-09-12"
+        },
+        {
+          "id": "zone_12",
+          "coordinates": [
+            [
+              [
+                75.5013947548636,
+                30.924996179636278
+              ],
+              [
+                75.50161958495453,
+                30.924996179636278
+              ],
+              [
+                75.50161958495453,
+                30.92522100972721
+              ],
+              [
+                75.5013947548636,
+                30.92522100972721
+              ],
+              [
+                75.5013947548636,
+                30.924996179636278
+              ]
+            ]
+          ],
+          "center": [
+            30.925108594681745,
+            75.50150716990906
+          ],
+          "areaAcres": 0.132,
+          "areaHectares": 0.0536,
+          "landCoverClass": "crop",
+          "landCoverLabel": "Crop vegetation",
+          "color": "#22c55e",
+          "confidence": 0.86,
+          "cropTypeLabel": "Crop vegetation",
+          "isCropConfirmed": false,
+          "spectralIndices": {
+            "ndvi": 0.5,
+            "ndwi": -0.15,
+            "ndbi": -0.1,
+            "ndre": 0.35
+          },
+          "source": "Sentinel-2 L2A",
+          "date": "2026-09-12"
+        },
+        {
+          "id": "zone_13",
+          "coordinates": [
+            [
+              [
+                75.5013947548636,
+                30.92522100972721
+              ],
+              [
+                75.50161958495453,
+                30.92522100972721
+              ],
+              [
+                75.50161958495453,
+                30.925445839818142
+              ],
+              [
+                75.5013947548636,
+                30.925445839818142
+              ],
+              [
+                75.5013947548636,
+                30.92522100972721
+              ]
+            ]
+          ],
+          "center": [
+            30.925333424772674,
+            75.50150716990906
+          ],
+          "areaAcres": 0.132,
+          "areaHectares": 0.0536,
+          "landCoverClass": "crop",
+          "landCoverLabel": "Crop vegetation",
+          "color": "#22c55e",
+          "confidence": 0.86,
+          "cropTypeLabel": "Crop vegetation",
+          "isCropConfirmed": false,
+          "spectralIndices": {
+            "ndvi": 0.5,
+            "ndwi": -0.15,
+            "ndbi": -0.1,
+            "ndre": 0.35
+          },
+          "source": "Sentinel-2 L2A",
+          "date": "2026-09-12"
+        },
+        {
+          "id": "zone_14",
+          "coordinates": [
+            [
+              [
+                75.5013947548636,
+                30.925445839818142
+              ],
+              [
+                75.50161958495453,
+                30.925445839818142
+              ],
+              [
+                75.50161958495453,
+                30.925670669909074
+              ],
+              [
+                75.5013947548636,
+                30.925670669909074
+              ],
+              [
+                75.5013947548636,
+                30.925445839818142
+              ]
+            ]
+          ],
+          "center": [
+            30.92555825486361,
+            75.50150716990906
+          ],
+          "areaAcres": 0.132,
+          "areaHectares": 0.0536,
+          "landCoverClass": "crop",
+          "landCoverLabel": "Crop vegetation",
+          "color": "#22c55e",
+          "confidence": 0.86,
+          "cropTypeLabel": "Crop vegetation",
+          "isCropConfirmed": false,
+          "spectralIndices": {
+            "ndvi": 0.5,
+            "ndwi": -0.15,
+            "ndbi": -0.1,
+            "ndre": 0.35
+          },
+          "source": "Sentinel-2 L2A",
+          "date": "2026-09-12"
+        },
+        {
+          "id": "zone_15",
+          "coordinates": [
+            [
+              [
+                75.5013947548636,
+                30.925670669909074
+              ],
+              [
+                75.50161958495453,
+                30.925670669909074
+              ],
+              [
+                75.50161958495453,
+                30.925895500000006
+              ],
+              [
+                75.5013947548636,
+                30.925895500000006
+              ],
+              [
+                75.5013947548636,
+                30.925670669909074
+              ]
+            ]
+          ],
+          "center": [
+            30.925783084954542,
+            75.50150716990906
+          ],
+          "areaAcres": 0.132,
+          "areaHectares": 0.0536,
+          "landCoverClass": "crop",
+          "landCoverLabel": "Crop vegetation",
+          "color": "#22c55e",
+          "confidence": 0.86,
+          "cropTypeLabel": "Crop vegetation",
+          "isCropConfirmed": false,
+          "spectralIndices": {
+            "ndvi": 0.5,
+            "ndwi": -0.15,
+            "ndbi": -0.1,
+            "ndre": 0.35
+          },
+          "source": "Sentinel-2 L2A",
+          "date": "2026-09-12"
+        },
+        {
+          "id": "zone_16",
+          "coordinates": [
+            [
+              [
+                75.5013947548636,
+                30.925895500000006
+              ],
+              [
+                75.50161958495453,
+                30.925895500000006
+              ],
+              [
+                75.50161958495453,
+                30.92612033009094
+              ],
+              [
+                75.5013947548636,
+                30.92612033009094
+              ],
+              [
+                75.5013947548636,
+                30.925895500000006
+              ]
+            ]
+          ],
+          "center": [
+            30.92600791504547,
+            75.50150716990906
+          ],
+          "areaAcres": 0.132,
+          "areaHectares": 0.0536,
+          "landCoverClass": "crop",
+          "landCoverLabel": "Crop vegetation",
+          "color": "#22c55e",
+          "confidence": 0.86,
+          "cropTypeLabel": "Crop vegetation",
+          "isCropConfirmed": false,
+          "spectralIndices": {
+            "ndvi": 0.5,
+            "ndwi": -0.15,
+            "ndbi": -0.1,
+            "ndre": 0.35
+          },
+          "source": "Sentinel-2 L2A",
+          "date": "2026-09-12"
+        },
+        {
+          "id": "zone_17",
+          "coordinates": [
+            [
+              [
+                75.5013947548636,
+                30.92612033009094
+              ],
+              [
+                75.50161958495453,
+                30.92612033009094
+              ],
+              [
+                75.50161958495453,
+                30.92634516018187
+              ],
+              [
+                75.5013947548636,
+                30.92634516018187
+              ],
+              [
+                75.5013947548636,
+                30.92612033009094
+              ]
+            ]
+          ],
+          "center": [
+            30.926232745136403,
+            75.50150716990906
+          ],
+          "areaAcres": 0.132,
+          "areaHectares": 0.0536,
+          "landCoverClass": "crop",
+          "landCoverLabel": "Crop vegetation",
+          "color": "#22c55e",
+          "confidence": 0.86,
+          "cropTypeLabel": "Crop vegetation",
+          "isCropConfirmed": false,
+          "spectralIndices": {
+            "ndvi": 0.5,
+            "ndwi": -0.15,
+            "ndbi": -0.1,
+            "ndre": 0.35
+          },
+          "source": "Sentinel-2 L2A",
+          "date": "2026-09-12"
+        },
+        {
+          "id": "zone_18",
+          "coordinates": [
+            [
+              [
+                75.5013947548636,
+                30.92634516018187
+              ],
+              [
+                75.50161958495453,
+                30.92634516018187
+              ],
+              [
+                75.50161958495453,
+                30.926569990272803
+              ],
+              [
+                75.5013947548636,
+                30.926569990272803
+              ],
+              [
+                75.5013947548636,
+                30.92634516018187
+              ]
+            ]
+          ],
+          "center": [
+            30.92645757522734,
+            75.50150716990906
+          ],
+          "areaAcres": 0.132,
+          "areaHectares": 0.0536,
+          "landCoverClass": "crop",
+          "landCoverLabel": "Crop vegetation",
+          "color": "#22c55e",
+          "confidence": 0.86,
+          "cropTypeLabel": "Crop vegetation",
+          "isCropConfirmed": false,
+          "spectralIndices": {
+            "ndvi": 0.5,
+            "ndwi": -0.15,
+            "ndbi": -0.1,
+            "ndre": 0.35
+          },
+          "source": "Sentinel-2 L2A",
+          "date": "2026-09-12"
+        },
+        {
+          "id": "zone_19",
+          "coordinates": [
+            [
+              [
+                75.5013947548636,
+                30.926569990272803
+              ],
+              [
+                75.50161958495453,
+                30.926569990272803
+              ],
+              [
+                75.50161958495453,
+                30.926794820363735
+              ],
+              [
+                75.5013947548636,
+                30.926794820363735
+              ],
+              [
+                75.5013947548636,
+                30.926569990272803
+              ]
+            ]
+          ],
+          "center": [
+            30.92668240531827,
+            75.50150716990906
+          ],
+          "areaAcres": 0.132,
+          "areaHectares": 0.0536,
+          "landCoverClass": "crop",
+          "landCoverLabel": "Crop vegetation",
+          "color": "#22c55e",
+          "confidence": 0.86,
+          "cropTypeLabel": "Crop vegetation",
+          "isCropConfirmed": false,
+          "spectralIndices": {
+            "ndvi": 0.5,
+            "ndwi": -0.15,
+            "ndbi": -0.1,
+            "ndre": 0.35
+          },
+          "source": "Sentinel-2 L2A",
+          "date": "2026-09-12"
+        },
+        {
+          "id": "zone_20",
+          "coordinates": [
+            [
+              [
+                75.5013947548636,
+                30.926794820363735
+              ],
+              [
+                75.50161958495453,
+                30.926794820363735
+              ],
+              [
+                75.50161958495453,
+                30.927019650454667
+              ],
+              [
+                75.5013947548636,
+                30.927019650454667
+              ],
+              [
+                75.5013947548636,
+                30.926794820363735
+              ]
+            ]
+          ],
+          "center": [
+            30.926907235409203,
+            75.50150716990906
+          ],
+          "areaAcres": 0.132,
+          "areaHectares": 0.0536,
+          "landCoverClass": "crop",
+          "landCoverLabel": "Crop vegetation",
+          "color": "#22c55e",
+          "confidence": 0.86,
+          "cropTypeLabel": "Crop vegetation",
+          "isCropConfirmed": false,
+          "spectralIndices": {
+            "ndvi": 0.5,
+            "ndwi": -0.15,
+            "ndbi": -0.1,
+            "ndre": 0.35
+          },
+          "source": "Sentinel-2 L2A",
+          "date": "2026-09-12"
+        },
+        {
+          "id": "zone_21",
+          "coordinates": [
+            [
+              [
+                75.50161958495453,
+                30.924771349545345
+              ],
+              [
+                75.50184441504545,
+                30.924771349545345
+              ],
+              [
+                75.50184441504545,
+                30.924996179636278
+              ],
+              [
+                75.50161958495453,
+                30.924996179636278
+              ],
+              [
+                75.50161958495453,
+                30.924771349545345
+              ]
+            ]
+          ],
+          "center": [
+            30.924883764590813,
+            75.50173199999999
+          ],
+          "areaAcres": 0.132,
+          "areaHectares": 0.0536,
+          "landCoverClass": "crop",
+          "landCoverLabel": "Crop vegetation",
+          "color": "#22c55e",
+          "confidence": 0.86,
+          "cropTypeLabel": "Crop vegetation",
+          "isCropConfirmed": false,
+          "spectralIndices": {
+            "ndvi": 0.5,
+            "ndwi": -0.15,
+            "ndbi": -0.1,
+            "ndre": 0.35
+          },
+          "source": "Sentinel-2 L2A",
+          "date": "2026-09-12"
+        },
+        {
+          "id": "zone_22",
+          "coordinates": [
+            [
+              [
+                75.50161958495453,
+                30.924996179636278
+              ],
+              [
+                75.50184441504545,
+                30.924996179636278
+              ],
+              [
+                75.50184441504545,
+                30.92522100972721
+              ],
+              [
+                75.50161958495453,
+                30.92522100972721
+              ],
+              [
+                75.50161958495453,
+                30.924996179636278
+              ]
+            ]
+          ],
+          "center": [
+            30.925108594681745,
+            75.50173199999999
+          ],
+          "areaAcres": 0.132,
+          "areaHectares": 0.0536,
+          "landCoverClass": "crop",
+          "landCoverLabel": "Crop vegetation",
+          "color": "#22c55e",
+          "confidence": 0.86,
+          "cropTypeLabel": "Crop vegetation",
+          "isCropConfirmed": false,
+          "spectralIndices": {
+            "ndvi": 0.5,
+            "ndwi": -0.15,
+            "ndbi": -0.1,
+            "ndre": 0.35
+          },
+          "source": "Sentinel-2 L2A",
+          "date": "2026-09-12"
+        },
+        {
+          "id": "zone_23",
+          "coordinates": [
+            [
+              [
+                75.50161958495453,
+                30.92522100972721
+              ],
+              [
+                75.50184441504545,
+                30.92522100972721
+              ],
+              [
+                75.50184441504545,
+                30.925445839818142
+              ],
+              [
+                75.50161958495453,
+                30.925445839818142
+              ],
+              [
+                75.50161958495453,
+                30.92522100972721
+              ]
+            ]
+          ],
+          "center": [
+            30.925333424772674,
+            75.50173199999999
+          ],
+          "areaAcres": 0.132,
+          "areaHectares": 0.0536,
+          "landCoverClass": "crop",
+          "landCoverLabel": "Crop vegetation",
+          "color": "#22c55e",
+          "confidence": 0.86,
+          "cropTypeLabel": "Crop vegetation",
+          "isCropConfirmed": false,
+          "spectralIndices": {
+            "ndvi": 0.5,
+            "ndwi": -0.15,
+            "ndbi": -0.1,
+            "ndre": 0.35
+          },
+          "source": "Sentinel-2 L2A",
+          "date": "2026-09-12"
+        },
+        {
+          "id": "zone_24",
+          "coordinates": [
+            [
+              [
+                75.50161958495453,
+                30.925445839818142
+              ],
+              [
+                75.50184441504545,
+                30.925445839818142
+              ],
+              [
+                75.50184441504545,
+                30.925670669909074
+              ],
+              [
+                75.50161958495453,
+                30.925670669909074
+              ],
+              [
+                75.50161958495453,
+                30.925445839818142
+              ]
+            ]
+          ],
+          "center": [
+            30.92555825486361,
+            75.50173199999999
+          ],
+          "areaAcres": 0.132,
+          "areaHectares": 0.0536,
+          "landCoverClass": "crop",
+          "landCoverLabel": "Crop vegetation",
+          "color": "#22c55e",
+          "confidence": 0.86,
+          "cropTypeLabel": "Crop vegetation",
+          "isCropConfirmed": false,
+          "spectralIndices": {
+            "ndvi": 0.5,
+            "ndwi": -0.15,
+            "ndbi": -0.1,
+            "ndre": 0.35
+          },
+          "source": "Sentinel-2 L2A",
+          "date": "2026-09-12"
+        },
+        {
+          "id": "zone_25",
+          "coordinates": [
+            [
+              [
+                75.50161958495453,
+                30.925670669909074
+              ],
+              [
+                75.50184441504545,
+                30.925670669909074
+              ],
+              [
+                75.50184441504545,
+                30.925895500000006
+              ],
+              [
+                75.50161958495453,
+                30.925895500000006
+              ],
+              [
+                75.50161958495453,
+                30.925670669909074
+              ]
+            ]
+          ],
+          "center": [
+            30.925783084954542,
+            75.50173199999999
+          ],
+          "areaAcres": 0.132,
+          "areaHectares": 0.0536,
+          "landCoverClass": "crop",
+          "landCoverLabel": "Crop vegetation",
+          "color": "#22c55e",
+          "confidence": 0.86,
+          "cropTypeLabel": "Crop vegetation",
+          "isCropConfirmed": false,
+          "spectralIndices": {
+            "ndvi": 0.5,
+            "ndwi": -0.15,
+            "ndbi": -0.1,
+            "ndre": 0.35
+          },
+          "source": "Sentinel-2 L2A",
+          "date": "2026-09-12"
+        },
+        {
+          "id": "zone_26",
+          "coordinates": [
+            [
+              [
+                75.50161958495453,
+                30.925895500000006
+              ],
+              [
+                75.50184441504545,
+                30.925895500000006
+              ],
+              [
+                75.50184441504545,
+                30.92612033009094
+              ],
+              [
+                75.50161958495453,
+                30.92612033009094
+              ],
+              [
+                75.50161958495453,
+                30.925895500000006
+              ]
+            ]
+          ],
+          "center": [
+            30.92600791504547,
+            75.50173199999999
+          ],
+          "areaAcres": 0.132,
+          "areaHectares": 0.0536,
+          "landCoverClass": "crop",
+          "landCoverLabel": "Crop vegetation",
+          "color": "#22c55e",
+          "confidence": 0.86,
+          "cropTypeLabel": "Crop vegetation",
+          "isCropConfirmed": false,
+          "spectralIndices": {
+            "ndvi": 0.5,
+            "ndwi": -0.15,
+            "ndbi": -0.1,
+            "ndre": 0.35
+          },
+          "source": "Sentinel-2 L2A",
+          "date": "2026-09-12"
+        },
+        {
+          "id": "zone_27",
+          "coordinates": [
+            [
+              [
+                75.50161958495453,
+                30.92612033009094
+              ],
+              [
+                75.50184441504545,
+                30.92612033009094
+              ],
+              [
+                75.50184441504545,
+                30.92634516018187
+              ],
+              [
+                75.50161958495453,
+                30.92634516018187
+              ],
+              [
+                75.50161958495453,
+                30.92612033009094
+              ]
+            ]
+          ],
+          "center": [
+            30.926232745136403,
+            75.50173199999999
+          ],
+          "areaAcres": 0.132,
+          "areaHectares": 0.0536,
+          "landCoverClass": "crop",
+          "landCoverLabel": "Crop vegetation",
+          "color": "#22c55e",
+          "confidence": 0.86,
+          "cropTypeLabel": "Crop vegetation",
+          "isCropConfirmed": false,
+          "spectralIndices": {
+            "ndvi": 0.5,
+            "ndwi": -0.15,
+            "ndbi": -0.1,
+            "ndre": 0.35
+          },
+          "source": "Sentinel-2 L2A",
+          "date": "2026-09-12"
+        },
+        {
+          "id": "zone_28",
+          "coordinates": [
+            [
+              [
+                75.50161958495453,
+                30.92634516018187
+              ],
+              [
+                75.50184441504545,
+                30.92634516018187
+              ],
+              [
+                75.50184441504545,
+                30.926569990272803
+              ],
+              [
+                75.50161958495453,
+                30.926569990272803
+              ],
+              [
+                75.50161958495453,
+                30.92634516018187
+              ]
+            ]
+          ],
+          "center": [
+            30.92645757522734,
+            75.50173199999999
+          ],
+          "areaAcres": 0.132,
+          "areaHectares": 0.0536,
+          "landCoverClass": "crop",
+          "landCoverLabel": "Crop vegetation",
+          "color": "#22c55e",
+          "confidence": 0.86,
+          "cropTypeLabel": "Crop vegetation",
+          "isCropConfirmed": false,
+          "spectralIndices": {
+            "ndvi": 0.5,
+            "ndwi": -0.15,
+            "ndbi": -0.1,
+            "ndre": 0.35
+          },
+          "source": "Sentinel-2 L2A",
+          "date": "2026-09-12"
+        },
+        {
+          "id": "zone_29",
+          "coordinates": [
+            [
+              [
+                75.50161958495453,
+                30.926569990272803
+              ],
+              [
+                75.50184441504545,
+                30.926569990272803
+              ],
+              [
+                75.50184441504545,
+                30.926794820363735
+              ],
+              [
+                75.50161958495453,
+                30.926794820363735
+              ],
+              [
+                75.50161958495453,
+                30.926569990272803
+              ]
+            ]
+          ],
+          "center": [
+            30.92668240531827,
+            75.50173199999999
+          ],
+          "areaAcres": 0.132,
+          "areaHectares": 0.0536,
+          "landCoverClass": "crop",
+          "landCoverLabel": "Crop vegetation",
+          "color": "#22c55e",
+          "confidence": 0.86,
+          "cropTypeLabel": "Crop vegetation",
+          "isCropConfirmed": false,
+          "spectralIndices": {
+            "ndvi": 0.5,
+            "ndwi": -0.15,
+            "ndbi": -0.1,
+            "ndre": 0.35
+          },
+          "source": "Sentinel-2 L2A",
+          "date": "2026-09-12"
+        },
+        {
+          "id": "zone_30",
+          "coordinates": [
+            [
+              [
+                75.50161958495453,
+                30.926794820363735
+              ],
+              [
+                75.50184441504545,
+                30.926794820363735
+              ],
+              [
+                75.50184441504545,
+                30.927019650454667
+              ],
+              [
+                75.50161958495453,
+                30.927019650454667
+              ],
+              [
+                75.50161958495453,
+                30.926794820363735
+              ]
+            ]
+          ],
+          "center": [
+            30.926907235409203,
+            75.50173199999999
+          ],
+          "areaAcres": 0.132,
+          "areaHectares": 0.0536,
+          "landCoverClass": "crop",
+          "landCoverLabel": "Crop vegetation",
+          "color": "#22c55e",
+          "confidence": 0.86,
+          "cropTypeLabel": "Crop vegetation",
+          "isCropConfirmed": false,
+          "spectralIndices": {
+            "ndvi": 0.5,
+            "ndwi": -0.15,
+            "ndbi": -0.1,
+            "ndre": 0.35
+          },
+          "source": "Sentinel-2 L2A",
+          "date": "2026-09-12"
+        },
+        {
+          "id": "zone_31",
+          "coordinates": [
+            [
+              [
+                75.50184441504545,
+                30.924771349545345
+              ],
+              [
+                75.50206924513638,
+                30.924771349545345
+              ],
+              [
+                75.50206924513638,
+                30.924996179636278
+              ],
+              [
+                75.50184441504545,
+                30.924996179636278
+              ],
+              [
+                75.50184441504545,
+                30.924771349545345
+              ]
+            ]
+          ],
+          "center": [
+            30.924883764590813,
+            75.50195683009092
+          ],
+          "areaAcres": 0.132,
+          "areaHectares": 0.0536,
+          "landCoverClass": "crop",
+          "landCoverLabel": "Crop vegetation",
+          "color": "#22c55e",
+          "confidence": 0.86,
+          "cropTypeLabel": "Crop vegetation",
+          "isCropConfirmed": false,
+          "spectralIndices": {
+            "ndvi": 0.5,
+            "ndwi": -0.15,
+            "ndbi": -0.1,
+            "ndre": 0.35
+          },
+          "source": "Sentinel-2 L2A",
+          "date": "2026-09-12"
+        },
+        {
+          "id": "zone_32",
+          "coordinates": [
+            [
+              [
+                75.50184441504545,
+                30.924996179636278
+              ],
+              [
+                75.50206924513638,
+                30.924996179636278
+              ],
+              [
+                75.50206924513638,
+                30.92522100972721
+              ],
+              [
+                75.50184441504545,
+                30.92522100972721
+              ],
+              [
+                75.50184441504545,
+                30.924996179636278
+              ]
+            ]
+          ],
+          "center": [
+            30.925108594681745,
+            75.50195683009092
+          ],
+          "areaAcres": 0.132,
+          "areaHectares": 0.0536,
+          "landCoverClass": "crop",
+          "landCoverLabel": "Crop vegetation",
+          "color": "#22c55e",
+          "confidence": 0.86,
+          "cropTypeLabel": "Crop vegetation",
+          "isCropConfirmed": false,
+          "spectralIndices": {
+            "ndvi": 0.5,
+            "ndwi": -0.15,
+            "ndbi": -0.1,
+            "ndre": 0.35
+          },
+          "source": "Sentinel-2 L2A",
+          "date": "2026-09-12"
+        },
+        {
+          "id": "zone_33",
+          "coordinates": [
+            [
+              [
+                75.50184441504545,
+                30.92522100972721
+              ],
+              [
+                75.50206924513638,
+                30.92522100972721
+              ],
+              [
+                75.50206924513638,
+                30.925445839818142
+              ],
+              [
+                75.50184441504545,
+                30.925445839818142
+              ],
+              [
+                75.50184441504545,
+                30.92522100972721
+              ]
+            ]
+          ],
+          "center": [
+            30.925333424772674,
+            75.50195683009092
+          ],
+          "areaAcres": 0.132,
+          "areaHectares": 0.0536,
+          "landCoverClass": "crop",
+          "landCoverLabel": "Crop vegetation",
+          "color": "#22c55e",
+          "confidence": 0.86,
+          "cropTypeLabel": "Crop vegetation",
+          "isCropConfirmed": false,
+          "spectralIndices": {
+            "ndvi": 0.5,
+            "ndwi": -0.15,
+            "ndbi": -0.1,
+            "ndre": 0.35
+          },
+          "source": "Sentinel-2 L2A",
+          "date": "2026-09-12"
+        },
+        {
+          "id": "zone_34",
+          "coordinates": [
+            [
+              [
+                75.50184441504545,
+                30.925445839818142
+              ],
+              [
+                75.50206924513638,
+                30.925445839818142
+              ],
+              [
+                75.50206924513638,
+                30.925670669909074
+              ],
+              [
+                75.50184441504545,
+                30.925670669909074
+              ],
+              [
+                75.50184441504545,
+                30.925445839818142
+              ]
+            ]
+          ],
+          "center": [
+            30.92555825486361,
+            75.50195683009092
+          ],
+          "areaAcres": 0.132,
+          "areaHectares": 0.0536,
+          "landCoverClass": "crop",
+          "landCoverLabel": "Crop vegetation",
+          "color": "#22c55e",
+          "confidence": 0.86,
+          "cropTypeLabel": "Crop vegetation",
+          "isCropConfirmed": false,
+          "spectralIndices": {
+            "ndvi": 0.5,
+            "ndwi": -0.15,
+            "ndbi": -0.1,
+            "ndre": 0.35
+          },
+          "source": "Sentinel-2 L2A",
+          "date": "2026-09-12"
+        },
+        {
+          "id": "zone_35",
+          "coordinates": [
+            [
+              [
+                75.50184441504545,
+                30.925670669909074
+              ],
+              [
+                75.50206924513638,
+                30.925670669909074
+              ],
+              [
+                75.50206924513638,
+                30.925895500000006
+              ],
+              [
+                75.50184441504545,
+                30.925895500000006
+              ],
+              [
+                75.50184441504545,
+                30.925670669909074
+              ]
+            ]
+          ],
+          "center": [
+            30.925783084954542,
+            75.50195683009092
+          ],
+          "areaAcres": 0.132,
+          "areaHectares": 0.0536,
+          "landCoverClass": "crop",
+          "landCoverLabel": "Crop vegetation",
+          "color": "#22c55e",
+          "confidence": 0.86,
+          "cropTypeLabel": "Crop vegetation",
+          "isCropConfirmed": false,
+          "spectralIndices": {
+            "ndvi": 0.5,
+            "ndwi": -0.15,
+            "ndbi": -0.1,
+            "ndre": 0.35
+          },
+          "source": "Sentinel-2 L2A",
+          "date": "2026-09-12"
+        },
+        {
+          "id": "zone_36",
+          "coordinates": [
+            [
+              [
+                75.50184441504545,
+                30.925895500000006
+              ],
+              [
+                75.50206924513638,
+                30.925895500000006
+              ],
+              [
+                75.50206924513638,
+                30.92612033009094
+              ],
+              [
+                75.50184441504545,
+                30.92612033009094
+              ],
+              [
+                75.50184441504545,
+                30.925895500000006
+              ]
+            ]
+          ],
+          "center": [
+            30.92600791504547,
+            75.50195683009092
+          ],
+          "areaAcres": 0.132,
+          "areaHectares": 0.0536,
+          "landCoverClass": "crop",
+          "landCoverLabel": "Crop vegetation",
+          "color": "#22c55e",
+          "confidence": 0.86,
+          "cropTypeLabel": "Crop vegetation",
+          "isCropConfirmed": false,
+          "spectralIndices": {
+            "ndvi": 0.5,
+            "ndwi": -0.15,
+            "ndbi": -0.1,
+            "ndre": 0.35
+          },
+          "source": "Sentinel-2 L2A",
+          "date": "2026-09-12"
+        },
+        {
+          "id": "zone_37",
+          "coordinates": [
+            [
+              [
+                75.50184441504545,
+                30.92612033009094
+              ],
+              [
+                75.50206924513638,
+                30.92612033009094
+              ],
+              [
+                75.50206924513638,
+                30.92634516018187
+              ],
+              [
+                75.50184441504545,
+                30.92634516018187
+              ],
+              [
+                75.50184441504545,
+                30.92612033009094
+              ]
+            ]
+          ],
+          "center": [
+            30.926232745136403,
+            75.50195683009092
+          ],
+          "areaAcres": 0.132,
+          "areaHectares": 0.0536,
+          "landCoverClass": "crop",
+          "landCoverLabel": "Crop vegetation",
+          "color": "#22c55e",
+          "confidence": 0.86,
+          "cropTypeLabel": "Crop vegetation",
+          "isCropConfirmed": false,
+          "spectralIndices": {
+            "ndvi": 0.5,
+            "ndwi": -0.15,
+            "ndbi": -0.1,
+            "ndre": 0.35
+          },
+          "source": "Sentinel-2 L2A",
+          "date": "2026-09-12"
+        },
+        {
+          "id": "zone_38",
+          "coordinates": [
+            [
+              [
+                75.50184441504545,
+                30.92634516018187
+              ],
+              [
+                75.50206924513638,
+                30.92634516018187
+              ],
+              [
+                75.50206924513638,
+                30.926569990272803
+              ],
+              [
+                75.50184441504545,
+                30.926569990272803
+              ],
+              [
+                75.50184441504545,
+                30.92634516018187
+              ]
+            ]
+          ],
+          "center": [
+            30.92645757522734,
+            75.50195683009092
+          ],
+          "areaAcres": 0.132,
+          "areaHectares": 0.0536,
+          "landCoverClass": "crop",
+          "landCoverLabel": "Crop vegetation",
+          "color": "#22c55e",
+          "confidence": 0.86,
+          "cropTypeLabel": "Crop vegetation",
+          "isCropConfirmed": false,
+          "spectralIndices": {
+            "ndvi": 0.5,
+            "ndwi": -0.15,
+            "ndbi": -0.1,
+            "ndre": 0.35
+          },
+          "source": "Sentinel-2 L2A",
+          "date": "2026-09-12"
+        },
+        {
+          "id": "zone_39",
+          "coordinates": [
+            [
+              [
+                75.50184441504545,
+                30.926569990272803
+              ],
+              [
+                75.50206924513638,
+                30.926569990272803
+              ],
+              [
+                75.50206924513638,
+                30.926794820363735
+              ],
+              [
+                75.50184441504545,
+                30.926794820363735
+              ],
+              [
+                75.50184441504545,
+                30.926569990272803
+              ]
+            ]
+          ],
+          "center": [
+            30.92668240531827,
+            75.50195683009092
+          ],
+          "areaAcres": 0.132,
+          "areaHectares": 0.0536,
+          "landCoverClass": "crop",
+          "landCoverLabel": "Crop vegetation",
+          "color": "#22c55e",
+          "confidence": 0.86,
+          "cropTypeLabel": "Crop vegetation",
+          "isCropConfirmed": false,
+          "spectralIndices": {
+            "ndvi": 0.5,
+            "ndwi": -0.15,
+            "ndbi": -0.1,
+            "ndre": 0.35
+          },
+          "source": "Sentinel-2 L2A",
+          "date": "2026-09-12"
+        },
+        {
+          "id": "zone_40",
+          "coordinates": [
+            [
+              [
+                75.50184441504545,
+                30.926794820363735
+              ],
+              [
+                75.50206924513638,
+                30.926794820363735
+              ],
+              [
+                75.50206924513638,
+                30.927019650454667
+              ],
+              [
+                75.50184441504545,
+                30.927019650454667
+              ],
+              [
+                75.50184441504545,
+                30.926794820363735
+              ]
+            ]
+          ],
+          "center": [
+            30.926907235409203,
+            75.50195683009092
+          ],
+          "areaAcres": 0.132,
+          "areaHectares": 0.0536,
+          "landCoverClass": "crop",
+          "landCoverLabel": "Crop vegetation",
+          "color": "#22c55e",
+          "confidence": 0.86,
+          "cropTypeLabel": "Crop vegetation",
+          "isCropConfirmed": false,
+          "spectralIndices": {
+            "ndvi": 0.5,
+            "ndwi": -0.15,
+            "ndbi": -0.1,
+            "ndre": 0.35
+          },
+          "source": "Sentinel-2 L2A",
+          "date": "2026-09-12"
+        },
+        {
+          "id": "zone_41",
+          "coordinates": [
+            [
+              [
+                75.50206924513638,
+                30.924771349545345
+              ],
+              [
+                75.50229407522731,
+                30.924771349545345
+              ],
+              [
+                75.50229407522731,
+                30.924996179636278
+              ],
+              [
+                75.50206924513638,
+                30.924996179636278
+              ],
+              [
+                75.50206924513638,
+                30.924771349545345
+              ]
+            ]
+          ],
+          "center": [
+            30.924883764590813,
+            75.50218166018185
+          ],
+          "areaAcres": 0.132,
+          "areaHectares": 0.0536,
+          "landCoverClass": "crop",
+          "landCoverLabel": "Crop vegetation",
+          "color": "#22c55e",
+          "confidence": 0.86,
+          "cropTypeLabel": "Crop vegetation",
+          "isCropConfirmed": false,
+          "spectralIndices": {
+            "ndvi": 0.5,
+            "ndwi": -0.15,
+            "ndbi": -0.1,
+            "ndre": 0.35
+          },
+          "source": "Sentinel-2 L2A",
+          "date": "2026-09-12"
+        },
+        {
+          "id": "zone_42",
+          "coordinates": [
+            [
+              [
+                75.50206924513638,
+                30.924996179636278
+              ],
+              [
+                75.50229407522731,
+                30.924996179636278
+              ],
+              [
+                75.50229407522731,
+                30.92522100972721
+              ],
+              [
+                75.50206924513638,
+                30.92522100972721
+              ],
+              [
+                75.50206924513638,
+                30.924996179636278
+              ]
+            ]
+          ],
+          "center": [
+            30.925108594681745,
+            75.50218166018185
+          ],
+          "areaAcres": 0.132,
+          "areaHectares": 0.0536,
+          "landCoverClass": "crop",
+          "landCoverLabel": "Crop vegetation",
+          "color": "#22c55e",
+          "confidence": 0.86,
+          "cropTypeLabel": "Crop vegetation",
+          "isCropConfirmed": false,
+          "spectralIndices": {
+            "ndvi": 0.5,
+            "ndwi": -0.15,
+            "ndbi": -0.1,
+            "ndre": 0.35
+          },
+          "source": "Sentinel-2 L2A",
+          "date": "2026-09-12"
+        },
+        {
+          "id": "zone_43",
+          "coordinates": [
+            [
+              [
+                75.50206924513638,
+                30.92522100972721
+              ],
+              [
+                75.50229407522731,
+                30.92522100972721
+              ],
+              [
+                75.50229407522731,
+                30.925445839818142
+              ],
+              [
+                75.50206924513638,
+                30.925445839818142
+              ],
+              [
+                75.50206924513638,
+                30.92522100972721
+              ]
+            ]
+          ],
+          "center": [
+            30.925333424772674,
+            75.50218166018185
+          ],
+          "areaAcres": 0.132,
+          "areaHectares": 0.0536,
+          "landCoverClass": "crop",
+          "landCoverLabel": "Crop vegetation",
+          "color": "#22c55e",
+          "confidence": 0.86,
+          "cropTypeLabel": "Crop vegetation",
+          "isCropConfirmed": false,
+          "spectralIndices": {
+            "ndvi": 0.5,
+            "ndwi": -0.15,
+            "ndbi": -0.1,
+            "ndre": 0.35
+          },
+          "source": "Sentinel-2 L2A",
+          "date": "2026-09-12"
+        },
+        {
+          "id": "zone_44",
+          "coordinates": [
+            [
+              [
+                75.50206924513638,
+                30.925445839818142
+              ],
+              [
+                75.50229407522731,
+                30.925445839818142
+              ],
+              [
+                75.50229407522731,
+                30.925670669909074
+              ],
+              [
+                75.50206924513638,
+                30.925670669909074
+              ],
+              [
+                75.50206924513638,
+                30.925445839818142
+              ]
+            ]
+          ],
+          "center": [
+            30.92555825486361,
+            75.50218166018185
+          ],
+          "areaAcres": 0.132,
+          "areaHectares": 0.0536,
+          "landCoverClass": "crop",
+          "landCoverLabel": "Crop vegetation",
+          "color": "#22c55e",
+          "confidence": 0.86,
+          "cropTypeLabel": "Crop vegetation",
+          "isCropConfirmed": false,
+          "spectralIndices": {
+            "ndvi": 0.5,
+            "ndwi": -0.15,
+            "ndbi": -0.1,
+            "ndre": 0.35
+          },
+          "source": "Sentinel-2 L2A",
+          "date": "2026-09-12"
+        },
+        {
+          "id": "zone_45",
+          "coordinates": [
+            [
+              [
+                75.50206924513638,
+                30.925670669909074
+              ],
+              [
+                75.50229407522731,
+                30.925670669909074
+              ],
+              [
+                75.50229407522731,
+                30.925895500000006
+              ],
+              [
+                75.50206924513638,
+                30.925895500000006
+              ],
+              [
+                75.50206924513638,
+                30.925670669909074
+              ]
+            ]
+          ],
+          "center": [
+            30.925783084954542,
+            75.50218166018185
+          ],
+          "areaAcres": 0.132,
+          "areaHectares": 0.0536,
+          "landCoverClass": "crop",
+          "landCoverLabel": "Crop vegetation",
+          "color": "#22c55e",
+          "confidence": 0.86,
+          "cropTypeLabel": "Crop vegetation",
+          "isCropConfirmed": false,
+          "spectralIndices": {
+            "ndvi": 0.5,
+            "ndwi": -0.15,
+            "ndbi": -0.1,
+            "ndre": 0.35
+          },
+          "source": "Sentinel-2 L2A",
+          "date": "2026-09-12"
+        },
+        {
+          "id": "zone_46",
+          "coordinates": [
+            [
+              [
+                75.50206924513638,
+                30.925895500000006
+              ],
+              [
+                75.50229407522731,
+                30.925895500000006
+              ],
+              [
+                75.50229407522731,
+                30.92612033009094
+              ],
+              [
+                75.50206924513638,
+                30.92612033009094
+              ],
+              [
+                75.50206924513638,
+                30.925895500000006
+              ]
+            ]
+          ],
+          "center": [
+            30.92600791504547,
+            75.50218166018185
+          ],
+          "areaAcres": 0.132,
+          "areaHectares": 0.0536,
+          "landCoverClass": "crop",
+          "landCoverLabel": "Crop vegetation",
+          "color": "#22c55e",
+          "confidence": 0.86,
+          "cropTypeLabel": "Crop vegetation",
+          "isCropConfirmed": false,
+          "spectralIndices": {
+            "ndvi": 0.5,
+            "ndwi": -0.15,
+            "ndbi": -0.1,
+            "ndre": 0.35
+          },
+          "source": "Sentinel-2 L2A",
+          "date": "2026-09-12"
+        },
+        {
+          "id": "zone_47",
+          "coordinates": [
+            [
+              [
+                75.50206924513638,
+                30.92612033009094
+              ],
+              [
+                75.50229407522731,
+                30.92612033009094
+              ],
+              [
+                75.50229407522731,
+                30.92634516018187
+              ],
+              [
+                75.50206924513638,
+                30.92634516018187
+              ],
+              [
+                75.50206924513638,
+                30.92612033009094
+              ]
+            ]
+          ],
+          "center": [
+            30.926232745136403,
+            75.50218166018185
+          ],
+          "areaAcres": 0.132,
+          "areaHectares": 0.0536,
+          "landCoverClass": "crop",
+          "landCoverLabel": "Crop vegetation",
+          "color": "#22c55e",
+          "confidence": 0.86,
+          "cropTypeLabel": "Crop vegetation",
+          "isCropConfirmed": false,
+          "spectralIndices": {
+            "ndvi": 0.5,
+            "ndwi": -0.15,
+            "ndbi": -0.1,
+            "ndre": 0.35
+          },
+          "source": "Sentinel-2 L2A",
+          "date": "2026-09-12"
+        },
+        {
+          "id": "zone_48",
+          "coordinates": [
+            [
+              [
+                75.50206924513638,
+                30.92634516018187
+              ],
+              [
+                75.50229407522731,
+                30.92634516018187
+              ],
+              [
+                75.50229407522731,
+                30.926569990272803
+              ],
+              [
+                75.50206924513638,
+                30.926569990272803
+              ],
+              [
+                75.50206924513638,
+                30.92634516018187
+              ]
+            ]
+          ],
+          "center": [
+            30.92645757522734,
+            75.50218166018185
+          ],
+          "areaAcres": 0.132,
+          "areaHectares": 0.0536,
+          "landCoverClass": "crop",
+          "landCoverLabel": "Crop vegetation",
+          "color": "#22c55e",
+          "confidence": 0.86,
+          "cropTypeLabel": "Crop vegetation",
+          "isCropConfirmed": false,
+          "spectralIndices": {
+            "ndvi": 0.5,
+            "ndwi": -0.15,
+            "ndbi": -0.1,
+            "ndre": 0.35
+          },
+          "source": "Sentinel-2 L2A",
+          "date": "2026-09-12"
+        },
+        {
+          "id": "zone_49",
+          "coordinates": [
+            [
+              [
+                75.50206924513638,
+                30.926569990272803
+              ],
+              [
+                75.50229407522731,
+                30.926569990272803
+              ],
+              [
+                75.50229407522731,
+                30.926794820363735
+              ],
+              [
+                75.50206924513638,
+                30.926794820363735
+              ],
+              [
+                75.50206924513638,
+                30.926569990272803
+              ]
+            ]
+          ],
+          "center": [
+            30.92668240531827,
+            75.50218166018185
+          ],
+          "areaAcres": 0.132,
+          "areaHectares": 0.0536,
+          "landCoverClass": "crop",
+          "landCoverLabel": "Crop vegetation",
+          "color": "#22c55e",
+          "confidence": 0.86,
+          "cropTypeLabel": "Crop vegetation",
+          "isCropConfirmed": false,
+          "spectralIndices": {
+            "ndvi": 0.5,
+            "ndwi": -0.15,
+            "ndbi": -0.1,
+            "ndre": 0.35
+          },
+          "source": "Sentinel-2 L2A",
+          "date": "2026-09-12"
+        },
+        {
+          "id": "zone_50",
+          "coordinates": [
+            [
+              [
+                75.50206924513638,
+                30.926794820363735
+              ],
+              [
+                75.50229407522731,
+                30.926794820363735
+              ],
+              [
+                75.50229407522731,
+                30.927019650454667
+              ],
+              [
+                75.50206924513638,
+                30.927019650454667
+              ],
+              [
+                75.50206924513638,
+                30.926794820363735
+              ]
+            ]
+          ],
+          "center": [
+            30.926907235409203,
+            75.50218166018185
+          ],
+          "areaAcres": 0.132,
+          "areaHectares": 0.0536,
+          "landCoverClass": "crop",
+          "landCoverLabel": "Crop vegetation",
+          "color": "#22c55e",
+          "confidence": 0.86,
+          "cropTypeLabel": "Crop vegetation",
+          "isCropConfirmed": false,
+          "spectralIndices": {
+            "ndvi": 0.5,
+            "ndwi": -0.15,
+            "ndbi": -0.1,
+            "ndre": 0.35
+          },
+          "source": "Sentinel-2 L2A",
+          "date": "2026-09-12"
+        }
+      ],
+      "classBreakdown": {
+        "crop": {
+          "areaAcres": 6.6,
+          "areaHectares": 2.68,
+          "percentage": 100,
+          "label": "Crop vegetation",
+          "color": "#22c55e"
+        },
+        "tree": {
+          "areaAcres": 0,
+          "areaHectares": 0,
+          "percentage": 0,
+          "label": "Tree canopy",
+          "color": "#15803d"
+        },
+        "bare_soil": {
+          "areaAcres": 0,
+          "areaHectares": 0,
+          "percentage": 0,
+          "label": "Bare soil / fallow land",
+          "color": "#92400e"
+        },
+        "water": {
+          "areaAcres": 0,
+          "areaHectares": 0,
+          "percentage": 0,
+          "label": "Water body / pond",
+          "color": "#0284c7"
+        },
+        "built_up": {
+          "areaAcres": 0,
+          "areaHectares": 0,
+          "percentage": 0,
+          "label": "Built-up / house / road",
+          "color": "#64748b"
+        },
+        "unknown": {
+          "areaAcres": 0,
+          "areaHectares": 0,
+          "percentage": 0,
+          "label": "Unknown / needs verification",
+          "color": "#eab308"
+        }
+      },
+      "soilData": {
+        "source": "ISRIC SoilGrids v2.0",
+        "coordinates": [
+          30.925895500000003,
+          75.501732
+        ],
+        "clayPercentage": 24.3,
+        "sandPercentage": 40.6,
+        "siltPercentage": 35.1,
+        "soilTexture": "Loam",
+        "organicCarbonGPerKg": 11.6,
+        "organicCarbonPercentage": 1.16,
+        "phH2o": 7.9,
+        "nitrogenGPerKg": 1.11,
+        "disclaimer": "Map-based estimate — field soil test required for exact values.",
+        "isAvailable": true,
+        "resolution": "250m grid resolution",
+        "depth": "0–5 cm (topsoil)",
+        "isEstimate": true,
+        "rawLayerDepths": {
+          "clay": 243,
+          "nitrogen": 111,
+          "phh2o": 79,
+          "sand": 406,
+          "silt": 351,
+          "soc": 116
+        }
+      },
+      "cropInference": {
+        "status": "model_predicted",
+        "isModelLoaded": true,
+        "predictedCrop": "Paddy / Rice (Dhaan)",
+        "confidence": 0.88,
+        "confidenceBreakdown": {
+          "Paddy / Rice (Dhaan)": 88,
+          "Wheat": 6,
+          "Potato (Aloo)": 3,
+          "Mustard (Sarson)": 2,
+          "Maize": 1
+        },
+        "modelVersion": "v1.1.0-agrifieldnet-balanced",
+        "supportingDates": [
+          "2026-09-08",
+          "2026-09-05",
+          "2026-09-03",
+          "2026-08-29",
+          "2026-08-24",
+          "2026-08-19",
+          "2026-08-16",
+          "2026-08-14",
+          "2026-08-09",
+          "2026-08-04",
+          "2026-07-30",
+          "2026-07-27"
+        ],
+        "scenesFound": [
+          {
+            "sceneId": "S2B_MSIL2A_20260908T053639_R005_T43REQ_20260908T092339",
+            "acquisitionDate": "2026-09-08",
+            "cloudCoverPercentage": 1.7,
+            "platform": "Sentinel-2B",
+            "bandsAvailable": [
+              "B02",
+              "B03",
+              "B04",
+              "B05",
+              "B08",
+              "B11",
+              "SCL"
+            ]
+          },
+          {
+            "sceneId": "S2A_MSIL2A_20260905T054251_R005_T43REQ_20260905T103208",
+            "acquisitionDate": "2026-09-05",
+            "cloudCoverPercentage": 30.1,
+            "platform": "Sentinel-2A",
+            "bandsAvailable": [
+              "B02",
+              "B03",
+              "B04",
+              "B05",
+              "B08",
+              "B11",
+              "SCL"
+            ]
+          },
+          {
+            "sceneId": "S2C_MSIL2A_20260903T053641_R005_T43REQ_20260903T102309",
+            "acquisitionDate": "2026-09-03",
+            "cloudCoverPercentage": 24,
+            "platform": "Sentinel-2C",
+            "bandsAvailable": [
+              "B02",
+              "B03",
+              "B04",
+              "B05",
+              "B08",
+              "B11",
+              "SCL"
+            ]
+          },
+          {
+            "sceneId": "S2B_MSIL2A_20260829T053639_R005_T43REQ_20260829T091959",
+            "acquisitionDate": "2026-08-29",
+            "cloudCoverPercentage": 46.7,
+            "platform": "Sentinel-2B",
+            "bandsAvailable": [
+              "B02",
+              "B03",
+              "B04",
+              "B05",
+              "B08",
+              "B11",
+              "SCL"
+            ]
+          },
+          {
+            "sceneId": "S2C_MSIL2A_20260824T053641_R005_T43REQ_20260824T102214",
+            "acquisitionDate": "2026-08-24",
+            "cloudCoverPercentage": 30,
+            "platform": "Sentinel-2C",
+            "bandsAvailable": [
+              "B02",
+              "B03",
+              "B04",
+              "B05",
+              "B08",
+              "B11",
+              "SCL"
+            ]
+          },
+          {
+            "sceneId": "S2B_MSIL2A_20260819T053639_R005_T43REQ_20260819T091716",
+            "acquisitionDate": "2026-08-19",
+            "cloudCoverPercentage": 74.8,
+            "platform": "Sentinel-2B",
+            "bandsAvailable": [
+              "B02",
+              "B03",
+              "B04",
+              "B05",
+              "B08",
+              "B11",
+              "SCL"
+            ]
+          },
+          {
+            "sceneId": "S2A_MSIL2A_20260816T054251_R005_T43REQ_20260816T103351",
+            "acquisitionDate": "2026-08-16",
+            "cloudCoverPercentage": 11,
+            "platform": "Sentinel-2A",
+            "bandsAvailable": [
+              "B02",
+              "B03",
+              "B04",
+              "B05",
+              "B08",
+              "B11",
+              "SCL"
+            ]
+          },
+          {
+            "sceneId": "S2C_MSIL2A_20260814T053641_R005_T43REQ_20260814T085710",
+            "acquisitionDate": "2026-08-14",
+            "cloudCoverPercentage": 76.3,
+            "platform": "Sentinel-2C",
+            "bandsAvailable": [
+              "B02",
+              "B03",
+              "B04",
+              "B05",
+              "B08",
+              "B11",
+              "SCL"
+            ]
+          },
+          {
+            "sceneId": "S2B_MSIL2A_20260809T053639_R005_T43REQ_20260809T091637",
+            "acquisitionDate": "2026-08-09",
+            "cloudCoverPercentage": 60,
+            "platform": "Sentinel-2B",
+            "bandsAvailable": [
+              "B02",
+              "B03",
+              "B04",
+              "B05",
+              "B08",
+              "B11",
+              "SCL"
+            ]
+          },
+          {
+            "sceneId": "S2C_MSIL2A_20260804T053641_R005_T43REQ_20260804T102016",
+            "acquisitionDate": "2026-08-04",
+            "cloudCoverPercentage": 99.6,
+            "platform": "Sentinel-2C",
+            "bandsAvailable": [
+              "B02",
+              "B03",
+              "B04",
+              "B05",
+              "B08",
+              "B11",
+              "SCL"
+            ]
+          },
+          {
+            "sceneId": "S2B_MSIL2A_20260730T053639_R005_T43REQ_20260730T091623",
+            "acquisitionDate": "2026-07-30",
+            "cloudCoverPercentage": 90.6,
+            "platform": "Sentinel-2B",
+            "bandsAvailable": [
+              "B02",
+              "B03",
+              "B04",
+              "B05",
+              "B08",
+              "B11",
+              "SCL"
+            ]
+          },
+          {
+            "sceneId": "S2A_MSIL2A_20260727T054251_R005_T43REQ_20260727T103314",
+            "acquisitionDate": "2026-07-27",
+            "cloudCoverPercentage": 86.1,
+            "platform": "Sentinel-2A",
+            "bandsAvailable": [
+              "B02",
+              "B03",
+              "B04",
+              "B05",
+              "B08",
+              "B11",
+              "SCL"
+            ]
+          }
+        ],
+        "sarScenesFound": [
+          {
+            "sceneId": "S1D_IW_GRDH_1SDV_20260910T130339_20260910T130404_004516_008644",
+            "date": "2026-09-10",
+            "platform": "sentinel-1d",
+            "orbitDirection": "ascending"
+          },
+          {
+            "sceneId": "S1D_IW_GRDH_1SDV_20260906T005917_20260906T005942_004450_0083F6",
+            "date": "2026-09-06",
+            "platform": "sentinel-1d",
+            "orbitDirection": "descending"
+          },
+          {
+            "sceneId": "S1D_IW_GRDH_1SDV_20260905T125508_20260905T125533_004443_0083BD",
+            "date": "2026-09-05",
+            "platform": "sentinel-1d",
+            "orbitDirection": "ascending"
+          },
+          {
+            "sceneId": "S1D_IW_GRDH_1SDV_20260829T130339_20260829T130404_004341_008028",
+            "date": "2026-08-29",
+            "platform": "sentinel-1d",
+            "orbitDirection": "ascending"
+          },
+          {
+            "sceneId": "S1D_IW_GRDH_1SDV_20260825T005917_20260825T005942_004275_007DDD",
+            "date": "2026-08-25",
+            "platform": "sentinel-1d",
+            "orbitDirection": "descending"
+          },
+          {
+            "sceneId": "S1D_IW_GRDH_1SDV_20260824T125508_20260824T125533_004268_007D9F",
+            "date": "2026-08-24",
+            "platform": "sentinel-1d",
+            "orbitDirection": "ascending"
+          }
+        ],
+        "message": "Regional satellite estimate: Paddy / Rice (Dhaan) (88% pattern match). Ground-truth validated against ICAR regional agro-calendar.",
+        "featuresUsed": {
+          "NDVI": 0.5,
+          "NDRE": 0.349,
+          "EVI": 0.684,
+          "NDWI": 0.379,
+          "B04_Red": 2850,
+          "B08_NIR": 8550
+        }
+      }
+    },
     {
       "id": "lc_1789203279199_a9aeba14",
       "farmId": "f20d600c-0f6f-4828-a7b6-7fa62d727a8c",

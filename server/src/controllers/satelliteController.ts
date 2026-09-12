@@ -15,6 +15,7 @@ import {
 import { cropClassificationService } from '../services/cropClassification.service.js';
 import { landCoverMLService } from '../services/landCoverML.service.js';
 import { getSoilGridsData } from '../services/soilGrids.service.js';
+import { computeParcelSatelliteNdvi } from '../services/ndviService.js';
 import { v4 as uuidv4 } from 'uuid';
 
 export interface AuthenticatedRequest extends Request {
@@ -154,29 +155,22 @@ export async function analyzeSatellite(req: AuthenticatedRequest, res: Response)
     if (scenario === 'critical') {
       parcelBaselineNdvi = Number((0.32 + (Math.abs(Math.sin(centerLat * 45.6)) * 0.06)).toFixed(2)); // < 0.4 Critical
     } else if (scenario === 'warning' || scenario === 'moderate' || scenario === 'stress') {
-      parcelBaselineNdvi = Number((0.46 + (Math.abs(Math.sin(centerLat * 45.6)) * 0.10)).toFixed(2)); // 0.4 - 0.6 Moderate
+      parcelBaselineNdvi = Number((0.48 + (Math.abs(Math.sin(centerLat * 45.6)) * 0.08)).toFixed(2)); // 0.4 - 0.6 Moderate
     } else if (scenario === 'healthy') {
-      parcelBaselineNdvi = Number((0.72 + (Math.abs(Math.sin(centerLat * 45.6)) * 0.15)).toFixed(2)); // > 0.6 Healthy
-    } else if (farm.status === 'critical') {
-      parcelBaselineNdvi = Number((0.34 + (Math.abs(Math.sin(centerLat * 123.4)) * 0.04)).toFixed(2)); // < 0.4
-    } else if (farm.status === 'warning') {
-      parcelBaselineNdvi = Number((0.48 + (Math.abs(Math.sin(centerLat * 123.4)) * 0.08)).toFixed(2)); // 0.4 - 0.6
-    } else if (farm.telemetryMetrics?.meanNdvi) {
-      parcelBaselineNdvi = farm.telemetryMetrics.meanNdvi;
+      parcelBaselineNdvi = Number((0.74 + (Math.abs(Math.sin(centerLat * 45.6)) * 0.12)).toFixed(2)); // > 0.6 Healthy
+    } else if (farm.telemetryMetrics?.meanNdvi !== undefined && farm.telemetryMetrics.meanNdvi !== null) {
+      // Prioritize the farm's recorded NDVI average
+      parcelBaselineNdvi = Number(farm.telemetryMetrics.meanNdvi.toFixed(2));
     } else {
-      // Natural spatial variation spanning all three tiers
-      const baseFertility = 0.54 + ((soilData?.soilOrganicCarbon || 12) / 80) - ((soilData?.clayPercentage || 25) > 42 ? 0.06 : 0);
-      const geoWave = (Math.sin(centerLat * 187.3 + centerLng * 249.7) * 0.24) + (Math.cos(centerLng * 341.1) * 0.12);
-      parcelBaselineNdvi = Number(Math.max(0.28, Math.min(0.89, baseFertility + geoWave)).toFixed(2));
+      // Shared dynamic parcel NDVI calculation from coordinates, soil, and crop
+      parcelBaselineNdvi = computeParcelSatelliteNdvi(centerLat, centerLng, soilData, farm.cropType);
     }
 
     // D. True Dynamic Stress Hotspot Evaluation
+    // A stress hotspot ONLY exists if NDVI is genuinely critical (< 0.4) or critical scenario simulated
     const hasStressHotspot = !isFallowCheck && !isRipeningCheck && (
       parcelBaselineNdvi < 0.4 ||
-      scenario === 'critical' ||
-      scenario === 'stress' ||
-      scenario === 'hotspot' ||
-      farm.status === 'critical'
+      scenario === 'critical'
     );
 
     // E. Dynamic Epicenter Mapping based on farm polygon bounding box and geographic hash
