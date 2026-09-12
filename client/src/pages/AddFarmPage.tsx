@@ -265,6 +265,7 @@ export const AddFarmPage: React.FC = () => {
 
   // Analyze Land Cover & Mapped Soil (Single Source of Truth)
   const handleAnalyzeSelectedArea = async () => {
+    if (isAnalyzing) return;
     if (!boundary || areaAcres <= 0) {
       setError('Please draw your parcel boundary on the satellite map first.');
       return;
@@ -511,10 +512,16 @@ export const AddFarmPage: React.FC = () => {
             <div className="pt-2 border-t border-slate-200">
               <button
                 type="button"
-                onClick={handleAnalyzeSelectedArea}
+                onClick={() => {
+                  if (isAnalyzing || areaAcres <= 0) return;
+                  setIsAnalyzing(true);
+                  handleAnalyzeSelectedArea();
+                }}
                 disabled={areaAcres <= 0 || isAnalyzing}
                 className={`w-full py-2.5 px-4 rounded-xl text-xs font-black flex items-center justify-center gap-2 transition-all shadow-sm ${
-                  areaAcres > 0
+                  isAnalyzing
+                    ? 'bg-slate-400 text-white cursor-not-allowed pointer-events-none opacity-80'
+                    : areaAcres > 0
                     ? 'bg-gradient-to-r from-emerald-600 to-teal-700 hover:from-emerald-700 hover:to-teal-800 text-white cursor-pointer active:scale-98 shadow-emerald-900/20'
                     : 'bg-slate-200 text-slate-400 cursor-not-allowed border border-slate-300'
                 }`}
