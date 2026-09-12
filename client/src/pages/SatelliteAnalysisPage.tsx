@@ -877,7 +877,7 @@ export const SatelliteAnalysisPage: React.FC = () => {
                   </span>
                 </div>
                 <h3 className="text-xl font-black text-white tracking-tight">
-                  North-East Sector Hotspot
+                  {activeHotspotDrawer.sector} Hotspot
                 </h3>
                 <p className="text-xs text-slate-300 font-mono">
                   Centroid: {activeHotspotDrawer.coordinates[0].toFixed(4)}° N, {activeHotspotDrawer.coordinates[1].toFixed(4)}° E
@@ -901,16 +901,16 @@ export const SatelliteAnalysisPage: React.FC = () => {
                   Anomaly:
                 </span>
                 <div className="text-lg font-black text-rose-950">
-                  {activeHotspotDrawer.radarAnomaly || '+3.2°C Canopy Transpiration Deficit'}
+                  {activeHotspotDrawer.radarAnomaly || `+${activeHotspotDrawer.temperatureElevation || 3.2}°C Canopy Transpiration Deficit`}
                 </div>
                 <div className="grid grid-cols-2 gap-2 pt-2 border-t border-rose-200 text-xs">
                   <div className="bg-white p-2.5 rounded-xl border border-rose-200">
                     <span className="text-[10px] text-slate-500 block font-medium">Canopy Heat Elevation</span>
-                    <strong className="text-rose-600 text-sm font-black">+3.2°C Elevation</strong>
+                    <strong className="text-rose-600 text-sm font-black">+{activeHotspotDrawer.temperatureElevation || 3.2}°C Elevation</strong>
                   </div>
                   <div className="bg-white p-2.5 rounded-xl border border-rose-200">
                     <span className="text-[10px] text-slate-500 block font-medium">NDVI Deficit</span>
-                    <strong className="text-amber-600 text-sm font-black">-24% Chlorophyll</strong>
+                    <strong className="text-amber-600 text-sm font-black">-{activeHotspotDrawer.chlorophyllDeficitPercent || 24}% Chlorophyll</strong>
                   </div>
                 </div>
               </div>
@@ -941,7 +941,8 @@ export const SatelliteAnalysisPage: React.FC = () => {
                 type="button"
                 onClick={() => {
                   const farmId = selectedFarm?.id || selectedFarmId || '';
-                  navigate(`/scanner?farmId=${farmId}&zone=ne_hotspot`);
+                  const zoneParam = activeHotspotDrawer.sector ? activeHotspotDrawer.sector.toLowerCase().replace(/\s+/g, '_') : 'hotspot';
+                  navigate(`/scanner?farmId=${farmId}&zone=${encodeURIComponent(zoneParam)}`);
                 }}
                 className="w-full py-3.5 px-4 bg-gradient-to-r from-rose-600 to-red-600 hover:from-rose-500 hover:to-red-500 active:scale-98 text-white rounded-2xl text-xs sm:text-sm font-black shadow-lg flex items-center justify-center gap-2 transition-all"
               >
@@ -949,7 +950,7 @@ export const SatelliteAnalysisPage: React.FC = () => {
                 <span>[📸 Ground-Truth Leaf Scan at this Hotspot]</span>
               </button>
               <p className="text-[10px] text-slate-400 text-center">
-                Navigates to /scanner?farmId={selectedFarm?.id || selectedFarmId || ''}&zone=ne_hotspot
+                Target Sector: {activeHotspotDrawer.sector}
               </p>
             </div>
 

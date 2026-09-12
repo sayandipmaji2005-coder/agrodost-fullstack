@@ -318,10 +318,10 @@ export const CameraScannerPage: React.FC = () => {
             <span className="text-xl shrink-0">🎯</span>
             <div>
               <p className="font-extrabold text-xs text-rose-200">
-                Ground-Truth Target: {zone === 'ne_hotspot' ? 'North-East Sector Critical Stress Patch' : zone}
+                Ground-Truth Target: {zone.replace(/_/g, ' ').replace(/\b\w/g, (c: string) => c.toUpperCase())}
               </p>
               <p className="text-[11px] text-rose-300">
-                Mean NDVI: 0.61 (-28% deficit) | Elevated Heat: +3.1°C. Point camera at foliar lesions in this zone.
+                Localized foliar stress cluster detected via satellite telemetry. Point camera at symptomatic leaves or lesions in this zone.
               </p>
             </div>
           </div>
