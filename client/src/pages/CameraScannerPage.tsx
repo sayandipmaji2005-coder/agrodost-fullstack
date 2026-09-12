@@ -225,7 +225,7 @@ export const CameraScannerPage: React.FC = () => {
 
   // Submit and analyze
   const handleProceedToDiagnosis = async () => {
-    if (!capturedImage) return;
+    if (!capturedImage || isUploading) return;
 
     // Module 7: Zero-Network Offline Storage
     if (!navigator.onLine || !isOnline) {
@@ -561,13 +561,21 @@ export const CameraScannerPage: React.FC = () => {
             <div className="flex flex-wrap items-center gap-3 w-full sm:w-auto">
               <button
                 type="button"
-                onClick={handleProceedToDiagnosis}
+                onClick={() => {
+                  if (isUploading || !capturedImage) return;
+                  setIsUploading(true);
+                  handleProceedToDiagnosis();
+                }}
                 disabled={isUploading}
-                className="flex-1 sm:flex-none px-8 py-3.5 bg-agri-700 hover:bg-agri-800 text-white font-black text-sm rounded-2xl shadow-xl flex items-center justify-center gap-2 transition-all transform hover:scale-105"
+                className={`flex-1 sm:flex-none px-8 py-3.5 rounded-2xl shadow-xl flex items-center justify-center gap-2 transition-all font-black text-sm ${
+                  isUploading
+                    ? 'bg-slate-400 text-slate-200 cursor-not-allowed pointer-events-none opacity-80'
+                    : 'bg-agri-700 hover:bg-agri-800 text-white transform hover:scale-105 active:scale-95'
+                }`}
               >
                 {isUploading ? (
                   <>
-                    <Loader2 className="w-5 h-5 animate-spin" />
+                    <Loader2 className="w-5 h-5 animate-spin text-white" />
                     <span>Analyzing Leaf Pathogen...</span>
                   </>
                 ) : (

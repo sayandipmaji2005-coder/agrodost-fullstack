@@ -89,6 +89,7 @@ export const SatelliteAnalysisPage: React.FC = () => {
 
   // Run scan when farm is selected, mode changes, or agronomic scenario changes
   const runAnalysis = async (farmIdToScan?: string, modeToUse?: SatelliteMode, scenarioToUse?: string) => {
+    if (isAnalyzing) return;
     const targetFarmId = farmIdToScan || selectedFarmId;
     const targetMode = modeToUse || requestedMode;
     const targetScenario = scenarioToUse || scenario;
@@ -328,10 +329,12 @@ export const SatelliteAnalysisPage: React.FC = () => {
         </div>
 
         {/* Agronomic Classification Scenarios */}
-        <div className="flex flex-wrap items-center justify-center gap-1.5 bg-slate-100 p-1.5 rounded-2xl border border-slate-200">
+        <div className={`flex flex-wrap items-center justify-center gap-1.5 bg-slate-100 p-1.5 rounded-2xl border border-slate-200 ${isAnalyzing ? 'pointer-events-none opacity-60' : ''}`}>
           <button
             type="button"
+            disabled={isAnalyzing}
             onClick={() => {
+              if (isAnalyzing) return;
               setScenario('default');
               runAnalysis(selectedFarmId, requestedMode, 'default');
             }}
@@ -345,7 +348,9 @@ export const SatelliteAnalysisPage: React.FC = () => {
           </button>
           <button
             type="button"
+            disabled={isAnalyzing}
             onClick={() => {
+              if (isAnalyzing) return;
               setScenario('fallow');
               runAnalysis(selectedFarmId, requestedMode, 'fallow');
             }}
@@ -359,7 +364,9 @@ export const SatelliteAnalysisPage: React.FC = () => {
           </button>
           <button
             type="button"
+            disabled={isAnalyzing}
             onClick={() => {
+              if (isAnalyzing) return;
               setScenario('ripening');
               runAnalysis(selectedFarmId, requestedMode, 'ripening');
             }}
@@ -375,9 +382,17 @@ export const SatelliteAnalysisPage: React.FC = () => {
 
         <button
           type="button"
-          onClick={() => runAnalysis(selectedFarmId, requestedMode)}
+          onClick={() => {
+            if (isAnalyzing) return;
+            setIsAnalyzing(true);
+            runAnalysis(selectedFarmId, requestedMode);
+          }}
           disabled={isAnalyzing}
-          className="w-full sm:w-auto px-5 py-2.5 bg-agri-700 hover:bg-agri-800 text-white rounded-2xl text-xs font-bold flex items-center justify-center gap-2 transition-colors shadow-sm"
+          className={`w-full sm:w-auto px-5 py-2.5 rounded-2xl text-xs font-bold flex items-center justify-center gap-2 transition-all shadow-sm ${
+            isAnalyzing
+              ? 'bg-slate-400 text-white cursor-not-allowed pointer-events-none opacity-80'
+              : 'bg-agri-700 hover:bg-agri-800 text-white cursor-pointer active:scale-95'
+          }`}
         >
           {isAnalyzing ? (
             <>

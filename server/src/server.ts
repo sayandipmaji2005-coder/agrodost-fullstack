@@ -29,12 +29,15 @@ app.use(cors({
 app.use(express.json({ limit: '15mb' }));
 app.use(express.urlencoded({ extended: true, limit: '15mb' }));
 
-// Rate limiter for diagnostic and satellite endpoints
+// Rate limiter for diagnostic and satellite endpoints (bypassed in dev, high threshold in prod)
+const isDev = process.env.NODE_ENV !== 'production' || (config as any).server?.nodeEnv !== 'production';
+
 const analysisLimiter = rateLimit({
-  windowMs: 15 * 60 * 1000,
-  max: 100,
+  windowMs: 60 * 1000, // 1-minute window
+  max: isDev ? 100000 : 1000, // 1000 requests per minute in prod, effectively unlimited in dev
   standardHeaders: true,
   legacyHeaders: false,
+  skip: () => isDev, // Completely disable rate limiter during development
   message: { error: 'Analysis rate limit reached. Please wait a few moments before scanning again.' },
 });
 
