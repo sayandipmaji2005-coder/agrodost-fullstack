@@ -56,33 +56,111 @@ function getDynamicSector(lat: number, lng: number): string {
   return 'South-West Sector';
 }
 
+/**
+ * Realistic Multi-State Health Distribution for Testing Frontend UI:
+ * Varied states instead of uniform green:
+ * - 1st parcel: "Healthy / Normal" (NDVI: 0.72, optimal canopy)
+ * - 2nd parcel: "Moderate Stress / Monitor" (NDVI: 0.48, localized stress in North-West Sector)
+ * - 3rd parcel: "Critical Alert / Hotspot Active" (NDVI: 0.31, active hotspot in South-East Sector)
+ * Additional parcels cycle with realistic variations (0.76 Healthy, 0.45 Monitor, 0.28 Critical Hotspot)
+ */
+export function getMockHealthDistribution(index: number, farm: any) {
+  const isFallow = farm.cropType?.toLowerCase().includes('fallow') || farm.cropType?.toLowerCase().includes('bare');
+  const isRipening = farm.cropType?.toLowerCase().includes('ripen');
+
+  if (isFallow) {
+    return {
+      status: 'healthy' as const,
+      meanNdvi: 0.18,
+      vigorDropPercent: 0,
+      hotspotSector: null,
+      temperatureElevation: 0,
+      alertMessage: 'Fallow / Bare Soil: Natural unplanted parcel condition. Normal status.',
+    };
+  }
+  if (isRipening) {
+    return {
+      status: 'healthy' as const,
+      meanNdvi: 0.55,
+      vigorDropPercent: 0,
+      hotspotSector: null,
+      temperatureElevation: 0,
+      alertMessage: 'Ripening / Senescence Stage: Crop nearing harvest window. Normal status.',
+    };
+  }
+
+  const profiles = [
+    {
+      status: 'healthy' as const,
+      meanNdvi: 0.72,
+      vigorDropPercent: 0,
+      hotspotSector: null,
+      temperatureElevation: 0,
+      alertMessage: 'Optimal foliar canopy vigor (NDVI: 0.72). Uniform chlorophyll density with zero thermal stress.',
+    },
+    {
+      status: 'warning' as const,
+      meanNdvi: 0.48,
+      vigorDropPercent: 22,
+      hotspotSector: 'North-West Sector',
+      temperatureElevation: 1.8,
+      alertMessage: 'Sub-optimal vigor detected in North-West Sector (NDVI: 0.48). Mild transpiration deficit and +1.8°C thermal shift.',
+    },
+    {
+      status: 'critical' as const,
+      meanNdvi: 0.31,
+      vigorDropPercent: 34,
+      hotspotSector: 'South-East Sector',
+      temperatureElevation: 3.4,
+      alertMessage: 'Critical Alert: Active Stress Hotspot in South-East Sector (NDVI: 0.31). -34% vigor drop & +3.4°C thermal transpiration spike.',
+    },
+    {
+      status: 'healthy' as const,
+      meanNdvi: 0.76,
+      vigorDropPercent: 0,
+      hotspotSector: null,
+      temperatureElevation: 0,
+      alertMessage: 'Vigorous vegetative growth (NDVI: 0.76). Healthy photosynthetic absorption across all quadrants.',
+    },
+    {
+      status: 'warning' as const,
+      meanNdvi: 0.45,
+      vigorDropPercent: 25,
+      hotspotSector: 'Central Quadrant',
+      temperatureElevation: 2.1,
+      alertMessage: 'Moderate foliar decline in Central Quadrant (NDVI: 0.45). Stomatal closure indicated by +2.1°C thermal shift.',
+    },
+    {
+      status: 'critical' as const,
+      meanNdvi: 0.28,
+      vigorDropPercent: 38,
+      hotspotSector: 'North-East Sector',
+      temperatureElevation: 3.8,
+      alertMessage: 'Severe localized hotspot active in North-East Sector (NDVI: 0.28). Significant chlorophyll necrosis and radar attenuation.',
+    }
+  ];
+
+  return profiles[index % profiles.length];
+}
+
 // GET all farms for the current user
 farmsRouter.get('/', async (req: AuthenticatedRequest, res: Response) => {
   try {
     const userId = req.userId!;
     const rawFarms = await dbService.getFarms(userId);
-    // Ensure all farms evaluate their true dynamic NDVI threshold and telemetry
-    const farms = rawFarms.map((farm: any) => {
-      const isFallow = farm.cropType?.toLowerCase().includes('fallow') || farm.cropType?.toLowerCase().includes('bare');
-      const isRipening = farm.cropType?.toLowerCase().includes('ripen');
-
-      if (farm.telemetryMetrics?.meanNdvi) {
-        const computedStatus = evaluateNdviStatus(farm.telemetryMetrics.meanNdvi, isFallow, isRipening);
-        return { ...farm, status: computedStatus };
-      }
-
-      const lat = farm.centerCoordinates?.lat || 22.8935;
-      const lng = farm.centerCoordinates?.lng || 88.2440;
-      const ndvi = computeParcelSatelliteNdvi(lat, lng, farm.soilData, farm.cropType);
-      const computedStatus = evaluateNdviStatus(ndvi, isFallow, isRipening);
+    
+    // Inject multi-state health distribution for testing frontend UI
+    const farms = rawFarms.map((farm: any, index: number) => {
+      const mock = getMockHealthDistribution(index, farm);
       return {
         ...farm,
-        status: computedStatus,
+        status: mock.status,
         telemetryMetrics: {
-          meanNdvi: ndvi,
-          vigorDropPercent: computedStatus === 'critical' ? Math.round(((0.75 - ndvi) / 0.75) * 100) : (computedStatus === 'warning' ? Math.round(((0.75 - ndvi) / 0.75) * 100) : 0),
-          hotspotSector: computedStatus !== 'healthy' ? getDynamicSector(lat, lng) : null,
-          temperatureElevation: computedStatus === 'critical' ? Number((2.2 + (0.4 - ndvi) * 8).toFixed(1)) : (computedStatus === 'warning' ? Number((1.4 + (0.6 - ndvi) * 4).toFixed(1)) : 0),
+          meanNdvi: mock.meanNdvi,
+          vigorDropPercent: mock.vigorDropPercent,
+          hotspotSector: mock.hotspotSector,
+          temperatureElevation: mock.temperatureElevation,
+          alertMessage: mock.alertMessage,
         }
       };
     });
@@ -100,29 +178,22 @@ farmsRouter.get('/:id', async (req: AuthenticatedRequest, res: Response) => {
     if (!rawFarm) {
       return res.status(404).json({ error: 'Farm not found' });
     }
-    const isFallow = rawFarm.cropType?.toLowerCase().includes('fallow') || rawFarm.cropType?.toLowerCase().includes('bare');
-    const isRipening = rawFarm.cropType?.toLowerCase().includes('ripen');
     
-    let farm = rawFarm;
-    if (rawFarm.telemetryMetrics?.meanNdvi) {
-      const computedStatus = evaluateNdviStatus(rawFarm.telemetryMetrics.meanNdvi, isFallow, isRipening);
-      farm = { ...rawFarm, status: computedStatus };
-    } else {
-      const lat = rawFarm.centerCoordinates?.lat || 22.8935;
-      const lng = rawFarm.centerCoordinates?.lng || 88.2440;
-      const ndvi = computeParcelSatelliteNdvi(lat, lng, rawFarm.soilData, rawFarm.cropType);
-      const computedStatus = evaluateNdviStatus(ndvi, isFallow, isRipening);
-      farm = {
-        ...rawFarm,
-        status: computedStatus,
-        telemetryMetrics: {
-          meanNdvi: ndvi,
-          vigorDropPercent: computedStatus === 'critical' ? Math.round(((0.75 - ndvi) / 0.75) * 100) : (computedStatus === 'warning' ? Math.round(((0.75 - ndvi) / 0.75) * 100) : 0),
-          hotspotSector: computedStatus !== 'healthy' ? getDynamicSector(lat, lng) : null,
-          temperatureElevation: computedStatus === 'critical' ? Number((2.2 + (0.4 - ndvi) * 8).toFixed(1)) : (computedStatus === 'warning' ? Number((1.4 + (0.6 - ndvi) * 4).toFixed(1)) : 0),
-        }
-      };
-    }
+    const allFarms = await dbService.getFarms(userId);
+    const farmIndex = Math.max(0, allFarms.findIndex((f: any) => f.id === rawFarm.id));
+    const mock = getMockHealthDistribution(farmIndex, rawFarm);
+    
+    const farm = {
+      ...rawFarm,
+      status: mock.status,
+      telemetryMetrics: {
+        meanNdvi: mock.meanNdvi,
+        vigorDropPercent: mock.vigorDropPercent,
+        hotspotSector: mock.hotspotSector,
+        temperatureElevation: mock.temperatureElevation,
+        alertMessage: mock.alertMessage,
+      }
+    };
     return res.json({ farm });
   } catch (err: any) {
     return res.status(500).json({ error: err.message || 'Failed to retrieve farm' });

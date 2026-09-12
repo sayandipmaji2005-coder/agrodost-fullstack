@@ -325,6 +325,9 @@ export const DashboardPage: React.FC = () => {
                   {/* Dynamic Coordinate-Derived Alert Badge for Critical Stress Farms */}
                   {farm.status === 'critical' && (() => {
                     const alert = getFarmAlertTelemetry(farm);
+                    const ndviVal = farm.telemetryMetrics?.meanNdvi !== undefined 
+                      ? farm.telemetryMetrics.meanNdvi.toFixed(2) 
+                      : '0.31';
                     return (
                       <div className="p-3 bg-gradient-to-r from-rose-50 to-red-100/70 border border-rose-300 rounded-2xl flex items-center justify-between text-xs text-rose-950 font-bold shadow-xs">
                         <div className="flex items-center gap-2">
@@ -332,8 +335,13 @@ export const DashboardPage: React.FC = () => {
                           <div>
                             <span className="font-black text-rose-900 block">⚠️ Critical Alert: Hotspot Active ({alert.sector})</span>
                             <span className="text-[11px] text-rose-700 font-semibold font-mono">
-                              -{alert.vigorDrop}% foliar vigor drop &bull; +{alert.tempElevation}°C &bull; NDVI &lt; 0.40
+                              -{alert.vigorDrop}% foliar vigor drop &bull; +{alert.tempElevation}°C &bull; NDVI {ndviVal}
                             </span>
+                            {farm.telemetryMetrics?.alertMessage && (
+                              <p className="text-[11px] text-rose-800/90 font-medium mt-0.5 max-w-md">
+                                {farm.telemetryMetrics.alertMessage}
+                              </p>
+                            )}
                           </div>
                         </div>
                         <Link
@@ -349,6 +357,9 @@ export const DashboardPage: React.FC = () => {
                   {/* Dynamic Coordinate-Derived Alert Badge for Moderate Stress / Monitor Farms */}
                   {farm.status === 'warning' && (() => {
                     const alert = getFarmAlertTelemetry(farm);
+                    const ndviVal = farm.telemetryMetrics?.meanNdvi !== undefined 
+                      ? farm.telemetryMetrics.meanNdvi.toFixed(2) 
+                      : '0.48';
                     return (
                       <div className="p-3 bg-gradient-to-r from-amber-50 to-amber-100/70 border border-amber-300 rounded-2xl flex items-center justify-between text-xs text-amber-950 font-bold shadow-xs">
                         <div className="flex items-center gap-2">
@@ -356,8 +367,13 @@ export const DashboardPage: React.FC = () => {
                           <div>
                             <span className="font-black text-amber-900 block">⚡ Moderate Stress / Monitor ({alert.sector})</span>
                             <span className="text-[11px] text-amber-800 font-semibold font-mono">
-                              Sub-optimal vigor &bull; NDVI {(farm.telemetryMetrics?.meanNdvi ?? 0.52).toFixed(2)} [0.40 - 0.60]
+                              Sub-optimal vigor &bull; NDVI {ndviVal} [0.40 - 0.60] &bull; +{alert.tempElevation}°C
                             </span>
+                            {farm.telemetryMetrics?.alertMessage && (
+                              <p className="text-[11px] text-amber-900/90 font-medium mt-0.5 max-w-md">
+                                {farm.telemetryMetrics.alertMessage}
+                              </p>
+                            )}
                           </div>
                         </div>
                         <Link

@@ -33,6 +33,7 @@ export interface Farm {
     vigorDropPercent?: number;
     hotspotSector?: string;
     temperatureElevation?: number;
+    alertMessage?: string;
   };
   createdAt: string;
   updatedAt: string;
