@@ -32,18 +32,21 @@ export const StatusBadge: React.FC<StatusBadgeProps> = ({ status, size = 'md' })
       );
     case 'warning':
     case 'moderate':
+    case 'moderate_stress':
+    case 'monitor':
       return (
-        <span className={`inline-flex items-center rounded-full font-medium bg-amber-50 text-amber-800 border border-amber-200 ${sizeClasses[size]}`}>
+        <span className={`inline-flex items-center rounded-full font-bold bg-amber-50 text-amber-800 border border-amber-300 shadow-xs ${sizeClasses[size]}`}>
           <AlertTriangle className="w-3.5 h-3.5 text-amber-600" />
-          Attention Needed
+          Moderate Stress / Monitor
         </span>
       );
     case 'critical':
     case 'severe':
+    case 'critical_hotspot':
       return (
-        <span className={`inline-flex items-center rounded-full font-medium bg-rose-50 text-rose-800 border border-rose-200 ${sizeClasses[size]}`}>
+        <span className={`inline-flex items-center rounded-full font-bold bg-rose-50 text-rose-800 border border-rose-300 shadow-xs ${sizeClasses[size]}`}>
           <AlertCircle className="w-3.5 h-3.5 text-rose-600" />
-          Critical Alert
+          Critical Alert / Hotspot Active
         </span>
       );
     case 'follow_up_due':
