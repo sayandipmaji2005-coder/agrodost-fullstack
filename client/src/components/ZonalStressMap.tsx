@@ -34,18 +34,16 @@ interface ColorStop {
 // Continuous 7-Class Colormap Matching Reference:
 // #00c800, #26d701, #7ae600, #b5f500, #ffea00, #ff9100, #e60000
 function getScientificNdviColor(pixelNDVI: number): [number, number, number, number] {
-  if (pixelNDVI >= 0.89) {
+  if (pixelNDVI >= 0.76) {
     return [0, 200, 0, 255];     // #00c800 Deep Green [Peak Biomass]
-  } else if (pixelNDVI >= 0.87) {
+  } else if (pixelNDVI >= 0.68) {
     return [38, 215, 1, 255];    // #26d701 Bright Green [High Vigor]
-  } else if (pixelNDVI >= 0.86) {
-    return [122, 230, 0, 255];   // #7ae600 Yellow-Green [Intermediate]
-  } else if (pixelNDVI >= 0.84) {
-    return [181, 245, 0, 255];   // #b5f500 Lemon Lime [Normal Canopy]
-  } else if (pixelNDVI >= 0.80) {
-    return [255, 234, 0, 255];   // #ffea00 Bright Yellow
-  } else if (pixelNDVI >= 0.74) {
-    return [255, 145, 0, 255];   // #ff9100 Amber / Orange [Early Stress]
+  } else if (pixelNDVI >= 0.60) {
+    return [122, 230, 0, 255];   // #7ae600 Yellow-Green [Normal Canopy]
+  } else if (pixelNDVI >= 0.52) {
+    return [255, 234, 0, 255];   // #ffea00 Bright Yellow [Moderate Stress]
+  } else if (pixelNDVI >= 0.44) {
+    return [255, 145, 0, 255];   // #ff9100 Amber / Orange [Foliar Deficit]
   } else {
     return [230, 0, 0, 255];     // #e60000 Crimson Red [Critical Foliar Deficit]
   }
@@ -239,27 +237,34 @@ export const ZonalStressMap: React.FC<ZonalStressMapProps> = ({
 
       if (rctx && octx) {
         // Fix Field Vegetation Color (Restore Deep Healthy Green):
-        // Base Canopy NDVI guarantees that 75-80% of healthy field renders deep #00c800 and bright green #26d701
-        const baseNDVI = 0.915;
+        // Base Canopy NDVI for optimal healthy background (~0.80 - 0.84)
+        const baseNDVI = 0.82;
 
         // Dynamic Localized Stress Epicenter from scan telemetry
         const primaryHotspot = scan.anomalyHotspots && scan.anomalyHotspots.length > 0 ? scan.anomalyHotspots[0] : null;
-        const hasStress = !isFallow && primaryHotspot !== null;
+        const hasStress = !isFallow && (primaryHotspot !== null || scan.overallStatus !== 'healthy');
 
         let cx = 0.5 * canvasWidth;
         let cy = 0.5 * canvasHeight;
-        let maxStressDrop = 0;
+        let maxStressDrop = 0.44;
 
-        if (hasStress && primaryHotspot) {
+        if (primaryHotspot) {
           const hLat = primaryHotspot.coordinates[0];
           const hLng = primaryHotspot.coordinates[1];
           cx = ((hLng - minLng) / spanLng) * canvasWidth;
           cy = ((maxLat - hLat) / spanLat) * canvasHeight;
-          maxStressDrop = Math.min(0.40, Math.max(0.18, (primaryHotspot.chlorophyllDeficitPercent || 24) / 100));
+          maxStressDrop = Math.min(0.48, Math.max(0.38, (primaryHotspot.chlorophyllDeficitPercent || 28) / 65));
+        } else if (scan.zonalGrid && scan.zonalGrid.length > 0) {
+          const stressCell = scan.zonalGrid.find(c => c.status === 'critical_hotspot') || scan.zonalGrid.find(c => c.status === 'moderate_stress');
+          if (stressCell) {
+            cx = ((stressCell.center[1] - minLng) / spanLng) * canvasWidth;
+            cy = ((maxLat - stressCell.center[0]) / spanLat) * canvasHeight;
+            maxStressDrop = stressCell.status === 'critical_hotspot' ? 0.46 : 0.28;
+          }
         }
 
         // Set localized anomaly radius:
-        const R = Math.min(width, height) * 0.22;
+        const R = Math.min(width, height) * 0.26;
 
         for (let y = 0; y < canvasHeight; y += step) {
           for (let x = 0; x < canvasWidth; x += step) {
@@ -617,35 +622,35 @@ export const ZonalStressMap: React.FC<ZonalStressMapProps> = ({
             <div className="flex items-center gap-2">
               <span className="w-3.5 h-3.5 rounded-sm shrink-0 border border-black/10 shadow-xs" style={{ backgroundColor: '#00c800' }} />
               <span className="text-slate-800 font-medium">
-                <strong className="text-slate-950 font-bold">0.89 - 0.93</strong> (Peak Biomass)
+                <strong className="text-slate-950 font-bold">&gt; 0.76</strong> (Peak Biomass)
               </span>
             </div>
 
             <div className="flex items-center gap-2">
               <span className="w-3.5 h-3.5 rounded-sm shrink-0 border border-black/10 shadow-xs" style={{ backgroundColor: '#26d701' }} />
               <span className="text-slate-800 font-medium">
-                <strong className="text-slate-950 font-bold">0.87 - 0.89</strong> (High Vigor)
+                <strong className="text-slate-950 font-bold">0.68 - 0.76</strong> (High Vigor)
               </span>
             </div>
 
             <div className="flex items-center gap-2">
-              <span className="w-3.5 h-3.5 rounded-sm shrink-0 border border-black/10 shadow-xs" style={{ backgroundColor: '#b5f500' }} />
+              <span className="w-3.5 h-3.5 rounded-sm shrink-0 border border-black/10 shadow-xs" style={{ backgroundColor: '#7ae600' }} />
               <span className="text-slate-800 font-medium">
-                <strong className="text-slate-950 font-bold">0.84 - 0.87</strong> (Normal Canopy)
+                <strong className="text-slate-950 font-bold">0.60 - 0.68</strong> (Normal Canopy)
               </span>
             </div>
 
             <div className="flex items-center gap-2">
-              <span className="w-3.5 h-3.5 rounded-sm shrink-0 border border-black/10 shadow-xs" style={{ backgroundColor: '#ff9100' }} />
+              <span className="w-3.5 h-3.5 rounded-sm shrink-0 border border-black/10 shadow-xs" style={{ backgroundColor: '#ffea00' }} />
               <span className="text-slate-800 font-medium">
-                <strong className="text-slate-950 font-bold">0.78 - 0.84</strong> (Early Stress / Moisture / Early Stress)
+                <strong className="text-slate-950 font-bold">0.48 - 0.60</strong> (Moderate Stress / Monitor)
               </span>
             </div>
 
             <div className="flex items-center gap-2">
               <span className="w-3.5 h-3.5 rounded-sm shrink-0 border border-black/10 shadow-xs" style={{ backgroundColor: '#e60000' }} />
               <span className="text-slate-800 font-medium">
-                <strong className="text-rose-700 font-bold">0.18 - 0.78</strong> (Critical Deficit / Critical Foliar Stress / Deficit)
+                <strong className="text-rose-700 font-bold">&lt; 0.48</strong> (Critical Hotspot Active)
               </span>
             </div>
           </div>

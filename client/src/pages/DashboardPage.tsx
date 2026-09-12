@@ -295,13 +295,13 @@ export const DashboardPage: React.FC = () => {
                     </div>
                     <div className="flex items-center gap-1.5 flex-wrap justify-end">
                       <span className={`text-[11px] font-black font-mono px-2 py-0.5 rounded-lg border shadow-xs ${
-                        (farm.telemetryMetrics?.meanNdvi ?? 0.72) > 0.6 
-                          ? 'bg-emerald-50 text-emerald-700 border-emerald-200' 
-                          : (farm.telemetryMetrics?.meanNdvi ?? 0.50) >= 0.4 
+                        farm.status === 'critical'
+                          ? 'bg-rose-50 text-rose-800 border-rose-300' 
+                          : farm.status === 'warning'
                           ? 'bg-amber-50 text-amber-800 border-amber-300' 
-                          : 'bg-rose-50 text-rose-800 border-rose-300'
+                          : 'bg-emerald-50 text-emerald-700 border-emerald-200'
                       }`}>
-                        NDVI: {(farm.telemetryMetrics?.meanNdvi ?? (farm.status === 'critical' ? 0.34 : farm.status === 'warning' ? 0.52 : 0.74)).toFixed(2)}
+                        NDVI: {(farm.telemetryMetrics?.meanNdvi ?? (farm.status === 'critical' ? 0.62 : farm.status === 'warning' ? 0.52 : 0.74)).toFixed(2)}
                       </span>
                       <StatusBadge status={farm.status} />
                     </div>
@@ -323,11 +323,11 @@ export const DashboardPage: React.FC = () => {
                   </div>
 
                   {/* Dynamic Coordinate-Derived Alert Badge for Critical Stress Farms */}
-                  {farm.status === 'critical' && (farm.telemetryMetrics?.meanNdvi ?? 0) < 0.40 && (() => {
+                  {farm.status === 'critical' && (() => {
                     const alert = getFarmAlertTelemetry(farm);
                     const ndviVal = farm.telemetryMetrics?.meanNdvi !== undefined 
                       ? farm.telemetryMetrics.meanNdvi.toFixed(2) 
-                      : '0.31';
+                      : '0.62';
                     return (
                       <div className="p-3 bg-gradient-to-r from-rose-50 to-red-100/70 border border-rose-300 rounded-2xl flex items-center justify-between text-xs text-rose-950 font-bold shadow-xs">
                         <div className="flex items-center gap-2">
@@ -335,7 +335,7 @@ export const DashboardPage: React.FC = () => {
                           <div>
                             <span className="font-black text-rose-900 block">⚠️ Critical Alert: Hotspot Active ({alert.sector})</span>
                             <span className="text-[11px] text-rose-700 font-semibold font-mono">
-                              -{alert.vigorDrop}% foliar vigor drop &bull; +{alert.tempElevation}°C &bull; NDVI {ndviVal}
+                              -{alert.vigorDrop}% foliar vigor drop &bull; +{alert.tempElevation}°C &bull; Parcel NDVI {ndviVal}
                             </span>
                             {farm.telemetryMetrics?.alertMessage && (
                               <p className="text-[11px] text-rose-800/90 font-medium mt-0.5 max-w-md">
@@ -355,11 +355,11 @@ export const DashboardPage: React.FC = () => {
                   })()}
 
                   {/* Dynamic Coordinate-Derived Alert Badge for Moderate Stress / Monitor Farms */}
-                  {farm.status === 'warning' && (farm.telemetryMetrics?.meanNdvi ?? 0.5) <= 0.60 && (farm.telemetryMetrics?.meanNdvi ?? 0.5) >= 0.40 && (() => {
+                  {farm.status === 'warning' && (() => {
                     const alert = getFarmAlertTelemetry(farm);
                     const ndviVal = farm.telemetryMetrics?.meanNdvi !== undefined 
                       ? farm.telemetryMetrics.meanNdvi.toFixed(2) 
-                      : '0.48';
+                      : '0.52';
                     return (
                       <div className="p-3 bg-gradient-to-r from-amber-50 to-amber-100/70 border border-amber-300 rounded-2xl flex items-center justify-between text-xs text-amber-950 font-bold shadow-xs">
                         <div className="flex items-center gap-2">
@@ -367,7 +367,7 @@ export const DashboardPage: React.FC = () => {
                           <div>
                             <span className="font-black text-amber-900 block">⚡ Moderate Stress / Monitor ({alert.sector})</span>
                             <span className="text-[11px] text-amber-800 font-semibold font-mono">
-                              Sub-optimal vigor &bull; NDVI {ndviVal} [0.40 - 0.60] &bull; +{alert.tempElevation}°C
+                              Sub-optimal vigor &bull; Parcel NDVI {ndviVal} &bull; +{alert.tempElevation}°C
                             </span>
                             {farm.telemetryMetrics?.alertMessage && (
                               <p className="text-[11px] text-amber-900/90 font-medium mt-0.5 max-w-md">
