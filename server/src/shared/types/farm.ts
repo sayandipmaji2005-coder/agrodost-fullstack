@@ -28,6 +28,12 @@ export interface Farm {
   phenologySeries?: any[];
   status: 'healthy' | 'warning' | 'critical' | 'follow_up_due';
   lastScanDate?: string;
+  telemetryMetrics?: {
+    meanNdvi?: number;
+    vigorDropPercent?: number;
+    hotspotSector?: string;
+    temperatureElevation?: number;
+  };
   createdAt: string;
   updatedAt: string;
 }

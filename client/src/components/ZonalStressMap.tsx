@@ -242,29 +242,40 @@ export const ZonalStressMap: React.FC<ZonalStressMapProps> = ({
         // Base Canopy NDVI guarantees that 75-80% of healthy field renders deep #00c800 and bright green #26d701
         const baseNDVI = 0.915;
 
-        // Tighten Localized Stress Hotspot (Prevent Whole-Field Yellowing):
-        // Place stress center strictly in North-East sector: (cx, cy)
-        const cx = 0.74 * canvasWidth;
-        const cy = 0.22 * canvasHeight;
+        // Dynamic Localized Stress Epicenter from scan telemetry
+        const primaryHotspot = scan.anomalyHotspots && scan.anomalyHotspots.length > 0 ? scan.anomalyHotspots[0] : null;
+        const hasStress = !isFallow && primaryHotspot !== null;
+
+        let cx = 0.5 * canvasWidth;
+        let cy = 0.5 * canvasHeight;
+        let maxStressDrop = 0;
+
+        if (hasStress && primaryHotspot) {
+          const hLat = primaryHotspot.coordinates[0];
+          const hLng = primaryHotspot.coordinates[1];
+          cx = ((hLng - minLng) / spanLng) * canvasWidth;
+          cy = ((maxLat - hLat) / spanLat) * canvasHeight;
+          maxStressDrop = Math.min(0.40, Math.max(0.18, (primaryHotspot.chlorophyllDeficitPercent || 24) / 100));
+        }
 
         // Set localized anomaly radius:
-        const R = Math.min(width, height) * 0.20;
+        const R = Math.min(width, height) * 0.22;
 
         for (let y = 0; y < canvasHeight; y += step) {
           for (let x = 0; x < canvasWidth; x += step) {
             // Add subtle organic field spatial variation:
             const cellBase = baseNDVI + (Math.sin(x * 0.05) * 0.008 + Math.cos(y * 0.05 + x * 0.03) * 0.004);
 
-            // Distance from NE stress center:
+            // Distance from stress center (if stress active):
             const d = Math.hypot(x - cx, y - cy);
 
             // Gaussian falloff:
-            const stressDrop = 0.32 * Math.exp(-Math.pow(d, 2) / (2 * Math.pow(R * 0.65, 2)));
+            const stressDrop = hasStress ? maxStressDrop * Math.exp(-Math.pow(d, 2) / (2 * Math.pow(R * 0.65, 2))) : 0;
             const pixelNDVI = Math.max(0.20, cellBase - stressDrop);
 
             if (isSar) {
-              // Sentinel-1 SAR Radar (sentinel1_sar_radar) microwave backscatter & moisture
-              const gaussianDecay = Math.exp(-Math.pow(d, 2) / (2 * Math.pow(R * 0.65, 2)));
+              // Sentinel-1 SAR Radar microwave backscatter & moisture
+              const gaussianDecay = hasStress ? Math.exp(-Math.pow(d, 2) / (2 * Math.pow(R * 0.65, 2))) : 0;
               const backscatter = -11.0 - 5.5 * gaussianDecay;
               const moisture = 52.0 + 26.0 * gaussianDecay;
               const [r, g, b, a] = getSarColor(backscatter, moisture);
@@ -316,62 +327,64 @@ export const ZonalStressMap: React.FC<ZonalStressMapProps> = ({
         heatmapOverlayRef.current = overlay;
       }
 
-      // 4. Interactive Stress Cluster Inspection Beacon (North-East Sector)
+      // 4. Interactive Stress Cluster Inspection Beacon (Dynamic per scan hotspots)
       if (hotspotLayerGroupRef.current) {
         hotspotLayerGroupRef.current.clearLayers();
 
-        // Geographic coordinates of North-East stress cluster
-        const neLat = maxLat - 0.22 * spanLat;
-        const neLng = minLng + 0.74 * spanLng;
+        if (scan.anomalyHotspots && scan.anomalyHotspots.length > 0) {
+          scan.anomalyHotspots.forEach((hotspot) => {
+            const hLat = hotspot.coordinates[0];
+            const hLng = hotspot.coordinates[1];
 
-        // Clickable pulsating anomaly cluster target (no dummy waypoint dots)
-        const clusterIcon = L.divIcon({
-          className: 'custom-stress-cluster-target',
-          html: `
-            <div style="position: relative; display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; cursor: pointer;">
-              <div style="position: absolute; width: 42px; height: 42px; border-radius: 50%; background: rgba(230, 0, 0, 0.45); animation: ping 1.4s cubic-bezier(0, 0, 0.2, 1) infinite;"></div>
-              <div style="position: absolute; width: 26px; height: 26px; border-radius: 50%; background: rgba(230, 0, 0, 0.7); animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;"></div>
-              <div style="width: 18px; height: 18px; border-radius: 50%; background: #E60000; border: 2px solid #FFFFFF; box-shadow: 0 2px 10px rgba(230, 0, 0, 0.95); z-index: 10;"></div>
-            </div>
-          `,
-          iconSize: [44, 44],
-          iconAnchor: [22, 22],
-        });
+            // Clickable pulsating anomaly cluster target
+            const clusterIcon = L.divIcon({
+              className: 'custom-stress-cluster-target',
+              html: `
+                <div style="position: relative; display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; cursor: pointer;">
+                  <div style="position: absolute; width: 42px; height: 42px; border-radius: 50%; background: rgba(230, 0, 0, 0.45); animation: ping 1.4s cubic-bezier(0, 0, 0.2, 1) infinite;"></div>
+                  <div style="position: absolute; width: 26px; height: 26px; border-radius: 50%; background: rgba(230, 0, 0, 0.7); animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;"></div>
+                  <div style="width: 18px; height: 18px; border-radius: 50%; background: #E60000; border: 2px solid #FFFFFF; box-shadow: 0 2px 10px rgba(230, 0, 0, 0.95); z-index: 10;"></div>
+                </div>
+              `,
+              iconSize: [44, 44],
+              iconAnchor: [22, 22],
+            });
 
-        const hotspotMarker = L.marker([neLat, neLng], { icon: clusterIcon });
+            const hotspotMarker = L.marker([hLat, hLng], { icon: clusterIcon });
 
-        // Hovering inspection tooltip exact requirement:
-        // "Critical Stress Patch (North-East Sector) | Mean NDVI: 0.61 (-28%) | Thermal Anomaly: +3.2°C"
-        hotspotMarker.bindTooltip(
-          `<div class="p-1.5 text-xs font-sans max-w-[280px] space-y-1">
-            <div class="flex items-center gap-1 text-rose-600 font-extrabold text-[11px]">
-              <span>🔥 Critical Stress Patch (North-East Sector)</span>
-            </div>
-            <div class="text-[11px] text-slate-800 font-semibold leading-tight">
-              Mean NDVI: <strong class="text-rose-600 font-black">0.61</strong> (-28%) | Thermal Anomaly: <strong class="text-rose-600 font-black">+3.2°C</strong>
-            </div>
-            <p class="text-[10px] text-slate-500 font-medium">Click to inspect and ground-truth via leaf camera scan.</p>
-          </div>`,
-          { offset: [0, -16], direction: 'top', className: 'leaflet-custom-tooltip' }
-        );
+            // Hovering inspection tooltip with authentic dynamic telemetry
+            hotspotMarker.bindTooltip(
+              `<div class="p-1.5 text-xs font-sans max-w-[280px] space-y-1">
+                <div class="flex items-center gap-1 text-rose-600 font-extrabold text-[11px]">
+                  <span>🔥 Critical Stress Patch (${hotspot.sector})</span>
+                </div>
+                <div class="text-[11px] text-slate-800 font-semibold leading-tight">
+                  Mean NDVI: <strong class="text-rose-600 font-black">${hotspot.ndvi}</strong> (-${hotspot.chlorophyllDeficitPercent}%) | Thermal Anomaly: <strong class="text-rose-600 font-black">+${hotspot.temperatureElevation}°C</strong>
+                </div>
+                <p class="text-[10px] text-slate-500 font-medium">Click to inspect and ground-truth via leaf camera scan.</p>
+              </div>`,
+              { offset: [0, -16], direction: 'top', className: 'leaflet-custom-tooltip' }
+            );
 
-        hotspotMarker.on('click', () => {
-          map.setView([neLat, neLng], 18, { animate: true });
-          setActiveHotspotDrawer({
-            isOpen: true,
-            sector: 'North-East Sector',
-            meanNdvi: 0.61,
-            deficitPct: -28,
-            elevatedHeat: '+3.2°C',
-            cause: 'Canopy foliar transpiration deficit detected via dual-sensor fusion.',
+            hotspotMarker.on('click', () => {
+              map.setView([hLat, hLng], 18, { animate: true });
+              setActiveHotspotDrawer({
+                isOpen: true,
+                sector: hotspot.sector,
+                meanNdvi: hotspot.ndvi,
+                deficitPct: -(hotspot.chlorophyllDeficitPercent || 24),
+                elevatedHeat: `+${hotspot.temperatureElevation || 3.2}°C`,
+                cause: hotspot.scientificNote || 'Canopy foliar transpiration deficit detected via dual-sensor fusion.',
+              });
+
+              if (onSelectHotspot) {
+                onSelectHotspot(hotspot);
+              }
+            });
+
+            hotspotLayerGroupRef.current?.addLayer(hotspotMarker);
           });
-
-          if (onSelectHotspot && scan.anomalyHotspots?.[0]) {
-            onSelectHotspot(scan.anomalyHotspots[0]);
-          }
-        });
-
-        hotspotLayerGroupRef.current.addLayer(hotspotMarker);
+        }
       }
     }
   }, [farm, scan, showHeatmap, activeLayer]);
@@ -664,7 +677,10 @@ export const ZonalStressMap: React.FC<ZonalStressMapProps> = ({
             <div className="flex items-center gap-2 shrink-0">
               <button
                 type="button"
-                onClick={() => navigate(`/scanner?farmId=${farm.id}&zone=ne_hotspot`)}
+                onClick={() => {
+                  const zoneParam = activeHotspotDrawer.sector ? activeHotspotDrawer.sector.toLowerCase().replace(/\s+/g, '_') : 'hotspot';
+                  navigate(`/scanner?farmId=${farm.id}&zone=${encodeURIComponent(zoneParam)}`);
+                }}
                 className="px-4 py-2.5 bg-gradient-to-r from-rose-600 to-red-600 hover:from-rose-500 hover:to-red-500 text-white rounded-2xl text-xs font-black flex items-center gap-2 shadow-lg transition-all active:scale-95"
               >
                 <Camera className="w-4 h-4 text-white" />
