@@ -99,6 +99,7 @@ export const DashboardPage: React.FC = () => {
   const totalAcres = farms.reduce((sum, f) => sum + (f.areaAcres || 0), 0);
   const criticalCount = farms.filter(f => f.status === 'critical').length;
   const warningCount = farms.filter(f => f.status === 'warning').length;
+  const healthyCount = farms.filter(f => f.status === 'healthy').length;
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8">
@@ -149,10 +150,22 @@ export const DashboardPage: React.FC = () => {
               <span className="text-xl font-bold text-slate-400">No plots mapped</span>
             ) : (
               <>
-                <span className={`text-2xl font-black ${criticalCount > 0 ? 'text-rose-600' : 'text-emerald-600'}`}>
-                  {criticalCount > 0 ? `${criticalCount} Critical` : 'Stable'}
+                <span className={`text-2xl font-black ${
+                  criticalCount > 0 ? 'text-rose-600' : warningCount > 0 ? 'text-amber-600' : 'text-emerald-600'
+                }`}>
+                  {criticalCount > 0 
+                    ? `${criticalCount} Critical` 
+                    : warningCount > 0 
+                    ? `${warningCount} Monitor` 
+                    : `${healthyCount} Healthy`}
                 </span>
-                <span className="text-xs text-slate-500 font-semibold">{warningCount} Under Observation</span>
+                <span className="text-xs text-slate-500 font-semibold">
+                  {criticalCount > 0 
+                    ? `${warningCount} Monitor · ${healthyCount} Healthy` 
+                    : warningCount > 0 
+                    ? `${healthyCount} Healthy` 
+                    : `${farms.length} Plot${farms.length > 1 ? 's' : ''}`}
+                </span>
               </>
             )}
           </div>
@@ -280,7 +293,18 @@ export const DashboardPage: React.FC = () => {
                         {farm.name}
                       </h3>
                     </div>
-                    <StatusBadge status={farm.status} />
+                    <div className="flex items-center gap-1.5 flex-wrap justify-end">
+                      <span className={`text-[11px] font-black font-mono px-2 py-0.5 rounded-lg border shadow-xs ${
+                        (farm.telemetryMetrics?.meanNdvi ?? 0.72) > 0.6 
+                          ? 'bg-emerald-50 text-emerald-700 border-emerald-200' 
+                          : (farm.telemetryMetrics?.meanNdvi ?? 0.50) >= 0.4 
+                          ? 'bg-amber-50 text-amber-800 border-amber-300' 
+                          : 'bg-rose-50 text-rose-800 border-rose-300'
+                      }`}>
+                        NDVI: {(farm.telemetryMetrics?.meanNdvi ?? (farm.status === 'critical' ? 0.34 : farm.status === 'warning' ? 0.52 : 0.74)).toFixed(2)}
+                      </span>
+                      <StatusBadge status={farm.status} />
+                    </div>
                   </div>
 
                   <div className="grid grid-cols-3 gap-2 bg-slate-50 p-3 rounded-2xl border border-slate-100 text-xs">
@@ -306,15 +330,39 @@ export const DashboardPage: React.FC = () => {
                         <div className="flex items-center gap-2">
                           <AlertTriangle className="w-4 h-4 text-rose-600 shrink-0 animate-bounce" />
                           <div>
-                            <span className="font-black text-rose-900 block">⚠️ Localized Stress ({alert.sector})</span>
+                            <span className="font-black text-rose-900 block">⚠️ Critical Alert: Hotspot Active ({alert.sector})</span>
                             <span className="text-[11px] text-rose-700 font-semibold font-mono">
-                              -{alert.vigorDrop}% foliar vigor drop &bull; +{alert.tempElevation}°C
+                              -{alert.vigorDrop}% foliar vigor drop &bull; +{alert.tempElevation}°C &bull; NDVI &lt; 0.40
                             </span>
                           </div>
                         </div>
                         <Link
                           to={`/satellite?farmId=${farm.id}`}
                           className="px-2.5 py-1 bg-rose-600 hover:bg-rose-700 text-white font-black text-[11px] rounded-xl transition-colors shadow-xs"
+                        >
+                          Inspect &rarr;
+                        </Link>
+                      </div>
+                    );
+                  })()}
+
+                  {/* Dynamic Coordinate-Derived Alert Badge for Moderate Stress / Monitor Farms */}
+                  {farm.status === 'warning' && (() => {
+                    const alert = getFarmAlertTelemetry(farm);
+                    return (
+                      <div className="p-3 bg-gradient-to-r from-amber-50 to-amber-100/70 border border-amber-300 rounded-2xl flex items-center justify-between text-xs text-amber-950 font-bold shadow-xs">
+                        <div className="flex items-center gap-2">
+                          <AlertTriangle className="w-4 h-4 text-amber-600 shrink-0" />
+                          <div>
+                            <span className="font-black text-amber-900 block">⚡ Moderate Stress / Monitor ({alert.sector})</span>
+                            <span className="text-[11px] text-amber-800 font-semibold font-mono">
+                              Sub-optimal vigor &bull; NDVI {(farm.telemetryMetrics?.meanNdvi ?? 0.52).toFixed(2)} [0.40 - 0.60]
+                            </span>
+                          </div>
+                        </div>
+                        <Link
+                          to={`/satellite?farmId=${farm.id}`}
+                          className="px-2.5 py-1 bg-amber-600 hover:bg-amber-700 text-white font-black text-[11px] rounded-xl transition-colors shadow-xs"
                         >
                           Inspect &rarr;
                         </Link>
