@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="100%" height="100%">
+  <defs>
+    <radialGradient id="leafGrad" cx="40%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#4a7c59"/>
+      <stop offset="60%" stop-color="#2d5a3f"/>
+      <stop offset="100%" stop-color="#183a24"/>
+    </radialGradient>
+    <radialGradient id="lesionGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#2c1a11"/>
+      <stop offset="45%" stop-color="#4a2e1b"/>
+      <stop offset="75%" stop-color="#8c6239"/>
+      <stop offset="90%" stop-color="#c4b04f"/>
+      <stop offset="100%" stop-color="#4a7c59" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="mildew" x="-20%" y="-20%" width="140%" height="140%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.08" numOctaves="3" result="noise"/>
+      <feColorMatrix type="matrix" values="1 0 0 0 1  0 1 0 0 1  0 0 1 0 1  0 0 0 0.45 0" in="noise" result="whiteMildew"/>
+      <feComposite operator="in" in="whiteMildew" in2="SourceGraphic"/>
+    </filter>
+  </defs>
+
+  <!-- Background / Soil -->
+  <rect width="800" height="600" fill="#1b241c"/>
+
+  <!-- Leaf Body -->
+  <path d="M 400 50 C 600 120, 720 320, 580 500 C 480 600, 320 600, 220 500 C 80 320, 200 120, 400 50 Z" fill="url(#leafGrad)" stroke="#1a3822" stroke-width="4"/>
+  
+  <!-- Central Leaf Vein -->
+  <path d="M 400 60 Q 395 300 400 560" stroke="#74b584" stroke-width="8" stroke-linecap="round" fill="none"/>
+  
+  <!-- Side Veins -->
+  <path d="M 398 160 Q 480 200 560 220" stroke="#5fa671" stroke-width="4" fill="none"/>
+  <path d="M 398 240 Q 500 290 600 330" stroke="#5fa671" stroke-width="4" fill="none"/>
+  <path d="M 398 340 Q 480 400 540 460" stroke="#5fa671" stroke-width="4" fill="none"/>
+  
+  <path d="M 398 180 Q 320 220 240 240" stroke="#5fa671" stroke-width="4" fill="none"/>
+  <path d="M 398 270 Q 300 320 200 360" stroke="#5fa671" stroke-width="4" fill="none"/>
+  <path d="M 398 370 Q 320 430 260 490" stroke="#5fa671" stroke-width="4" fill="none"/>
+
+  <!-- Late Blight Necrotic Lesions (Water-soaked brown patches with chlorotic halo) -->
+  <circle cx="480" cy="280" r="95" fill="url(#lesionGrad)"/>
+  <circle cx="280" cy="360" r="75" fill="url(#lesionGrad)"/>
+  <ellipse cx="440" cy="420" rx="60" ry="40" fill="url(#lesionGrad)"/>
+
+  <!-- White fungal mildew down on lesion borders -->
+  <ellipse cx="495" cy="270" rx="70" ry="60" filter="url(#mildew)"/>
+  <circle cx="275" cy="350" r="50" filter="url(#mildew)"/>
+
+  <!-- Label Badge Overlay -->
+  <rect x="25" y="25" width="310" height="42" rx="8" fill="rgba(0,0,0,0.75)"/>
+  <text x="40" y="52" fill="#5dc285" font-family="Inter, sans-serif" font-size="16" font-weight="bold">AgriCare Diagnostic Field Scan</text>
+</svg>

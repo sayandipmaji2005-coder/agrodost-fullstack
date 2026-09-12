@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="100%" height="100%">
+  <defs>
+    <radialGradient id="leafGradRec" cx="40%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#55a36c"/>
+      <stop offset="60%" stop-color="#3b7d51"/>
+      <stop offset="100%" stop-color="#245233"/>
+    </radialGradient>
+    <radialGradient id="healedLesion" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#5c4d3c"/>
+      <stop offset="60%" stop-color="#8a7966"/>
+      <stop offset="90%" stop-color="#608b68"/>
+      <stop offset="100%" stop-color="#55a36c" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="800" height="600" fill="#1b241c"/>
+
+  <!-- Leaf Body -->
+  <path d="M 400 50 C 600 120, 720 320, 580 500 C 480 600, 320 600, 220 500 C 80 320, 200 120, 400 50 Z" fill="url(#leafGradRec)" stroke="#245233" stroke-width="4"/>
+  
+  <!-- Veins -->
+  <path d="M 400 60 Q 395 300 400 560" stroke="#8ed19e" stroke-width="8" stroke-linecap="round" fill="none"/>
+  <path d="M 398 160 Q 480 200 560 220" stroke="#72b883" stroke-width="4" fill="none"/>
+  <path d="M 398 240 Q 500 290 600 330" stroke="#72b883" stroke-width="4" fill="none"/>
+  <path d="M 398 340 Q 480 400 540 460" stroke="#72b883" stroke-width="4" fill="none"/>
+  <path d="M 398 180 Q 320 220 240 240" stroke="#72b883" stroke-width="4" fill="none"/>
+  <path d="M 398 270 Q 300 320 200 360" stroke="#72b883" stroke-width="4" fill="none"/>
+
+  <!-- Desiccated / Healed dry lesion scars (No active fungus, clean callus border) -->
+  <circle cx="480" cy="280" r="60" fill="url(#healedLesion)"/>
+  <circle cx="280" cy="360" r="45" fill="url(#healedLesion)"/>
+
+  <!-- Recovery Success Badge -->
+  <rect x="25" y="25" width="340" height="42" rx="8" fill="rgba(20,60,35,0.85)"/>
+  <text x="40" y="52" fill="#94dcaf" font-family="Inter, sans-serif" font-size="16" font-weight="bold">Post-Treatment Day 7: Recovered</text>
+</svg>

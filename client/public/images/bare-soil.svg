@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="100%" height="100%">
+  <defs>
+    <linearGradient id="soilGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8B5A2B"/>
+      <stop offset="50%" stop-color="#6B4423"/>
+      <stop offset="100%" stop-color="#4A2F18"/>
+    </linearGradient>
+    <radialGradient id="crustGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#A06838"/>
+      <stop offset="100%" stop-color="#553417"/>
+    </radialGradient>
+  </defs>
+  <!-- Background Soil Texture -->
+  <rect width="400" height="300" fill="url(#soilGrad)"/>
+  
+  <!-- Soil Clods and Cracks -->
+  <path d="M 20 50 Q 80 70 120 40 T 220 60 T 320 30 L 390 80 L 360 140 L 290 120 L 230 160 L 150 130 L 70 180 Z" fill="#583416" opacity="0.8"/>
+  <path d="M 50 180 Q 130 170 190 210 T 310 190 L 380 250 L 320 290 L 180 280 L 100 290 L 20 260 Z" fill="#42250F" opacity="0.9"/>
+  
+  <!-- Fissure Cracks -->
+  <path d="M 120 40 L 140 100 L 110 150 L 160 210 L 140 270" stroke="#2B1607" stroke-width="3" fill="none"/>
+  <path d="M 220 60 L 250 110 L 230 180 L 280 240" stroke="#2B1607" stroke-width="2.5" fill="none"/>
+  <path d="M 250 110 L 320 120 L 350 180" stroke="#2B1607" stroke-width="2" fill="none"/>
+  <path d="M 140 100 L 70 120 L 40 160" stroke="#2B1607" stroke-width="2" fill="none"/>
+  
+  <!-- Small Stones and Gravel -->
+  <ellipse cx="90" cy="110" rx="14" ry="9" fill="#755030"/>
+  <ellipse cx="270" cy="80" rx="18" ry="12" fill="#7D5533"/>
+  <ellipse cx="180" cy="240" rx="20" ry="13" fill="#6A4628"/>
+  <ellipse cx="330" cy="220" rx="12" ry="8" fill="#7D5533"/>
+
+  <!-- Warning Tag Overlay -->
+  <rect x="70" y="130" width="260" height="40" rx="20" fill="rgba(0,0,0,0.75)" stroke="#D97706" stroke-width="2"/>
+  <text x="200" y="155" fill="#FCD34D" font-size="12" font-family="sans-serif" font-weight="bold" text-anchor="middle">
+    Bare Soil / Non-Crop Test Target
+  </text>
+</svg>

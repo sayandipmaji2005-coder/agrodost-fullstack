@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="100%" height="100%">
+  <defs>
+    <radialGradient id="blastLesion" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#dedede"/>
+      <stop offset="40%" stop-color="#b0aba7"/>
+      <stop offset="70%" stop-color="#6e2d1d"/>
+      <stop offset="90%" stop-color="#b55828"/>
+      <stop offset="100%" stop-color="#3d6e3f" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="800" height="600" fill="#1b241c"/>
+
+  <!-- Long Slender Rice Leaf Blade -->
+  <path d="M 120 520 Q 380 320 680 80 Q 720 180 440 450 Q 300 550 120 520 Z" fill="#3d6e3f" stroke="#254727" stroke-width="4"/>
+  <path d="M 120 520 Q 400 330 680 80" stroke="#71aa75" stroke-width="5" fill="none"/>
+
+  <!-- Spindle / Diamond Shaped Blast Lesions with gray center and red-brown borders -->
+  <g transform="translate(360, 310) rotate(-40)">
+    <ellipse cx="0" cy="0" rx="65" ry="22" fill="url(#blastLesion)"/>
+  </g>
+  <g transform="translate(480, 210) rotate(-42)">
+    <ellipse cx="0" cy="0" rx="80" ry="26" fill="url(#blastLesion)"/>
+  </g>
+  <g transform="translate(260, 410) rotate(-38)">
+    <ellipse cx="0" cy="0" rx="55" ry="18" fill="url(#blastLesion)"/>
+  </g>
+
+  <rect x="25" y="25" width="310" height="42" rx="8" fill="rgba(0,0,0,0.75)"/>
+  <text x="40" y="52" fill="#5dc285" font-family="Inter, sans-serif" font-size="16" font-weight="bold">Rice Blast Diamond Lesions</text>
+</svg>
