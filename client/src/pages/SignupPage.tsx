@@ -25,8 +25,16 @@ export const SignupPage: React.FC = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!formData.fullName || !formData.email) {
-      setError('Please provide your full name and email address');
+    if (!formData.fullName.trim()) {
+      setError('Please provide your full name');
+      return;
+    }
+    if (!formData.email.trim()) {
+      setError('Please provide your email address');
+      return;
+    }
+    if (!formData.password || formData.password.length < 6) {
+      setError('Password must be at least 6 characters long');
       return;
     }
 
@@ -36,7 +44,23 @@ export const SignupPage: React.FC = () => {
       await signup(formData);
       navigate(from, { replace: true });
     } catch (err: any) {
-      setError(err.response?.data?.error || 'Registration failed. Please try again.');
+      // Catch and log API error responses to console for easier debugging
+      console.error('[AgriCare Signup Error]:', {
+        status: err.response?.status,
+        statusText: err.response?.statusText,
+        data: err.response?.data,
+        message: err.message,
+        url: err.config?.url,
+        method: err.config?.method,
+        rawError: err,
+      });
+
+      const serverMessage = 
+        err.response?.data?.error || 
+        err.response?.data?.message || 
+        (typeof err.response?.data === 'string' ? err.response?.data : null);
+
+      setError(serverMessage || err.message || 'Registration failed. Please check your details and try again.');
     } finally {
       setIsLoading(false);
     }
