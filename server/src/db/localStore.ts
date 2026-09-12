@@ -52,7 +52,9 @@ const INITIAL_SEED: LocalDatabaseSchema = {
   landCoverScans: []
 };
 
-const DATA_DIR = path.resolve(process.cwd(), 'data');
+const DATA_DIR = process.cwd().endsWith('server')
+  ? path.resolve(process.cwd(), 'data')
+  : path.resolve(process.cwd(), 'server/data');
 const DB_FILE = path.join(DATA_DIR, 'local_db.json');
 
 export class LocalStore {

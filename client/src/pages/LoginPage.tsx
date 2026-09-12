@@ -25,10 +25,21 @@ export const LoginPage: React.FC = () => {
     setIsLoading(true);
     setError(null);
     try {
-      await login(email, password);
+      await login(email.trim(), password);
       navigate(from, { replace: true });
     } catch (err: any) {
-      setError(err.response?.data?.error || 'Login failed. Please verify your credentials or register an account.');
+      console.error('[AgriCare Login Error]:', {
+        status: err.response?.status,
+        data: err.response?.data,
+        message: err.message,
+      });
+
+      const serverMessage = 
+        err.response?.data?.error || 
+        err.response?.data?.message || 
+        (typeof err.response?.data === 'string' ? err.response?.data : null);
+
+      setError(serverMessage || err.message || 'Login failed. Please verify your credentials or register an account.');
     } finally {
       setIsLoading(false);
     }
