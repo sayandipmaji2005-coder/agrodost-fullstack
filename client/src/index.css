@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-[#fafaf7] text-slate-800 font-sans selection:bg-agri-200 selection:text-agri-950;
+  }
+}
+
+/* Leaflet map container styling */
+.leaflet-container {
+  width: 100%;
+  height: 100%;
+  font-family: inherit;
+  z-index: 10;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1eb;
+}
+::-webkit-scrollbar-thumb {
+  background: #c3ecd2;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #5dc285;
+}
+
+/* Print stylesheet for 1-Click Kisan Parchi Prescription */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  #printable-kisan-parchi, #printable-kisan-parchi * {
+    visibility: visible;
+  }
+  #printable-kisan-parchi {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    margin: 0;
+    padding: 20px;
+    background: white !important;
+    color: black !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+}

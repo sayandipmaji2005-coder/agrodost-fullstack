@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="100%" height="100%">
+  <defs>
+    <linearGradient id="skyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#7DD3FC"/>
+      <stop offset="60%" stop-color="#E0F2FE"/>
+      <stop offset="100%" stop-color="#FEF08A"/>
+    </linearGradient>
+    <linearGradient id="wheatGrad" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#CA8A04"/>
+      <stop offset="50%" stop-color="#EAB308"/>
+      <stop offset="100%" stop-color="#FEF08A"/>
+    </linearGradient>
+  </defs>
+  <!-- Horizon Sky -->
+  <rect width="400" height="300" fill="url(#skyGrad)"/>
+
+  <!-- Field Backdrop -->
+  <rect y="160" width="400" height="140" fill="#CA8A04" opacity="0.6"/>
+  <rect y="190" width="400" height="110" fill="#A16207" opacity="0.8"/>
+
+  <!-- Golden Mature Wheat Stalks & Grain Heads -->
+  <g stroke="#854D0E" stroke-width="2">
+    <!-- Stalks -->
+    <path d="M 60 300 Q 70 200 80 130" fill="none"/>
+    <path d="M 110 300 Q 115 190 120 110" fill="none"/>
+    <path d="M 160 300 Q 170 210 180 120" fill="none"/>
+    <path d="M 220 300 Q 210 200 210 100" fill="none"/>
+    <path d="M 270 300 Q 280 210 290 125" fill="none"/>
+    <path d="M 330 300 Q 325 190 320 115" fill="none"/>
+  </g>
+
+  <!-- Golden Spikes / Ears -->
+  <g fill="url(#wheatGrad)" stroke="#A16207" stroke-width="1.5">
+    <!-- Spike 1 -->
+    <ellipse cx="80" cy="110" rx="9" ry="30" transform="rotate(5 80 110)"/>
+    <path d="M 75 90 L 65 60 M 80 85 L 80 50 M 85 90 L 95 60" stroke="#CA8A04" stroke-width="1.5"/>
+
+    <!-- Spike 2 -->
+    <ellipse cx="120" cy="90" rx="10" ry="34" transform="rotate(8 120 90)"/>
+    <path d="M 115 70 L 105 40 M 120 65 L 120 30 M 125 70 L 135 40" stroke="#CA8A04" stroke-width="1.5"/>
+
+    <!-- Spike 3 -->
+    <ellipse cx="180" cy="100" rx="9" ry="32" transform="rotate(6 180 100)"/>
+    <path d="M 175 80 L 165 50 M 180 75 L 180 40 M 185 80 L 195 50" stroke="#CA8A04" stroke-width="1.5"/>
+
+    <!-- Spike 4 -->
+    <ellipse cx="210" cy="80" rx="11" ry="36" transform="rotate(-4 210 80)"/>
+    <path d="M 205 60 L 195 30 M 210 55 L 210 20 M 215 60 L 225 30" stroke="#CA8A04" stroke-width="1.5"/>
+
+    <!-- Spike 5 -->
+    <ellipse cx="290" cy="105" rx="9" ry="32" transform="rotate(10 290 105)"/>
+    <path d="M 285 85 L 275 55 M 290 80 L 290 45 M 295 85 L 305 55" stroke="#CA8A04" stroke-width="1.5"/>
+
+    <!-- Spike 6 -->
+    <ellipse cx="320" cy="95" rx="10" ry="32" transform="rotate(-6 320 95)"/>
+    <path d="M 315 75 L 305 45 M 320 70 L 320 35 M 325 75 L 335 45" stroke="#CA8A04" stroke-width="1.5"/>
+  </g>
+
+  <!-- Senescence Label Overlay -->
+  <rect x="50" y="240" width="300" height="38" rx="19" fill="rgba(17, 24, 39, 0.85)" stroke="#F59E0B" stroke-width="2"/>
+  <text x="200" y="264" fill="#FDE68A" font-size="12" font-family="sans-serif" font-weight="bold" text-anchor="middle">
+    Normal Crop Ripening (Senescence Phase)
+  </text>
+</svg>

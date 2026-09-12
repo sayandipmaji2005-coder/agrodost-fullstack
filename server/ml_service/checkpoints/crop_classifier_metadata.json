@@ -1,0 +1,137 @@
+{
+  "model_name": "AgriCare Real Satellite Crop Classifier",
+  "model_version": "v1.1.0-agrifieldnet-balanced",
+  "algorithm": "LightGBM Gradient Boosted Decision Forest",
+  "dataset": {
+    "name": "AgriFieldNet India Challenge Dataset",
+    "license": "CC-BY-4.0",
+    "doi": "10.34911/rdnt.wu92p1",
+    "curators": "Radiant Earth Foundation & IDinsight",
+    "geographic_scope": "Northern/Eastern India (Uttar Pradesh, Bihar, Odisha, Rajasthan)",
+    "regional_limitation_notice": "Model is trained and validated on real ground-reference fields from Uttar Pradesh, Bihar, Odisha, and Rajasthan. While agro-climatically aligned with the Eastern Gangetic Plain, accuracy in West Bengal is not independently claimed without local West Bengal ground survey validation."
+  },
+  "training_date": "2026-09-11T21:51:39.807003+00:00",
+  "anti_leakage_protocol": "Strict field-level grouping on ground-truth field_id. Zero spatial or parcel overlap between training and validation sets.",
+  "features": {
+    "feature_order": [
+      "B02",
+      "B03",
+      "B04",
+      "B05",
+      "B08",
+      "B11",
+      "NDVI",
+      "NDRE",
+      "EVI",
+      "NDWI"
+    ],
+    "bands": [
+      "B02",
+      "B03",
+      "B04",
+      "B05",
+      "B08",
+      "B11"
+    ],
+    "indices": [
+      "NDVI",
+      "NDRE",
+      "EVI",
+      "NDWI"
+    ],
+    "scaling": "Normalized physical surface reflectance (0.0 - 1.0 range, scaled from BOA DN 0-10,000 or percentage 0-100)."
+  },
+  "supported_classes": [
+    "Fallow Land",
+    "Gram / Chickpea",
+    "Lentil / Pulses",
+    "Maize",
+    "Mustard",
+    "Paddy/Rice",
+    "Potato",
+    "Sugarcane",
+    "Vegetables",
+    "Wheat"
+  ],
+  "class_mapping": {
+    "Fallow Land": 0,
+    "Gram / Chickpea": 1,
+    "Lentil / Pulses": 2,
+    "Maize": 3,
+    "Mustard": 4,
+    "Paddy/Rice": 5,
+    "Potato": 6,
+    "Sugarcane": 7,
+    "Vegetables": 8,
+    "Wheat": 9
+  },
+  "validation_metrics": {
+    "overall_accuracy": 0.5553,
+    "n_training_fields": 319,
+    "n_validation_fields": 106,
+    "n_training_pixels": 2999,
+    "n_validation_pixels": 1012,
+    "per_crop_performance": {
+      "Fallow Land": {
+        "precision": 0.626,
+        "recall": 0.742,
+        "f1_score": 0.679,
+        "support": 264
+      },
+      "Gram / Chickpea": {
+        "precision": 0.6,
+        "recall": 0.3,
+        "f1_score": 0.4,
+        "support": 30
+      },
+      "Lentil / Pulses": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0,
+        "support": 20
+      },
+      "Maize": {
+        "precision": 0.702,
+        "recall": 0.81,
+        "f1_score": 0.752,
+        "support": 105
+      },
+      "Mustard": {
+        "precision": 0.367,
+        "recall": 0.312,
+        "f1_score": 0.337,
+        "support": 199
+      },
+      "Paddy/Rice": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0,
+        "support": 19
+      },
+      "Potato": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0,
+        "support": 29
+      },
+      "Sugarcane": {
+        "precision": 0.481,
+        "recall": 0.26,
+        "f1_score": 0.338,
+        "support": 50
+      },
+      "Vegetables": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0,
+        "support": 0
+      },
+      "Wheat": {
+        "precision": 0.568,
+        "recall": 0.666,
+        "f1_score": 0.613,
+        "support": 296
+      }
+    }
+  }
+}

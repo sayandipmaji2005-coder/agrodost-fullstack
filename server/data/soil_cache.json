@@ -1,0 +1,753 @@
+{
+  "22.894_88.244": {
+    "data": {
+      "source": "ISRIC SoilGrids v2.0",
+      "coordinates": [
+        22.8935,
+        88.244
+      ],
+      "clayPercentage": 38.4,
+      "sandPercentage": 8.7,
+      "siltPercentage": 52.9,
+      "soilTexture": "Silty Clay Loam",
+      "organicCarbonGPerKg": 24.9,
+      "organicCarbonPercentage": 2.49,
+      "phH2o": 6.8,
+      "nitrogenGPerKg": 1.44,
+      "disclaimer": "Map-based estimate — field soil test required for exact values.",
+      "isAvailable": true,
+      "rawLayerDepths": {
+        "clay": 384,
+        "sand": 87,
+        "silt": 529,
+        "phh2o": 68,
+        "soc": 249,
+        "nitrogen": 144
+      }
+    },
+    "timestamp": 1726071400000
+  },
+  "22.891_88.241": {
+    "data": {
+      "source": "ISRIC SoilGrids v2.0",
+      "coordinates": [
+        22.8912,
+        88.2412
+      ],
+      "clayPercentage": 38.1,
+      "sandPercentage": 8.8,
+      "siltPercentage": 53.1,
+      "soilTexture": "Silty Clay Loam",
+      "organicCarbonGPerKg": 24.8,
+      "organicCarbonPercentage": 2.48,
+      "phH2o": 6.8,
+      "nitrogenGPerKg": 1.43,
+      "disclaimer": "Map-based estimate — field soil test required for exact values.",
+      "isAvailable": true,
+      "rawLayerDepths": {
+        "clay": 381,
+        "nitrogen": 143,
+        "phh2o": 68,
+        "sand": 88,
+        "silt": 531,
+        "soc": 248
+      }
+    },
+    "timestamp": 1789141644233
+  },
+  "22.893_88.244": {
+    "data": {
+      "source": "ISRIC SoilGrids v2.0",
+      "coordinates": [
+        22.8935,
+        88.244
+      ],
+      "clayPercentage": 38.4,
+      "sandPercentage": 8.7,
+      "siltPercentage": 52.9,
+      "soilTexture": "Silty Clay Loam",
+      "organicCarbonGPerKg": 24.9,
+      "organicCarbonPercentage": 2.49,
+      "phH2o": 6.8,
+      "nitrogenGPerKg": 1.44,
+      "disclaimer": "Map-based estimate — field soil test required for exact values.",
+      "isAvailable": true,
+      "rawLayerDepths": {
+        "clay": 384,
+        "nitrogen": 144,
+        "phh2o": 68,
+        "sand": 87,
+        "silt": 529,
+        "soc": 249
+      }
+    },
+    "timestamp": 1789141639817
+  },
+  "22.881_88.021": {
+    "data": {
+      "source": "ISRIC SoilGrids v2.0",
+      "coordinates": [
+        22.8813,
+        88.0213
+      ],
+      "clayPercentage": 32.2,
+      "sandPercentage": 16.8,
+      "siltPercentage": 51,
+      "soilTexture": "Silty Clay Loam",
+      "organicCarbonGPerKg": 22.5,
+      "organicCarbonPercentage": 2.25,
+      "phH2o": 6.7,
+      "nitrogenGPerKg": 1.59,
+      "disclaimer": "Map-based estimate — field soil test required for exact values.",
+      "isAvailable": true,
+      "resolution": "250m grid resolution",
+      "depth": "0–5 cm (topsoil)",
+      "isEstimate": true,
+      "rawLayerDepths": {
+        "clay": 322,
+        "nitrogen": 159,
+        "phh2o": 67,
+        "sand": 168,
+        "silt": 510,
+        "soc": 225
+      }
+    },
+    "timestamp": 1789142810649
+  },
+  "22.894_88.246": {
+    "data": {
+      "source": "ISRIC SoilGrids v2.0",
+      "coordinates": [
+        22.893753,
+        88.245902
+      ],
+      "clayPercentage": 38.4,
+      "sandPercentage": 8.8,
+      "siltPercentage": 52.8,
+      "soilTexture": "Silty Clay Loam",
+      "organicCarbonGPerKg": 24.2,
+      "organicCarbonPercentage": 2.42,
+      "phH2o": 6.7,
+      "nitrogenGPerKg": 1.41,
+      "disclaimer": "Map-based estimate — field soil test required for exact values.",
+      "isAvailable": true,
+      "resolution": "250m grid resolution",
+      "depth": "0–5 cm (topsoil)",
+      "isEstimate": true,
+      "rawLayerDepths": {
+        "clay": 384,
+        "nitrogen": 141,
+        "phh2o": 67,
+        "sand": 88,
+        "silt": 528,
+        "soc": 242
+      }
+    },
+    "timestamp": 1789143115440
+  },
+  "22.894_88.245": {
+    "data": {
+      "source": "ISRIC SoilGrids v2.0",
+      "coordinates": [
+        22.893848,
+        88.244713
+      ],
+      "clayPercentage": 38.4,
+      "sandPercentage": 8.8,
+      "siltPercentage": 52.8,
+      "soilTexture": "Silty Clay Loam",
+      "organicCarbonGPerKg": 24.2,
+      "organicCarbonPercentage": 2.42,
+      "phH2o": 6.7,
+      "nitrogenGPerKg": 1.41,
+      "disclaimer": "Map-based estimate — field soil test required for exact values.",
+      "isAvailable": true,
+      "resolution": "250m grid resolution",
+      "depth": "0–5 cm (topsoil)",
+      "isEstimate": true,
+      "rawLayerDepths": {
+        "clay": 384,
+        "nitrogen": 141,
+        "phh2o": 67,
+        "sand": 88,
+        "silt": 528,
+        "soc": 242
+      }
+    },
+    "timestamp": 1789143183176
+  },
+  "22.895_88.242": {
+    "data": {
+      "source": "ISRIC SoilGrids v2.0",
+      "coordinates": [
+        22.89532,
+        88.242173
+      ],
+      "clayPercentage": 38.3,
+      "sandPercentage": 8.7,
+      "siltPercentage": 53,
+      "soilTexture": "Silty Clay Loam",
+      "organicCarbonGPerKg": 23.8,
+      "organicCarbonPercentage": 2.38,
+      "phH2o": 6.8,
+      "nitrogenGPerKg": 1.49,
+      "disclaimer": "Map-based estimate — field soil test required for exact values.",
+      "isAvailable": true,
+      "resolution": "250m grid resolution",
+      "depth": "0–5 cm (topsoil)",
+      "isEstimate": true,
+      "rawLayerDepths": {
+        "clay": 383,
+        "nitrogen": 149,
+        "phh2o": 68,
+        "sand": 87,
+        "silt": 530,
+        "soc": 238
+      }
+    },
+    "timestamp": 1789143236940
+  },
+  "22.684_87.697": {
+    "data": {
+      "source": "ISRIC SoilGrids v2.0",
+      "coordinates": [
+        22.684092,
+        87.696813
+      ],
+      "clayPercentage": 27.7,
+      "sandPercentage": 19.7,
+      "siltPercentage": 52.5,
+      "soilTexture": "Silty Clay Loam",
+      "organicCarbonGPerKg": 28.2,
+      "organicCarbonPercentage": 2.82,
+      "phH2o": 6.5,
+      "nitrogenGPerKg": 1.71,
+      "disclaimer": "Map-based estimate — field soil test required for exact values.",
+      "isAvailable": true,
+      "resolution": "250m grid resolution",
+      "depth": "0–5 cm (topsoil)",
+      "isEstimate": true,
+      "rawLayerDepths": {
+        "clay": 277,
+        "nitrogen": 171,
+        "phh2o": 65,
+        "sand": 197,
+        "silt": 525,
+        "soc": 282
+      }
+    },
+    "timestamp": 1789143336288
+  },
+  "22.886_88.022": {
+    "data": {
+      "source": "ISRIC SoilGrids v2.0",
+      "coordinates": [
+        22.88625,
+        88.02175
+      ],
+      "disclaimer": "Map-based estimate — field soil test required for exact values.",
+      "isAvailable": true,
+      "resolution": "250m grid resolution",
+      "depth": "0–5 cm (topsoil)",
+      "isEstimate": true,
+      "rawLayerDepths": {}
+    },
+    "timestamp": 1789143868472
+  },
+  "22.896_88.246": {
+    "data": {
+      "source": "ISRIC SoilGrids v2.0",
+      "coordinates": [
+        22.8962,
+        88.2461
+      ],
+      "clayPercentage": 39.7,
+      "sandPercentage": 9.4,
+      "siltPercentage": 50.8,
+      "soilTexture": "Silty Clay Loam",
+      "organicCarbonGPerKg": 27.4,
+      "organicCarbonPercentage": 2.74,
+      "phH2o": 6.8,
+      "nitrogenGPerKg": 2.18,
+      "disclaimer": "Map-based estimate — field soil test required for exact values.",
+      "isAvailable": true,
+      "resolution": "250m grid resolution",
+      "depth": "0–5 cm (topsoil)",
+      "isEstimate": true,
+      "rawLayerDepths": {
+        "clay": 397,
+        "nitrogen": 218,
+        "phh2o": 68,
+        "sand": 94,
+        "silt": 508,
+        "soc": 274
+      }
+    },
+    "timestamp": 1789145193949
+  },
+  "26.889_88.188": {
+    "data": {
+      "source": "ISRIC SoilGrids v2.0",
+      "coordinates": [
+        26.8885,
+        88.188
+      ],
+      "clayPercentage": 26.2,
+      "sandPercentage": 38.2,
+      "siltPercentage": 35.6,
+      "soilTexture": "Loam",
+      "organicCarbonGPerKg": 34.1,
+      "organicCarbonPercentage": 3.41,
+      "phH2o": 5.4,
+      "nitrogenGPerKg": 3.2,
+      "disclaimer": "Map-based estimate — field soil test required for exact values.",
+      "isAvailable": true,
+      "resolution": "250m grid resolution",
+      "depth": "0–5 cm (topsoil)",
+      "isEstimate": true,
+      "rawLayerDepths": {
+        "clay": 262,
+        "nitrogen": 320,
+        "phh2o": 54,
+        "sand": 382,
+        "silt": 356,
+        "soc": 341
+      }
+    },
+    "timestamp": 1789145209113
+  },
+  "22.891_88.250": {
+    "data": {
+      "source": "ISRIC SoilGrids v2.0",
+      "coordinates": [
+        22.891299,
+        88.250035
+      ],
+      "clayPercentage": 40.6,
+      "sandPercentage": 8.5,
+      "siltPercentage": 50.9,
+      "soilTexture": "Silty Clay",
+      "organicCarbonGPerKg": 24.5,
+      "organicCarbonPercentage": 2.45,
+      "phH2o": 6.9,
+      "nitrogenGPerKg": 1.63,
+      "disclaimer": "Map-based estimate — field soil test required for exact values.",
+      "isAvailable": true,
+      "resolution": "250m grid resolution",
+      "depth": "0–5 cm (topsoil)",
+      "isEstimate": true,
+      "rawLayerDepths": {
+        "clay": 406,
+        "nitrogen": 163,
+        "phh2o": 69,
+        "sand": 85,
+        "silt": 509,
+        "soc": 245
+      }
+    },
+    "timestamp": 1789145279468
+  },
+  "23.373_85.985": {
+    "data": {
+      "source": "ISRIC SoilGrids v2.0",
+      "coordinates": [
+        23.372687,
+        85.984776
+      ],
+      "clayPercentage": 36,
+      "sandPercentage": 27.4,
+      "siltPercentage": 36.5,
+      "soilTexture": "Clay Loam",
+      "organicCarbonGPerKg": 17.6,
+      "organicCarbonPercentage": 1.76,
+      "phH2o": 6.4,
+      "nitrogenGPerKg": 1.52,
+      "disclaimer": "Map-based estimate — field soil test required for exact values.",
+      "isAvailable": true,
+      "resolution": "250m grid resolution",
+      "depth": "0–5 cm (topsoil)",
+      "isEstimate": true,
+      "rawLayerDepths": {
+        "clay": 360,
+        "nitrogen": 152,
+        "phh2o": 64,
+        "sand": 274,
+        "silt": 365,
+        "soc": 176
+      }
+    },
+    "timestamp": 1789145397550
+  },
+  "30.927_75.500": {
+    "data": {
+      "source": "ISRIC SoilGrids v2.0",
+      "coordinates": [
+        30.927446,
+        75.500372
+      ],
+      "clayPercentage": 24.1,
+      "sandPercentage": 40.7,
+      "siltPercentage": 35.2,
+      "soilTexture": "Loam",
+      "organicCarbonGPerKg": 12,
+      "organicCarbonPercentage": 1.2,
+      "phH2o": 7.9,
+      "nitrogenGPerKg": 1.12,
+      "disclaimer": "Map-based estimate — field soil test required for exact values.",
+      "isAvailable": true,
+      "resolution": "250m grid resolution",
+      "depth": "0–5 cm (topsoil)",
+      "isEstimate": true,
+      "rawLayerDepths": {
+        "clay": 241,
+        "nitrogen": 112,
+        "phh2o": 79,
+        "sand": 407,
+        "silt": 352,
+        "soc": 120
+      }
+    },
+    "timestamp": 1789154098356
+  },
+  "30.927_75.504": {
+    "data": {
+      "source": "ISRIC SoilGrids v2.0",
+      "coordinates": [
+        30.927038,
+        75.503697
+      ],
+      "clayPercentage": 24.6,
+      "sandPercentage": 40.2,
+      "siltPercentage": 35.2,
+      "soilTexture": "Loam",
+      "organicCarbonGPerKg": 11.3,
+      "organicCarbonPercentage": 1.13,
+      "phH2o": 7.9,
+      "nitrogenGPerKg": 1.12,
+      "disclaimer": "Map-based estimate — field soil test required for exact values.",
+      "isAvailable": true,
+      "resolution": "250m grid resolution",
+      "depth": "0–5 cm (topsoil)",
+      "isEstimate": true,
+      "rawLayerDepths": {
+        "clay": 246,
+        "nitrogen": 112,
+        "phh2o": 79,
+        "sand": 402,
+        "silt": 352,
+        "soc": 113
+      }
+    },
+    "timestamp": 1789154239137
+  },
+  "27.132_80.859": {
+    "data": {
+      "source": "ISRIC SoilGrids v2.0",
+      "coordinates": [
+        27.131857,
+        80.858894
+      ],
+      "clayPercentage": 25,
+      "sandPercentage": 37.5,
+      "siltPercentage": 37.5,
+      "soilTexture": "Loam",
+      "organicCarbonGPerKg": 18.3,
+      "organicCarbonPercentage": 1.83,
+      "phH2o": 7,
+      "nitrogenGPerKg": 1.25,
+      "disclaimer": "Map-based estimate — field soil test required for exact values.",
+      "isAvailable": true,
+      "resolution": "250m grid resolution",
+      "depth": "0–5 cm (topsoil)",
+      "isEstimate": true,
+      "rawLayerDepths": {
+        "clay": 250,
+        "nitrogen": 125,
+        "phh2o": 70,
+        "sand": 375,
+        "silt": 375,
+        "soc": 183
+      }
+    },
+    "timestamp": 1789154571615
+  },
+  "22.683_87.700": {
+    "data": {
+      "source": "ISRIC SoilGrids v2.0",
+      "coordinates": [
+        22.682529,
+        87.700379
+      ],
+      "clayPercentage": 27.6,
+      "sandPercentage": 19.4,
+      "siltPercentage": 53,
+      "soilTexture": "Silty Clay Loam",
+      "organicCarbonGPerKg": 27.7,
+      "organicCarbonPercentage": 2.77,
+      "phH2o": 6.5,
+      "nitrogenGPerKg": 1.66,
+      "disclaimer": "Map-based estimate — field soil test required for exact values.",
+      "isAvailable": true,
+      "resolution": "250m grid resolution",
+      "depth": "0–5 cm (topsoil)",
+      "isEstimate": true,
+      "rawLayerDepths": {
+        "clay": 276,
+        "nitrogen": 166,
+        "phh2o": 65,
+        "sand": 194,
+        "silt": 530,
+        "soc": 277
+      }
+    },
+    "timestamp": 1789154851367
+  },
+  "30.929_75.497": {
+    "data": {
+      "source": "ISRIC SoilGrids v2.0",
+      "coordinates": [
+        30.928723,
+        75.497171
+      ],
+      "clayPercentage": 24.3,
+      "sandPercentage": 40.6,
+      "siltPercentage": 35,
+      "soilTexture": "Loam",
+      "organicCarbonGPerKg": 12.2,
+      "organicCarbonPercentage": 1.22,
+      "phH2o": 7.9,
+      "nitrogenGPerKg": 1.08,
+      "disclaimer": "Map-based estimate — field soil test required for exact values.",
+      "isAvailable": true,
+      "resolution": "250m grid resolution",
+      "depth": "0–5 cm (topsoil)",
+      "isEstimate": true,
+      "rawLayerDepths": {
+        "clay": 243,
+        "nitrogen": 108,
+        "phh2o": 79,
+        "sand": 406,
+        "silt": 350,
+        "soc": 122
+      }
+    },
+    "timestamp": 1789156664987
+  },
+  "23.374_85.985": {
+    "data": {
+      "source": "ISRIC SoilGrids v2.0",
+      "coordinates": [
+        23.374141,
+        85.984514
+      ],
+      "clayPercentage": 36,
+      "sandPercentage": 27.4,
+      "siltPercentage": 36.5,
+      "soilTexture": "Clay Loam",
+      "organicCarbonGPerKg": 17.6,
+      "organicCarbonPercentage": 1.76,
+      "phH2o": 6.4,
+      "nitrogenGPerKg": 1.52,
+      "disclaimer": "Map-based estimate — field soil test required for exact values.",
+      "isAvailable": true,
+      "resolution": "250m grid resolution",
+      "depth": "0–5 cm (topsoil)",
+      "isEstimate": true,
+      "rawLayerDepths": {
+        "clay": 360,
+        "nitrogen": 152,
+        "phh2o": 64,
+        "sand": 274,
+        "silt": 365,
+        "soc": 176
+      }
+    },
+    "timestamp": 1789156758792
+  },
+  "30.930_75.499": {
+    "data": {
+      "source": "ISRIC SoilGrids v2.0",
+      "coordinates": [
+        30.930391,
+        75.499008
+      ],
+      "clayPercentage": 23.6,
+      "sandPercentage": 42.5,
+      "siltPercentage": 33.9,
+      "soilTexture": "Loam",
+      "organicCarbonGPerKg": 12.4,
+      "organicCarbonPercentage": 1.24,
+      "phH2o": 7.9,
+      "nitrogenGPerKg": 1.05,
+      "disclaimer": "Map-based estimate — field soil test required for exact values.",
+      "isAvailable": true,
+      "resolution": "250m grid resolution",
+      "depth": "0–5 cm (topsoil)",
+      "isEstimate": true,
+      "rawLayerDepths": {
+        "clay": 236,
+        "nitrogen": 105,
+        "phh2o": 79,
+        "sand": 425,
+        "silt": 339,
+        "soc": 124
+      }
+    },
+    "timestamp": 1789158197851
+  },
+  "30.945_75.470": {
+    "data": {
+      "source": "ISRIC SoilGrids v2.0",
+      "coordinates": [
+        30.945205,
+        75.470045
+      ],
+      "clayPercentage": 25.2,
+      "sandPercentage": 41,
+      "siltPercentage": 33.8,
+      "soilTexture": "Loam",
+      "organicCarbonGPerKg": 13.2,
+      "organicCarbonPercentage": 1.32,
+      "phH2o": 7.9,
+      "nitrogenGPerKg": 1.1,
+      "disclaimer": "Map-based estimate — field soil test required for exact values.",
+      "isAvailable": true,
+      "resolution": "250m grid resolution",
+      "depth": "0–5 cm (topsoil)",
+      "isEstimate": true,
+      "rawLayerDepths": {
+        "clay": 252,
+        "nitrogen": 110,
+        "phh2o": 79,
+        "sand": 410,
+        "silt": 338,
+        "soc": 132
+      }
+    },
+    "timestamp": 1789158456976
+  },
+  "22.900_88.255": {
+    "data": {
+      "source": "ISRIC SoilGrids v2.0",
+      "coordinates": [
+        22.900393,
+        88.255165
+      ],
+      "clayPercentage": 39.8,
+      "sandPercentage": 9,
+      "siltPercentage": 51.2,
+      "soilTexture": "Silty Clay Loam",
+      "organicCarbonGPerKg": 23.2,
+      "organicCarbonPercentage": 2.32,
+      "phH2o": 6.8,
+      "nitrogenGPerKg": 1.6,
+      "disclaimer": "Map-based estimate — field soil test required for exact values.",
+      "isAvailable": true,
+      "resolution": "250m grid resolution",
+      "depth": "0–5 cm (topsoil)",
+      "isEstimate": true,
+      "rawLayerDepths": {
+        "clay": 398,
+        "nitrogen": 160,
+        "phh2o": 68,
+        "sand": 90,
+        "silt": 512,
+        "soc": 232
+      }
+    },
+    "timestamp": 1789159539535
+  },
+  "30.926_75.497": {
+    "data": {
+      "source": "ISRIC SoilGrids v2.0",
+      "coordinates": [
+        30.925862,
+        75.496813
+      ],
+      "clayPercentage": 23.9,
+      "sandPercentage": 40.4,
+      "siltPercentage": 35.7,
+      "soilTexture": "Loam",
+      "organicCarbonGPerKg": 11.7,
+      "organicCarbonPercentage": 1.17,
+      "phH2o": 7.9,
+      "nitrogenGPerKg": 1.12,
+      "disclaimer": "Map-based estimate — field soil test required for exact values.",
+      "isAvailable": true,
+      "resolution": "250m grid resolution",
+      "depth": "0–5 cm (topsoil)",
+      "isEstimate": true,
+      "rawLayerDepths": {
+        "clay": 239,
+        "nitrogen": 112,
+        "phh2o": 79,
+        "sand": 404,
+        "silt": 357,
+        "soc": 117
+      }
+    },
+    "timestamp": 1789160044479
+  },
+  "30.925_75.497": {
+    "data": {
+      "source": "ISRIC SoilGrids v2.0",
+      "coordinates": [
+        30.925475,
+        75.496812
+      ],
+      "clayPercentage": 24.1,
+      "sandPercentage": 40.7,
+      "siltPercentage": 35.2,
+      "soilTexture": "Loam",
+      "organicCarbonGPerKg": 11.9,
+      "organicCarbonPercentage": 1.19,
+      "phH2o": 7.9,
+      "nitrogenGPerKg": 1.13,
+      "disclaimer": "Map-based estimate — field soil test required for exact values.",
+      "isAvailable": true,
+      "resolution": "250m grid resolution",
+      "depth": "0–5 cm (topsoil)",
+      "isEstimate": true,
+      "rawLayerDepths": {
+        "clay": 241,
+        "nitrogen": 113,
+        "phh2o": 79,
+        "sand": 407,
+        "silt": 352,
+        "soc": 119
+      }
+    },
+    "timestamp": 1789160999112
+  },
+  "30.930_75.498": {
+    "data": {
+      "source": "ISRIC SoilGrids v2.0",
+      "coordinates": [
+        30.9304895462434,
+        75.4983030571545
+      ],
+      "clayPercentage": 23.6,
+      "sandPercentage": 42.5,
+      "siltPercentage": 33.9,
+      "soilTexture": "Loam",
+      "organicCarbonGPerKg": 12.4,
+      "organicCarbonPercentage": 1.24,
+      "phH2o": 7.9,
+      "nitrogenGPerKg": 1.05,
+      "disclaimer": "Map-based estimate — field soil test required for exact values.",
+      "isAvailable": true,
+      "resolution": "250m grid resolution",
+      "depth": "0–5 cm (topsoil)",
+      "isEstimate": true,
+      "rawLayerDepths": {
+        "clay": 236,
+        "nitrogen": 105,
+        "phh2o": 79,
+        "sand": 425,
+        "silt": 339,
+        "soc": 124
+      }
+    },
+    "timestamp": 1789185458387
+  }
+}

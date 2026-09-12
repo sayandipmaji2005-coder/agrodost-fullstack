@@ -1,0 +1,25 @@
+{
+  "name": "agricare",
+  "version": "1.0.0",
+  "description": "AgriCare: Production-grade full-stack AI crop health monitoring and advisory platform",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently -k -p \"[{name}]\" -n \"SERVER,CLIENT\" -c \"cyan.bold,green.bold\" \"npm run dev --prefix server\" \"npm run dev --prefix client\"",
+    "build": "npm run build --prefix server && npm run build --prefix client",
+    "start": "npm run start --prefix server",
+    "install:all": "npm install && npm install --prefix server && npm install --prefix client"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "keywords": [
+    "agriculture",
+    "crop-health",
+    "satellite-monitoring",
+    "sar-radar",
+    "disease-diagnosis",
+    "kisan-parchi"
+  ],
+  "author": "AgriCare Team",
+  "license": "MIT"
+}
