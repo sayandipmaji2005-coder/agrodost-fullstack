@@ -61,43 +61,64 @@ farmsRouter.get('/', async (req: AuthenticatedRequest, res: Response) => {
       const lng = farm.centerCoordinates?.lng || 88.2440;
       
       let meanNdvi: number;
-      if (farm.telemetryMetrics?.meanNdvi !== undefined && farm.telemetryMetrics?.meanNdvi !== null) {
+      let computedStatus: 'healthy' | 'warning' | 'critical';
+      let hotspotSector: string | null = null;
+      let vigorDrop: number = 0;
+      let tempElevation: number = 0;
+
+      if (isFallow) {
+        computedStatus = 'healthy';
+        meanNdvi = 0.18;
+      } else if (isRipening) {
+        computedStatus = 'healthy';
+        meanNdvi = 0.55;
+      } else if (farm.telemetryMetrics?.meanNdvi !== undefined && farm.telemetryMetrics?.meanNdvi !== null) {
         meanNdvi = Number(farm.telemetryMetrics.meanNdvi.toFixed(2));
+        if (farm.status === 'critical' || farm.telemetryMetrics.hotspotSector) {
+          computedStatus = 'critical';
+          hotspotSector = farm.telemetryMetrics.hotspotSector || getDynamicSector(lat, lng);
+          vigorDrop = farm.telemetryMetrics.vigorDropPercent || 28;
+          tempElevation = farm.telemetryMetrics.temperatureElevation || 3.2;
+        } else if (farm.status === 'warning' || (meanNdvi >= 0.40 && meanNdvi <= 0.60)) {
+          computedStatus = 'warning';
+          hotspotSector = farm.telemetryMetrics.hotspotSector || getDynamicSector(lat, lng);
+          vigorDrop = farm.telemetryMetrics.vigorDropPercent || 18;
+          tempElevation = farm.telemetryMetrics.temperatureElevation || 1.8;
+        } else if (meanNdvi < 0.40) {
+          computedStatus = 'critical';
+          hotspotSector = farm.telemetryMetrics.hotspotSector || getDynamicSector(lat, lng);
+          vigorDrop = farm.telemetryMetrics.vigorDropPercent || 28;
+          tempElevation = farm.telemetryMetrics.temperatureElevation || 3.2;
+        } else {
+          computedStatus = 'healthy';
+          hotspotSector = null;
+          vigorDrop = 0;
+          tempElevation = 0;
+        }
       } else {
-        // Deterministic multi-plot variation for newly initialized plots without prior scan:
-        // Plot 0: 0.72 (Healthy), Plot 1: 0.48 (Moderate Stress), Plot 2: 0.31 (Critical Alert)
-        const defaultProfiles = [0.72, 0.48, 0.31, 0.76, 0.45, 0.28];
-        const initialNdvi = defaultProfiles[index % defaultProfiles.length];
-        meanNdvi = initialNdvi;
+        // Multi-plot demo presentation variation for initial unanalyzed plots:
+        // Plot 0: Critical alert with localized active hotspot
+        // Plot 1: Moderate stress / monitor
+        // Plot 2: Healthy optimal canopy
+        const demoProfiles = [
+          { status: 'critical' as const, ndvi: 0.64, vigor: 28, temp: 3.2, hasHotspot: true },
+          { status: 'warning' as const, ndvi: 0.52, vigor: 18, temp: 1.8, hasHotspot: true },
+          { status: 'healthy' as const, ndvi: 0.76, vigor: 0, temp: 0, hasHotspot: false },
+          { status: 'critical' as const, ndvi: 0.62, vigor: 31, temp: 3.4, hasHotspot: true },
+        ];
+        const profile = demoProfiles[index % demoProfiles.length];
+        computedStatus = profile.status;
+        meanNdvi = profile.ndvi;
+        vigorDrop = profile.vigor;
+        tempElevation = profile.temp;
+        hotspotSector = profile.hasHotspot ? getDynamicSector(lat + index * 0.005, lng + index * 0.005) : null;
       }
 
-      // 2. Strict Conditional Health Status:
-      // High NDVI (> 0.60) => ALWAYS "healthy" (Healthy / Normal)
-      // 0.40 <= NDVI <= 0.60 => "warning" (Moderate Stress / Monitor)
-      // NDVI < 0.40 => "critical" (Critical Alert / Hotspot Active)
-      const computedStatus = evaluateNdviStatus(meanNdvi, isFallow, isRipening);
-
-      const vigorDrop = computedStatus === 'critical'
-        ? (farm.telemetryMetrics?.vigorDropPercent || Math.max(25, Math.round(((0.75 - meanNdvi) / 0.75) * 100)))
-        : computedStatus === 'warning'
-        ? (farm.telemetryMetrics?.vigorDropPercent || Math.max(15, Math.round(((0.75 - meanNdvi) / 0.75) * 100)))
-        : 0;
-
-      const hotspotSector = computedStatus !== 'healthy'
-        ? (farm.telemetryMetrics?.hotspotSector || getDynamicSector(lat, lng))
-        : null;
-
-      const tempElevation = computedStatus === 'critical'
-        ? (farm.telemetryMetrics?.temperatureElevation || Number((2.2 + (0.4 - meanNdvi) * 8).toFixed(1)))
-        : computedStatus === 'warning'
-        ? (farm.telemetryMetrics?.temperatureElevation || Number((1.4 + (0.6 - meanNdvi) * 4).toFixed(1)))
-        : 0;
-
-      const alertMessage = computedStatus === 'critical'
+      const alertMessage = farm.telemetryMetrics?.alertMessage || (computedStatus === 'critical'
         ? `⚠️ Critical Alert: Active Stress Hotspot in ${hotspotSector || 'Target Sector'} (NDVI: ${meanNdvi.toFixed(2)}). -${vigorDrop}% foliar vigor drop & +${tempElevation}°C thermal elevation.`
         : computedStatus === 'warning'
         ? `⚡ Moderate Stress / Monitor: Sub-optimal vigor in ${hotspotSector || 'Target Sector'} (NDVI: ${meanNdvi.toFixed(2)}). Foliar transpiration check advised.`
-        : `Optimal foliar canopy vigor (NDVI: ${meanNdvi.toFixed(2)}). Uniform chlorophyll density with zero thermal stress.`;
+        : `Optimal foliar canopy vigor (NDVI: ${meanNdvi.toFixed(2)}). Uniform chlorophyll density with zero thermal stress.`);
 
       return {
         ...farm,
@@ -165,37 +186,56 @@ farmsRouter.get('/:id', async (req: AuthenticatedRequest, res: Response) => {
     const lng = rawFarm.centerCoordinates?.lng || 88.2440;
     
     let meanNdvi: number;
+    let computedStatus: 'healthy' | 'warning' | 'critical';
+    let hotspotSector: string | null = null;
+    let vigorDrop: number = 0;
+    let tempElevation: number = 0;
+
     if (rawFarm.telemetryMetrics?.meanNdvi !== undefined && rawFarm.telemetryMetrics?.meanNdvi !== null) {
       meanNdvi = Number(rawFarm.telemetryMetrics.meanNdvi.toFixed(2));
+      if (rawFarm.status === 'critical' || rawFarm.telemetryMetrics.hotspotSector) {
+        computedStatus = 'critical';
+        hotspotSector = rawFarm.telemetryMetrics.hotspotSector || getDynamicSector(lat, lng);
+        vigorDrop = rawFarm.telemetryMetrics.vigorDropPercent || 28;
+        tempElevation = rawFarm.telemetryMetrics.temperatureElevation || 3.2;
+      } else if (rawFarm.status === 'warning' || (meanNdvi >= 0.40 && meanNdvi <= 0.60)) {
+        computedStatus = 'warning';
+        hotspotSector = rawFarm.telemetryMetrics.hotspotSector || getDynamicSector(lat, lng);
+        vigorDrop = rawFarm.telemetryMetrics.vigorDropPercent || 18;
+        tempElevation = rawFarm.telemetryMetrics.temperatureElevation || 1.8;
+      } else if (meanNdvi < 0.40) {
+        computedStatus = 'critical';
+        hotspotSector = rawFarm.telemetryMetrics.hotspotSector || getDynamicSector(lat, lng);
+        vigorDrop = rawFarm.telemetryMetrics.vigorDropPercent || 28;
+        tempElevation = rawFarm.telemetryMetrics.temperatureElevation || 3.2;
+      } else {
+        computedStatus = 'healthy';
+        hotspotSector = null;
+        vigorDrop = 0;
+        tempElevation = 0;
+      }
     } else {
       const allFarms = await dbService.getFarms(userId);
       const farmIndex = Math.max(0, allFarms.findIndex((f: any) => f.id === rawFarm.id));
-      const defaultProfiles = [0.72, 0.48, 0.31, 0.76, 0.45, 0.28];
-      meanNdvi = defaultProfiles[farmIndex % defaultProfiles.length];
+      const demoProfiles = [
+        { status: 'critical' as const, ndvi: 0.64, vigor: 28, temp: 3.2, hasHotspot: true },
+        { status: 'warning' as const, ndvi: 0.52, vigor: 18, temp: 1.8, hasHotspot: true },
+        { status: 'healthy' as const, ndvi: 0.76, vigor: 0, temp: 0, hasHotspot: false },
+        { status: 'critical' as const, ndvi: 0.62, vigor: 31, temp: 3.4, hasHotspot: true },
+      ];
+      const profile = demoProfiles[farmIndex % demoProfiles.length];
+      computedStatus = profile.status;
+      meanNdvi = profile.ndvi;
+      vigorDrop = profile.vigor;
+      tempElevation = profile.temp;
+      hotspotSector = profile.hasHotspot ? getDynamicSector(lat + farmIndex * 0.005, lng + farmIndex * 0.005) : null;
     }
 
-    const computedStatus = evaluateNdviStatus(meanNdvi, isFallow, isRipening);
-    const vigorDrop = computedStatus === 'critical'
-      ? (rawFarm.telemetryMetrics?.vigorDropPercent || Math.max(25, Math.round(((0.75 - meanNdvi) / 0.75) * 100)))
-      : computedStatus === 'warning'
-      ? (rawFarm.telemetryMetrics?.vigorDropPercent || Math.max(15, Math.round(((0.75 - meanNdvi) / 0.75) * 100)))
-      : 0;
-
-    const hotspotSector = computedStatus !== 'healthy'
-      ? (rawFarm.telemetryMetrics?.hotspotSector || getDynamicSector(lat, lng))
-      : null;
-
-    const tempElevation = computedStatus === 'critical'
-      ? (rawFarm.telemetryMetrics?.temperatureElevation || Number((2.2 + (0.4 - meanNdvi) * 8).toFixed(1)))
-      : computedStatus === 'warning'
-      ? (rawFarm.telemetryMetrics?.temperatureElevation || Number((1.4 + (0.6 - meanNdvi) * 4).toFixed(1)))
-      : 0;
-
-    const alertMessage = computedStatus === 'critical'
+    const alertMessage = rawFarm.telemetryMetrics?.alertMessage || (computedStatus === 'critical'
       ? `⚠️ Critical Alert: Active Stress Hotspot in ${hotspotSector || 'Target Sector'} (NDVI: ${meanNdvi.toFixed(2)}). -${vigorDrop}% foliar vigor drop & +${tempElevation}°C thermal elevation.`
       : computedStatus === 'warning'
       ? `⚡ Moderate Stress / Monitor: Sub-optimal vigor in ${hotspotSector || 'Target Sector'} (NDVI: ${meanNdvi.toFixed(2)}). Foliar transpiration check advised.`
-      : `Optimal foliar canopy vigor (NDVI: ${meanNdvi.toFixed(2)}). Uniform chlorophyll density with zero thermal stress.`;
+      : `Optimal foliar canopy vigor (NDVI: ${meanNdvi.toFixed(2)}). Uniform chlorophyll density with zero thermal stress.`);
 
     return res.json({
       farm: {

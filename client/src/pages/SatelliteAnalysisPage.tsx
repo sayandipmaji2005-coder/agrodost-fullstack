@@ -513,11 +513,11 @@ export const SatelliteAnalysisPage: React.FC = () => {
                   </span>
                   <div className="flex items-center gap-1.5 flex-wrap">
                     <span className={`text-[11px] font-black font-mono px-2 py-0.5 rounded-lg border shadow-xs ${
-                      (currentScan?.opticalMetrics?.meanNdvi ?? selectedFarm.telemetryMetrics?.meanNdvi ?? 0.72) > 0.6 
-                        ? 'bg-emerald-50 text-emerald-700 border-emerald-200' 
-                        : (currentScan?.opticalMetrics?.meanNdvi ?? selectedFarm.telemetryMetrics?.meanNdvi ?? 0.50) >= 0.4 
+                      (currentScan?.overallStatus || selectedFarm.status) === 'critical'
+                        ? 'bg-rose-50 text-rose-800 border-rose-300' 
+                        : (currentScan?.overallStatus || selectedFarm.status) === 'warning'
                         ? 'bg-amber-50 text-amber-800 border-amber-300' 
-                        : 'bg-rose-50 text-rose-800 border-rose-300'
+                        : 'bg-emerald-50 text-emerald-700 border-emerald-200'
                     }`}>
                       NDVI: {(currentScan?.opticalMetrics?.meanNdvi ?? selectedFarm.telemetryMetrics?.meanNdvi ?? 0.72).toFixed(2)}
                     </span>

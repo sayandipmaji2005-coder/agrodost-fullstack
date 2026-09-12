@@ -181,18 +181,47 @@ export async function analyzeSatellite(req: AuthenticatedRequest, res: Response)
     const epicenterLng = bbox[0] + (0.18 + 0.64 * geoSeedX) * spanLng;
     const epicenterLat = bbox[1] + (0.18 + 0.64 * geoSeedY) * spanLat;
 
-    // Find closest cell to the dynamic geographic stress epicenter
-    let closestCellIndex = 0;
-    let minDistanceToEpicenter = Infinity;
-    clippedFeatures.forEach((cell: any, idx: number) => {
+    // Calculate distance from each sub-parcel cell centroid to the dynamic stress epicenter
+    const cellDistances = clippedFeatures.map((cell: any, idx: number) => {
       const centroid = turf.centroid(cell);
       const d = turf.distance([epicenterLng, epicenterLat], centroid.geometry.coordinates, { units: 'kilometers' });
-      if (d < minDistanceToEpicenter) {
-        minDistanceToEpicenter = d;
-        closestCellIndex = idx;
-      }
+      return { idx, distance: d };
     });
-    const hotspotCellIndex = hasStressHotspot ? closestCellIndex : -1;
+    // Sort ascending by proximity to stress epicenter
+    cellDistances.sort((a: { idx: number; distance: number }, b: { idx: number; distance: number }) => a.distance - b.distance);
+
+    const totalSectors = clippedFeatures.length;
+    const criticalIndices = new Set<number>();
+    const moderateIndices = new Set<number>();
+
+    // Multi-State Presentation Demo Zoning:
+    // Green (Healthy Canopy, ~60-70%), Yellow (Moderate Stress, ~20-25%), Red (Critical Anomaly, ~10-15%)
+    if (!isFallowCheck && !isRipeningCheck) {
+      if (scenario === 'healthy') {
+        // Pure healthy canopy with subtle variance
+        if (totalSectors >= 6) {
+          moderateIndices.add(cellDistances[0].idx);
+        }
+      } else {
+        // Presentation Demo / Default Live Orbit / Critical:
+        const criticalCount = (scenario === 'critical' || totalSectors >= 12)
+          ? Math.min(2, Math.max(1, Math.round(totalSectors * 0.15)))
+          : 1;
+
+        for (let i = 0; i < criticalCount; i++) {
+          criticalIndices.add(cellDistances[i].idx);
+        }
+
+        const moderateCount = Math.min(
+          totalSectors - criticalCount - 1,
+          Math.max(1, Math.round(totalSectors * 0.25))
+        );
+
+        for (let i = criticalCount; i < criticalCount + moderateCount; i++) {
+          moderateIndices.add(cellDistances[i].idx);
+        }
+      }
+    }
 
     const zonalGrid: ZonalGridCell[] = [];
     const anomalyHotspots: AnomalyHotspot[] = [];
@@ -244,82 +273,54 @@ export async function analyzeSatellite(req: AuthenticatedRequest, res: Response)
         soilMoisture = 42;
         vvBackscatter = -13.1;
         action = 'Harvest-Ready / Normal Ripening: Natural foliar senescence. Cease spraying and prepare harvest.';
+      } else if (criticalIndices.has(index)) {
+        // 1. Critical Anomaly Zone (NDVI < 0.40 - Red/Orange)
+        const microVar = (Math.sin(cellLat * 1234.0 + cellLng * 4321.0) * 0.02);
+        ndvi = Number((0.34 + microVar).toFixed(2));
+        status = 'critical_hotspot';
+        color = '#ef4444'; // Red
+
+        const exactVigorDrop = Math.max(26, Math.round(((0.75 - ndvi) / 0.75) * 100));
+        const coordHeatShift = (Math.abs(Math.sin(cellLat * 2345.6 + cellLng * 6543.2)) * 1.6);
+        const tempElevation = Number((1.8 + (exactVigorDrop / 100) * 3.6 + coordHeatShift).toFixed(1));
+
+        soilMoisture = (soilData?.clayPercentage || 25) > 35 ? 78 : 34;
+        vvBackscatter = -8.2;
+        vhVvRatio = 1.68;
+        action = `Critical foliar vigor collapse (${ndvi} NDVI) detected in ${sector}. Ground truth with leaf camera scanner.`;
+
+        anomalyHotspots.push({
+          id: `spot_${prefix.toLowerCase()}_${cellIndex}`,
+          cellId: `cell-${cellIndex}`,
+          sector: sector,
+          title: `Localized Stress Cluster (${sector})`,
+          severity: 'critical',
+          ndvi: ndvi,
+          temperatureElevation: tempElevation,
+          chlorophyllDeficitPercent: exactVigorDrop,
+          radarAnomaly: `+${tempElevation}°C Canopy Transpiration Deficit`,
+          scientificNote: `Thermal transpiration deficit (+${tempElevation}°C) and -${exactVigorDrop}% foliar vigor drop detected at [${cellLat}, ${cellLng}] via dual-satellite telemetry. Ground-truth foliar diagnosis recommended.`,
+          coordinates: [cellLat, cellLng],
+          recommendedSprayCoords: { lat: cellLat, lng: cellLng },
+          localizedPrescription: `Inspect ${sector}: +${tempElevation}°C canopy heat elevation and -${exactVigorDrop}% NDVI foliar deficit detected. Verify foliar cause via close-up leaf scan.`
+        });
+      } else if (moderateIndices.has(index)) {
+        // 2. Moderate Stress Zone (0.40 <= NDVI <= 0.60 - Yellow/Amber)
+        const microVar = (Math.cos(cellLat * 987.0 + cellLng * 321.0) * 0.03);
+        ndvi = Number((0.52 + microVar).toFixed(2));
+        status = 'moderate_stress';
+        color = '#f59e0b'; // Amber
+        soilMoisture = 58;
+        vvBackscatter = -10.5;
+        vhVvRatio = 1.52;
+        action = `Moderate canopy stress (${ndvi} NDVI) detected in ${sector}. Sub-optimal foliar transpiration; monitor moisture and foliar health.`;
       } else {
-        // Active Standing Crop: Compute cell NDVI with micro-variation
-        const cellVariation = (Math.sin(cellLat * 1234.0 + cellLng * 4321.0) * 0.04);
-        let cellNdvi = Number(Math.max(0.18, Math.min(0.92, parcelBaselineNdvi + cellVariation)).toFixed(2));
-
-        if (index === hotspotCellIndex || (hasStressHotspot && cellNdvi < 0.4)) {
-          // Epicenter of critical hotspot (NDVI < 0.4)
-          cellNdvi = Math.min(cellNdvi, 0.36);
-          ndvi = cellNdvi;
-          status = 'critical_hotspot';
-          color = '#ef4444'; // Red
-          
-          const exactVigorDrop = Math.max(25, Math.round(((0.75 - ndvi) / 0.75) * 100));
-          const coordHeatShift = (Math.abs(Math.sin(cellLat * 2345.6 + cellLng * 6543.2)) * 1.6);
-          const tempElevation = Number((1.8 + (exactVigorDrop / 100) * 3.6 + coordHeatShift).toFixed(1));
-          
-          soilMoisture = (soilData?.clayPercentage || 25) > 35 ? 78 : 34;
-          vvBackscatter = -8.2;
-          vhVvRatio = 1.68;
-          action = `Critical foliar vigor collapse (< 0.4 NDVI) detected in ${sector}. Ground truth with leaf camera scanner.`;
-
-          anomalyHotspots.push({
-            id: `spot_${prefix.toLowerCase()}_${cellIndex}`,
-            cellId: `cell-${cellIndex}`,
-            sector: sector,
-            title: `Localized Stress Cluster (${sector})`,
-            severity: 'critical',
-            ndvi: ndvi,
-            temperatureElevation: tempElevation,
-            chlorophyllDeficitPercent: exactVigorDrop,
-            radarAnomaly: `+${tempElevation}°C Canopy Transpiration Deficit`,
-            scientificNote: `Thermal transpiration deficit (+${tempElevation}°C) and -${exactVigorDrop}% foliar vigor drop detected at [${cellLat}, ${cellLng}] via dual-satellite telemetry. Ground-truth foliar diagnosis recommended.`,
-            coordinates: [cellLat, cellLng],
-            recommendedSprayCoords: { lat: cellLat, lng: cellLng },
-            localizedPrescription: `Inspect ${sector}: +${tempElevation}°C canopy heat elevation and -${exactVigorDrop}% NDVI foliar deficit detected. Verify foliar cause via close-up leaf scan.`
-          });
-        } else if (cellNdvi > 0.6) {
-          // NDVI > 0.6 = Healthy / Normal (Green)
-          ndvi = cellNdvi;
-          status = 'healthy';
-          color = '#22c55e'; // Green
-          action = 'Canopy vigor is optimal. Maintain balanced irrigation.';
-        } else if (cellNdvi >= 0.4) {
-          // 0.4 <= NDVI <= 0.6 = Moderate Stress / Monitor (Yellow/Orange)
-          ndvi = cellNdvi;
-          status = 'moderate_stress';
-          color = '#f59e0b'; // Amber
-          soilMoisture = 60;
-          action = `Moderate canopy stress (0.4 - 0.6 NDVI) detected in ${sector}. Monitor moisture and foliar health.`;
-        } else {
-          // NDVI < 0.4 = Critical Alert / Hotspot Active (Red)
-          ndvi = cellNdvi;
-          status = 'critical_hotspot';
-          color = '#ef4444'; // Red
-          action = `Critical foliar vigor collapse (< 0.4 NDVI) detected in ${sector}. Ground truth with leaf camera scanner.`;
-
-          const exactVigorDrop = Math.max(25, Math.round(((0.75 - ndvi) / 0.75) * 100));
-          const coordHeatShift = (Math.abs(Math.sin(cellLat * 2345.6 + cellLng * 6543.2)) * 1.6);
-          const tempElevation = Number((1.8 + (exactVigorDrop / 100) * 3.6 + coordHeatShift).toFixed(1));
-
-          anomalyHotspots.push({
-            id: `spot_${prefix.toLowerCase()}_${cellIndex}`,
-            cellId: `cell-${cellIndex}`,
-            sector: sector,
-            title: `Localized Stress Cluster (${sector})`,
-            severity: 'critical',
-            ndvi: ndvi,
-            temperatureElevation: tempElevation,
-            chlorophyllDeficitPercent: exactVigorDrop,
-            radarAnomaly: `+${tempElevation}°C Canopy Transpiration Deficit`,
-            scientificNote: `Thermal transpiration deficit (+${tempElevation}°C) and -${exactVigorDrop}% foliar vigor drop detected at [${cellLat}, ${cellLng}] via dual-satellite telemetry. Ground-truth foliar diagnosis recommended.`,
-            coordinates: [cellLat, cellLng],
-            recommendedSprayCoords: { lat: cellLat, lng: cellLng },
-            localizedPrescription: `Inspect ${sector}: +${tempElevation}°C canopy heat elevation and -${exactVigorDrop}% NDVI foliar deficit detected. Verify foliar cause via close-up leaf scan.`
-          });
-        }
+        // 3. Healthy Canopy Zone (NDVI > 0.60 - Green)
+        const microVar = (Math.sin(cellLat * 543.0 + cellLng * 765.0) * 0.04);
+        ndvi = Number((0.76 + microVar).toFixed(2));
+        status = 'healthy';
+        color = '#22c55e'; // Green
+        action = 'Canopy vigor is optimal. Maintain balanced irrigation.';
       }
 
       zonalGrid.push({
@@ -349,16 +350,16 @@ export async function analyzeSatellite(req: AuthenticatedRequest, res: Response)
     const moderatePercentage = Math.round((moderateCount / totalCount) * 100);
     const severePercentage = Math.round((severeCount / totalCount) * 100);
 
-    // Strict NDVI Thresholding on overall parcel status:
-    // NDVI > 0.6 = Healthy / Normal
-    // 0.4 <= NDVI <= 0.6 = Moderate Stress / Monitor
-    // NDVI < 0.4 = Critical Alert / Hotspot Active
+    // Multi-State Overall Parcel Status:
+    // If critical hotspots present -> 'critical'
+    // If moderate stress present -> 'warning'
+    // Else -> 'healthy'
     let overallStatus: 'healthy' | 'warning' | 'critical' = 'healthy';
     if (isFallowCheck || isRipeningCheck) {
       overallStatus = 'healthy';
-    } else if (meanNdvi < 0.4 || severeCount > 0) {
+    } else if (severeCount > 0 || meanNdvi < 0.4) {
       overallStatus = 'critical';
-    } else if (meanNdvi <= 0.6 || moderateCount > 0) {
+    } else if (moderateCount > 0 || meanNdvi <= 0.6) {
       overallStatus = 'warning';
     } else {
       overallStatus = 'healthy';
@@ -450,6 +451,12 @@ export async function analyzeSatellite(req: AuthenticatedRequest, res: Response)
       ? anomalyHotspots[0].temperatureElevation 
       : (overallStatus === 'warning' ? Number((1.2 + (0.6 - meanNdvi) * 3).toFixed(1)) : 0);
 
+    const alertMessage = overallStatus === 'critical'
+      ? `⚠️ Critical Alert: Active Stress Hotspot in ${dynamicHotspotSector || 'Target Sector'} (NDVI: ${meanNdvi.toFixed(2)}). -${dynamicVigorDrop}% foliar vigor drop & +${dynamicTempElevation}°C thermal elevation.`
+      : overallStatus === 'warning'
+      ? `⚡ Moderate Stress / Monitor: Sub-optimal vigor in ${dynamicHotspotSector || 'Target Sector'} (NDVI: ${meanNdvi.toFixed(2)}). Foliar transpiration check advised.`
+      : `Optimal foliar canopy vigor (NDVI: ${meanNdvi.toFixed(2)}). Uniform chlorophyll density with zero thermal stress.`;
+
     await dbService.updateFarm(farm.id, finalUserId, {
       status: overallStatus,
       lastScanDate: scan.scanDate,
@@ -458,6 +465,7 @@ export async function analyzeSatellite(req: AuthenticatedRequest, res: Response)
         vigorDropPercent: dynamicVigorDrop,
         hotspotSector: dynamicHotspotSector,
         temperatureElevation: dynamicTempElevation,
+        alertMessage,
       }
     });
 
