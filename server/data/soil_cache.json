@@ -1013,5 +1013,36 @@
       }
     },
     "timestamp": 1789202568332
+  },
+  "22.683_87.701": {
+    "data": {
+      "source": "ISRIC SoilGrids v2.0",
+      "coordinates": [
+        22.682612,
+        87.700524
+      ],
+      "clayPercentage": 27.6,
+      "sandPercentage": 19.4,
+      "siltPercentage": 53,
+      "soilTexture": "Silty Clay Loam",
+      "organicCarbonGPerKg": 27.7,
+      "organicCarbonPercentage": 2.77,
+      "phH2o": 6.5,
+      "nitrogenGPerKg": 1.66,
+      "disclaimer": "Map-based estimate — field soil test required for exact values.",
+      "isAvailable": true,
+      "resolution": "250m grid resolution",
+      "depth": "0–5 cm (topsoil)",
+      "isEstimate": true,
+      "rawLayerDepths": {
+        "clay": 276,
+        "nitrogen": 166,
+        "phh2o": 65,
+        "sand": 194,
+        "silt": 530,
+        "soc": 277
+      }
+    },
+    "timestamp": 1789367974626
   }
 }
