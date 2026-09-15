@@ -25,5 +25,53 @@
     "district": "purulia",
     "preferredLanguage": "en",
     "createdAt": "2026-09-12T08:30:14.064Z"
+  },
+  {
+    "id": "1ec5356b-ab76-4920-b96c-ee0a52d8f980",
+    "fullName": "Ramesh Patel",
+    "email": "farmer_1789206568195@agricare.org",
+    "phone": "+91-9876543210",
+    "phoneNumber": "+91-9876543210",
+    "state": "Gujarat",
+    "district": "Anand",
+    "preferredLanguage": "hi",
+    "role": "farmer",
+    "createdAt": "2026-09-12T09:49:28.191Z"
+  },
+  {
+    "id": "38b80089-3d92-480a-9b00-b56868022e71",
+    "fullName": "Sunita Roy",
+    "email": "farmer_alias_1789206568270@agricare.org",
+    "phone": "",
+    "phoneNumber": "",
+    "state": "West Bengal",
+    "district": "Hooghly",
+    "preferredLanguage": "bn",
+    "role": "farmer",
+    "createdAt": "2026-09-12T09:49:28.265Z"
+  },
+  {
+    "id": "c94044a7-b722-4e43-b178-8b4b1cdd3a0f",
+    "fullName": "chahat saw",
+    "email": "chahat@3213gmail.com",
+    "phone": "9382709561",
+    "phoneNumber": "9382709561",
+    "state": "",
+    "district": "",
+    "preferredLanguage": "en",
+    "role": "farmer",
+    "createdAt": "2026-09-12T09:55:01.598Z"
+  },
+  {
+    "id": "5808d2c6-ae56-4d3a-9bf3-ae157370fd31",
+    "fullName": "chahat saw",
+    "email": "chahat@3219gmail.com",
+    "phone": "6294826513",
+    "phoneNumber": "6294826513",
+    "state": "",
+    "district": "",
+    "preferredLanguage": "en",
+    "role": "farmer",
+    "createdAt": "2026-09-12T10:11:03.737Z"
   }
 ]
